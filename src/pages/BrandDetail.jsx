@@ -97,8 +97,8 @@ export default function BrandDetail() {
           
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-start sm:gap-10 lg:gap-14">
             {/* Logo */}
-            <div className="flex-shrink-0 mb-6 sm:mb-0">
-              <div className="w-[140px] h-[90px] sm:w-[200px] sm:h-[120px] lg:w-[240px] lg:h-[140px] bg-white rounded-2xl sm:rounded-3xl border border-[#e2e8f0] shadow-sm flex items-center justify-center p-4 sm:p-6">
+            <div className="flex-shrink-0 mb-6 sm:mb-0 w-full sm:w-auto">
+              <div className="w-[calc(100%-20px)] mx-auto sm:mx-0 sm:w-[200px] h-[120px] sm:h-[120px] lg:w-[240px] lg:h-[140px] bg-white rounded-2xl sm:rounded-3xl border border-[#e2e8f0] shadow-sm flex items-center justify-center p-4 sm:p-6">
                 {Logo ? (
                   <div className="w-full h-full flex items-center justify-center">
                     <img src={`/images/logos/${brand.id === 'ao-smith' ? 'aosmith_new' : brand.id === 'kent' ? 'brand2' : brand.id === 'aquaguard' ? 'brand5' : brand.id === 'pureit' ? 'brand4' : 'brand1'}.webp`} alt={brand.name} width="240" height="140" decoding="async" className="max-w-full max-h-full object-contain" />
@@ -112,7 +112,7 @@ export default function BrandDetail() {
             {/* Content */}
             <div className="flex-1 min-w-0">
               <h1 className="text-[28px] sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#0f172a] leading-[1.1] mb-3 sm:mb-4">{brand.name} Service</h1>
-              <p className="text-[14px] sm:text-lg text-[#64748b] mb-6 sm:mb-8 leading-relaxed">{brand.description}</p>
+              <p className="text-[14px] sm:text-lg text-[#64748b] mb-6 sm:mb-8 leading-relaxed">Advanced multi-stage water purification with expert service in Bangalore. Repair, filter replacement, and AMC plans.</p>
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                 <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#2563eb] text-white font-semibold btn-ribbon hover:bg-[#1d4ed8] transition-all shadow-lg text-[14px]">
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5" />Call Now: {SITE.phoneFormatted}
