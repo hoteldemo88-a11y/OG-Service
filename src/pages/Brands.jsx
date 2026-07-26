@@ -32,7 +32,7 @@ export default function Brands() {
                 <div key={brand.id}>
                   <Link to={`/brands/${brand.id}`} className="group block bg-white rounded-2xl border border-[#e2e8f0] overflow-hidden hover:shadow-xl transition-all duration-300">
                     <div className="bg-[#eff6ff] p-6 sm:p-8 flex items-center justify-center h-32 sm:h-40">
-                      <div className="group-hover:scale-110 transition-transform duration-300 scale-75 sm:scale-90 lg:scale-100">
+                      <div className="group-hover:scale-110 transition-transform duration-300">
                         {Logo ? <Logo /> : (
                           <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#2563eb] rounded-2xl flex items-center justify-center text-xl sm:text-2xl font-bold text-white">{brand.name.charAt(0)}</div>
                         )}
