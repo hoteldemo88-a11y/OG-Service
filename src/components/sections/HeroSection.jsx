@@ -35,6 +35,23 @@ export default function HeroSection() {
   };
 
   useEffect(() => {
+    const links = [
+      { href: '/hero image 1-sm.webp', media: '(max-width: 1023px)' },
+      { href: '/herobg.webp', media: '(min-width: 1024px)' },
+    ].map(({ href, media }) => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = href;
+      link.media = media;
+      link.fetchPriority = 'high';
+      document.head.appendChild(link);
+      return link;
+    });
+    return () => links.forEach(l => l.remove());
+  }, []);
+
+  useEffect(() => {
     const timer = setInterval(() => {
       setHeroIdx((prev) => (prev + 1) % heroImages.length);
     }, 5000);
