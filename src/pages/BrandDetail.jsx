@@ -139,8 +139,16 @@ export default function BrandDetail() {
           </div>
 
           {/* Title */}
-          <h1 className="mt-6 sm:mt-8 text-[24px] sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[#0f172a] leading-[1.1] mb-2 sm:mb-3">Expert RO Service</h1>
-          <p className="text-[13px] sm:text-[15px] text-[#64748b] mb-5 sm:mb-6 leading-relaxed">Expert repair, filter replacement, membrane change, UV lamp service, and annual maintenance plans in Bangalore. Certified technicians, genuine parts, same-day doorstep service with warranty.</p>
+          <h1 className="mt-6 sm:mt-8 text-[24px] sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[#0f172a] leading-[1.1] mb-2 sm:mb-3">Your RO Not Working?<br />We Fix It Today.</h1>
+          <p className="text-[13px] sm:text-[15px] text-[#64748b] mb-5 sm:mb-6 leading-relaxed">Getting dirty water, low pressure, or strange noise from your RO? Our trained technicians come to your home in Bangalore and fix it the same day.</p>
+          <div className="flex flex-col items-start gap-1.5 mb-5 sm:mb-6">
+            {['Same Day Service Available', 'Certified & Trained Engineers', '100% Genuine Spare Parts', 'Service Warranty Included'].map((item) => (
+              <div key={item} className="flex items-center gap-1.5">
+                <span className="w-4 h-4 rounded-full bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center text-[9px] text-[#22c55e] font-bold shrink-0">✓</span>
+                <span className="text-[12px] sm:text-[13px] font-medium text-[#334155]">{item}</span>
+              </div>
+            ))}
+          </div>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-10">
