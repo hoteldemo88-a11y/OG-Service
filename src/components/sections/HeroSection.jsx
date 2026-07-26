@@ -30,7 +30,7 @@ export default function HeroSection() {
       <Container className="relative z-10 w-full py-10 sm:py-16 lg:py-0 lg:min-h-[calc(100vh-36px)] flex items-center">
         <div className="w-full lg:grid lg:grid-cols-[1fr_400px] lg:gap-12 lg:items-center">
 
-          {/* ── Phone: Image + Badge + Buttons ── */}
+          {/* ── Phone: Badge + Image + Form + Texts + Buttons ── */}
           <div className="lg:hidden pt-16 pb-6 text-center">
             <div className="mx-4 mb-3 flex justify-center">
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#eff6ff] border border-[#bfdbfe]">
@@ -57,26 +57,6 @@ export default function HeroSection() {
                   <span key={i} className={`w-2 h-2 rounded-full transition-all duration-300 ${i === heroIdx ? 'bg-[#2563eb] w-5' : 'bg-white/70'}`} />
                 ))}
               </div>
-            </div>
-            <div className="mx-4 mt-4 mb-4">
-              <h1 className="text-[26px] font-extrabold text-[#0f172a] leading-[1.15] mb-2">Your RO Not Working?<br/>We Fix It Today.</h1>
-              <p className="text-[13px] text-[#64748b] leading-relaxed mb-3">Getting dirty water, low pressure, or strange noise from your RO? Our trained technicians come to your home and fix it the same day.</p>
-              <div className="flex flex-col items-start gap-1.5 mb-1 mx-auto max-w-[280px]">
-                {['Same Day Service', 'Certified Engineers', 'Genuine Spare Parts', 'Service Warranty'].map((item) => (
-                  <div key={item} className="flex items-center gap-1.5">
-                    <span className="w-4 h-4 rounded-full bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center text-[9px] text-[#22c55e] font-bold shrink-0">✓</span>
-                    <span className="text-[12px] font-medium text-[#334155]">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col gap-3 mx-4 mt-4">
-              <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center justify-center gap-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-semibold btn-ribbon px-6 py-4 text-[15px] transition-all duration-200 shadow-md hover:shadow-lg active:scale-[0.98]">
-                <Phone className="w-5 h-5" />Call Now
-              </a>
-              <a href={`mailto:${SITE.email}`} className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#f8fafc] text-[#334155] font-semibold btn-ribbon px-6 py-4 text-[15px] border border-[#e2e8f0] hover:border-[#cbd5e1] transition-all duration-200 shadow-sm hover:shadow active:scale-[0.98]">
-                <Mail className="w-5 h-5 text-[#2563eb]" />Email Us
-              </a>
             </div>
           </div>
 
@@ -182,6 +162,31 @@ export default function HeroSection() {
               </form>
             </div>
           </div>
+
+          {/* ── Phone: Texts + Buttons (after form) ── */}
+          <div className="lg:hidden w-full text-center">
+            <div className="mx-4 mt-4 mb-4">
+              <h1 className="text-[26px] font-extrabold text-[#0f172a] leading-[1.15] mb-2">Your RO Not Working?<br/>We Fix It Today.</h1>
+              <p className="text-[13px] text-[#64748b] leading-relaxed mb-3">Getting dirty water, low pressure, or strange noise from your RO? Our trained technicians come to your home and fix it the same day.</p>
+              <div className="flex flex-col items-start gap-1.5 mb-1 mx-auto max-w-[280px]">
+                {['Same Day Service', 'Certified Engineers', 'Genuine Spare Parts', 'Service Warranty'].map((item) => (
+                  <div key={item} className="flex items-center gap-1.5">
+                    <span className="w-4 h-4 rounded-full bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center text-[9px] text-[#22c55e] font-bold shrink-0">✓</span>
+                    <span className="text-[12px] font-medium text-[#334155]">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-col gap-3 mx-4 mt-4">
+              <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center justify-center gap-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-semibold btn-ribbon px-6 py-4 text-[15px] transition-all duration-200 shadow-md hover:shadow-lg active:scale-[0.98]">
+                <Phone className="w-5 h-5" />Call Now
+              </a>
+              <a href={`mailto:${SITE.email}`} className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#f8fafc] text-[#334155] font-semibold btn-ribbon px-6 py-4 text-[15px] border border-[#e2e8f0] hover:border-[#cbd5e1] transition-all duration-200 shadow-sm hover:shadow active:scale-[0.98]">
+                <Mail className="w-5 h-5 text-[#2563eb]" />Email Us
+              </a>
+            </div>
+          </div>
+
         </div>
       </Container>
     </section>
