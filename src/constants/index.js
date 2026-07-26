@@ -38,13 +38,6 @@ export const NAV_LINKS = [
     name: 'Services',
     path: '/services',
     icon: 'Wrench',
-    children: [
-      { name: 'RO Repair', path: '/services/ro-repair' },
-      { name: 'RO Installation', path: '/services/ro-installation' },
-      { name: 'AMC Plans', path: '/services/amc-plans' },
-      { name: 'Filter Replacement', path: '/services/filter-replacement' },
-      { name: 'All Services', path: '/services' },
-    ],
   },
   {
     name: 'Brands',
