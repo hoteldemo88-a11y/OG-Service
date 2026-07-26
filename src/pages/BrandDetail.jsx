@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { Phone, ArrowRight, Shield, Wrench, Calendar, Clock, CheckCircle, Droplets, Gauge, Cog, Zap, Power, Filter, Settings, Star, Users, Quote, Send } from 'lucide-react';
+import { Phone, Shield, Wrench, Calendar, Clock, CheckCircle, Droplets, Gauge, Cog, Zap, Power, Filter, Settings, Star, Users, Quote, Send } from 'lucide-react';
 import SEO from '@/components/common/SEO';
 import Container from '@/components/common/Container';
 import SectionHeading from '@/components/common/SectionHeading';
