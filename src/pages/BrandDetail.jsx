@@ -9,62 +9,62 @@ import { BRANDS, SITE, TESTIMONIALS } from '@/constants';
 
 const brandFaqs = {
   kent: [
-    { id: 1, question: 'How often should I service my Kent RO?', answer: 'We recommend servicing your Kent RO every 6-12 months, depending on your water quality and usage.' },
-    { id: 2, question: 'Do you use genuine Kent spare parts?', answer: 'Yes, we use 100% genuine Kent spare parts for all repairs and replacements.' },
-    { id: 3, question: 'What is the warranty on Kent RO repair?', answer: 'We provide a 30-day service warranty on all Kent RO repairs. Part warranty varies by component.' },
+    { id: 1, question: 'How often should I service my RO?', answer: 'We recommend servicing your RO every 6-12 months, depending on your water quality and usage.' },
+    { id: 2, question: 'Do you use genuine spare parts?', answer: 'Yes, we use 100% genuine spare parts for all repairs and replacements.' },
+    { id: 3, question: 'What is the warranty on repair?', answer: 'We provide a 30-day service warranty on all repairs. Part warranty varies by component.' },
   ],
   aquaguard: [
-    { id: 1, question: 'How often should I service my Aquaguard?', answer: 'Regular service every 6-12 months is recommended for optimal performance of your Aquaguard purifier.' },
-    { id: 2, question: 'Do you provide Aquaguard filter replacement?', answer: 'Yes, we replace all types of Aquaguard filters with genuine parts.' },
-    { id: 3, question: 'What areas do you cover for Aquaguard service?', answer: 'We cover all major areas in Bangalore for Aquaguard service.' },
+    { id: 1, question: 'How often should I service my RO?', answer: 'Regular service every 6-12 months is recommended for optimal performance of your purifier.' },
+    { id: 2, question: 'Do you provide filter replacement?', answer: 'Yes, we replace all types of filters with genuine parts.' },
+    { id: 3, question: 'What areas do you cover?', answer: 'We cover all major areas in Bangalore for service.' },
   ],
   pureit: [
-    { id: 1, question: 'How do I know when to service my Pureit RO?', answer: 'If you notice reduced water flow, bad taste, or unusual noise, it\'s time to service your Pureit RO.' },
-    { id: 2, question: 'Do you provide AMC for Pureit?', answer: 'Yes, we offer comprehensive AMC plans for Pureit water purifiers.' },
-    { id: 3, question: 'How long does a Pureit service take?', answer: 'Most Pureit service visits are completed within 30-45 minutes.' },
+    { id: 1, question: 'How do I know when to service my RO?', answer: 'If you notice reduced water flow, bad taste, or unusual noise, it\'s time to service your RO.' },
+    { id: 2, question: 'Do you provide AMC plans?', answer: 'Yes, we offer comprehensive Annual Maintenance Contracts for all purifiers.' },
+    { id: 3, question: 'How long does a service take?', answer: 'Most service visits are completed within 30-45 minutes.' },
   ],
   'ao-smith': [
-    { id: 1, question: 'Do you service all AO Smith models?', answer: 'Yes, we service all AO Smith water purifier models including hot and cold water dispensers.' },
-    { id: 2, question: 'What is the cost of AO Smith filter change?', answer: 'AO Smith filter replacement starts from ₹1,500 depending on the model and filter type.' },
-    { id: 3, question: 'Do you provide AO Smith AMC?', answer: 'Yes, we offer annual maintenance contracts for AO Smith water purifiers.' },
+    { id: 1, question: 'Do you service all models?', answer: 'Yes, we service all water purifier models including hot and cold water dispensers.' },
+    { id: 2, question: 'What is the cost of filter change?', answer: 'Filter replacement starts from ₹1,500 depending on the model and filter type.' },
+    { id: 3, question: 'Do you provide AMC?', answer: 'Yes, we offer annual maintenance contracts for all purifiers.' },
   ],
   lg: [
-    { id: 1, question: 'Do you service LG water purifiers?', answer: 'Yes, we provide complete service for all LG water purifier models including mineral enhancer models.' },
-    { id: 2, question: 'How often should I service my LG RO?', answer: 'We recommend servicing your LG RO every 6-12 months for best performance.' },
-    { id: 3, question: 'Do you use genuine LG parts?', answer: 'Yes, we use only genuine LG spare parts for all repairs and replacements.' },
+    { id: 1, question: 'Do you service all LG purifiers?', answer: 'Yes, we provide complete service for all models including mineral enhancer models.' },
+    { id: 2, question: 'How often should I service my RO?', answer: 'We recommend servicing your RO every 6-12 months for best performance.' },
+    { id: 3, question: 'Do you use genuine parts?', answer: 'Yes, we use only genuine spare parts for all repairs and replacements.' },
   ],
 };
 
 const brandServices = {
   kent: [
-    { title: 'Kent RO Repair', description: 'Expert repair for all Kent RO models including Kent Pearl, Kent Prime, and Kent Elite.' },
-    { title: 'Kent Filter Change', description: 'Genuine Kent filter replacement with PP, sediment, carbon, and post-carbon filters.' },
-    { title: 'Kent Membrane Replacement', description: 'RO membrane replacement for optimal TDS reduction and water purification.' },
-    { title: 'Kent AMC', description: 'Annual maintenance contracts for hassle-free Kent RO maintenance.' },
+    { title: 'RO Repair', description: 'Expert repair for all models including Pearl, Prime, and Elite.' },
+    { title: 'Filter Change', description: 'Genuine filter replacement with PP, sediment, carbon, and post-carbon filters.' },
+    { title: 'Membrane Replacement', description: 'RO membrane replacement for optimal TDS reduction and water purification.' },
+    { title: 'AMC Plans', description: 'Annual maintenance contracts for hassle-free RO maintenance.' },
   ],
   aquaguard: [
-    { title: 'Aquaguard Repair', description: 'Professional repair for all Aquaguard models including Aquaguard Marvel and Aquaguard Amrit.' },
-    { title: 'Aquaguard Filter Change', description: 'Genuine Aquaguard filter replacement with sediment and carbon filters.' },
-    { title: 'Aquaguard UV Lamp Replacement', description: 'UV lamp replacement for effective bacterial disinfection.' },
-    { title: 'Aquaguard AMC', description: 'Comprehensive annual maintenance for your Aquaguard purifier.' },
+    { title: 'RO Repair', description: 'Professional repair for all models including Marvel and Amrit.' },
+    { title: 'Filter Change', description: 'Genuine filter replacement with sediment and carbon filters.' },
+    { title: 'UV Lamp Replacement', description: 'UV lamp replacement for effective bacterial disinfection.' },
+    { title: 'AMC Plans', description: 'Comprehensive annual maintenance for your purifier.' },
   ],
   pureit: [
-    { title: 'Pureit Repair', description: 'Expert repair for all Pureit models including Pureit Classic and Pureit Ultima.' },
-    { title: 'Pureit Filter Change', description: 'Genuine Pureit filter replacement for clean and safe water.' },
-    { title: 'Pureit Membrane Change', description: 'RO membrane replacement for optimal water purification.' },
-    { title: 'Pureit AMC', description: 'Annual maintenance contracts for Pureit water purifiers.' },
+    { title: 'RO Repair', description: 'Expert repair for all models including Classic and Ultima.' },
+    { title: 'Filter Change', description: 'Genuine filter replacement for clean and safe water.' },
+    { title: 'Membrane Change', description: 'RO membrane replacement for optimal water purification.' },
+    { title: 'AMC Plans', description: 'Annual maintenance contracts for hassle-free service.' },
   ],
   'ao-smith': [
-    { title: 'AO Smith Repair', description: 'Professional repair for all AO Smith water purifier models.' },
-    { title: 'AO Smith Filter Change', description: 'Genuine AO Smith filter replacement with SCMT and sediment filters.' },
-    { title: 'AO Smith Hot Water Service', description: 'Service and repair for AO Smith hot and cold water dispensers.' },
-    { title: 'AO Smith AMC', description: 'Annual maintenance contracts for AO Smith purifiers.' },
+    { title: 'RO Repair', description: 'Professional repair for all water purifier models.' },
+    { title: 'Filter Change', description: 'Genuine filter replacement with SCMT and sediment filters.' },
+    { title: 'Hot Water Service', description: 'Service and repair for hot and cold water dispensers.' },
+    { title: 'AMC Plans', description: 'Annual maintenance contracts for purifiers.' },
   ],
   lg: [
-    { title: 'LG RO Repair', description: 'Expert repair for all LG water purifier models including mineral enhancer models.' },
-    { title: 'LG Filter Change', description: 'Genuine LG filter replacement for clean and mineral-rich water.' },
-    { title: 'LG Mineralizer Service', description: 'Service and maintenance of LG mineral enhancer technology.' },
-    { title: 'LG AMC', description: 'Annual maintenance contracts for LG water purifiers.' },
+    { title: 'RO Repair', description: 'Expert repair for all models including mineral enhancer technology.' },
+    { title: 'Filter Change', description: 'Genuine filter replacement for clean and mineral-rich water.' },
+    { title: 'Mineralizer Service', description: 'Service and maintenance of mineral enhancement technology.' },
+    { title: 'AMC Plans', description: 'Annual maintenance contracts for hassle-free service.' },
   ],
 };
 
@@ -129,7 +129,7 @@ export default function BrandDetail() {
       {/* Services */}
       <section className="py-12 sm:py-20 bg-white">
         <Container>
-          <SectionHeading badge="Services" title={`${brand.name} Services We Offer`} icon={Wrench} />
+          <SectionHeading badge="Services" title="Services We Offer" icon={Wrench} />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
             {services.map((service) => (
               <div key={service.title} className="bg-white p-4 sm:p-5 lg:p-6 rounded-xl sm:rounded-2xl border border-[#e2e8f0] hover:shadow-lg hover:border-[#bfdbfe] transition-all">
@@ -256,7 +256,7 @@ export default function BrandDetail() {
         <section className="py-12 sm:py-20 bg-white">
           <Container>
             <div className="max-w-3xl mx-auto">
-              <SectionHeading badge="FAQ" title={`${brand.name} Service FAQ`} icon={CheckCircle} />
+              <SectionHeading badge="FAQ" title="Frequently Asked Questions" icon={CheckCircle} />
               <FAQAccordion items={faqs} />
             </div>
           </Container>

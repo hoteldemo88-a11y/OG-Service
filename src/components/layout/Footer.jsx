@@ -1,9 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import Container from '@/components/common/Container';
 import { SITE, SERVICES, BRANDS } from '@/constants';
 
 export default function Footer() {
+  const location = useLocation();
+  const isBrandDetail = location.pathname.startsWith('/brands/');
   return (
     <footer className="bg-[#f8fafc] border-t border-[#e2e8f0] pb-20 lg:pb-0" role="contentinfo">
       <div className="py-10 sm:py-12 lg:py-16">
@@ -11,9 +13,15 @@ export default function Footer() {
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-8">
             {/* Company */}
             <div className="col-span-2 sm:col-span-2 lg:col-span-1">
-              <Link to="/" className="flex items-center gap-2.5 mb-3 sm:mb-5">
-                <div className="flex items-center justify-center bg-white rounded-lg sm:rounded-xl overflow-hidden h-12 sm:h-14"><img src="/brandlogo.webp" alt="RO Service Center" width="200" height="56" loading="lazy" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
-              </Link>
+              {isBrandDetail ? (
+                <span className="flex items-center gap-2.5 mb-3 sm:mb-5">
+                  <div className="flex items-center justify-center bg-white rounded-lg sm:rounded-xl overflow-hidden h-12 sm:h-14"><img src="/brandlogo.webp" alt="RO Service Center" width="200" height="56" loading="lazy" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+                </span>
+              ) : (
+                <Link to="/" className="flex items-center gap-2.5 mb-3 sm:mb-5">
+                  <div className="flex items-center justify-center bg-white rounded-lg sm:rounded-xl overflow-hidden h-12 sm:h-14"><img src="/brandlogo.webp" alt="RO Service Center" width="200" height="56" loading="lazy" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+                </Link>
+              )}
               <p className="text-[#64748b] text-[12px] sm:text-[14px] leading-relaxed mb-3 sm:mb-5" style={{ fontFamily: 'var(--font-body)' }}>
                 We provide expert RO repair and service at your doorstep in Bangalore. Customer satisfaction is our first priority.
               </p>
