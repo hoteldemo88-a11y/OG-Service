@@ -58,8 +58,8 @@ export default function Navbar() {
             {/* Logo */}
             {isBrandDetail ? (
               <span className="flex items-center gap-2.5 shrink-0 group">
-                <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14 sm:h-16 lg:h-[50px]">
-                  {brandId && <img src={`/images/logos/${brandLogoMap[brandId] || 'brand1'}.webp`} alt="Brand" width="200" height="64" decoding="async" className="h-full w-auto object-contain" />}
+                <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-10 w-[100px] sm:h-12 sm:w-[120px] lg:h-[40px] lg:w-[100px]">
+                  {brandId && <img src={`/images/logos/${brandLogoMap[brandId] || 'brand1'}.webp`} alt="Brand" width="120" height="48" decoding="async" className="h-full w-full object-contain p-1" />}
                 </div>
               </span>
             ) : (
@@ -117,7 +117,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between px-6 py-5 border-b border-[#f1f5f9]">
               {isBrandDetail ? (
                 <span className="flex items-center gap-2.5">
-                  <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14">{brandId && <img src={`/images/logos/${brandLogoMap[brandId] || 'brand1'}.webp`} alt="Brand" width="200" height="56" decoding="async" className="h-full w-auto object-contain" />}</div>
+                  <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-10 w-[100px]">{brandId && <img src={`/images/logos/${brandLogoMap[brandId] || 'brand1'}.webp`} alt="Brand" width="100" height="40" decoding="async" className="h-full w-full object-contain p-1" />}</div>
                 </span>
               ) : (
                 <Link to="/" className="flex items-center gap-2.5" onClick={() => setIsOpen(false)}>
