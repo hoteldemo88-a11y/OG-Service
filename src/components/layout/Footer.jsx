@@ -11,6 +11,7 @@ export default function Footer() {
       <div className="py-10 sm:py-12 lg:py-16">
         <Container>
           {/* Trust Badges */}
+          <h3 className="text-[15px] sm:text-[17px] font-bold text-[#0f172a] mb-4 sm:mb-5 text-center" style={{ fontFamily: 'var(--font-heading)' }}>Our Priority Support</h3>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-10 sm:mb-12">
             {[
               { icon: Clock, text: 'Doorstep Service in 60 Minutes' },
