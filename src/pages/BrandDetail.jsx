@@ -4,7 +4,6 @@ import SEO from '@/components/common/SEO';
 import Container from '@/components/common/Container';
 import SectionHeading from '@/components/common/SectionHeading';
 import FAQAccordion from '@/components/common/FAQAccordion';
-import Breadcrumb from '@/components/common/Breadcrumb';
 import BrandLogos from '@/components/icons/BrandLogos';
 import { BRANDS, SITE } from '@/constants';
 
@@ -95,7 +94,6 @@ export default function BrandDetail() {
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 bg-[#f8fafc] overflow-hidden">
         <Container className="relative z-10">
-          <Breadcrumb items={[{ label: 'Brands', path: '/brands' }, { label: brand.name }]} />
           
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-start sm:gap-10 lg:gap-14">
             {/* Logo */}
