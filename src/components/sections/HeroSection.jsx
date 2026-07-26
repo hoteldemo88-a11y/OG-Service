@@ -58,6 +58,14 @@ export default function HeroSection() {
                 ))}
               </div>
             </div>
+            <div className="flex flex-col gap-3 mx-4 mt-4">
+              <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center justify-center gap-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-semibold btn-ribbon px-6 py-4 text-[15px] transition-all duration-200 shadow-md hover:shadow-lg active:scale-[0.98]">
+                <Phone className="w-5 h-5" />Call Now
+              </a>
+              <a href={`mailto:${SITE.email}`} className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#f8fafc] text-[#334155] font-semibold btn-ribbon px-6 py-4 text-[15px] border border-[#e2e8f0] hover:border-[#cbd5e1] transition-all duration-200 shadow-sm hover:shadow active:scale-[0.98]">
+                <Mail className="w-5 h-5 text-[#2563eb]" />Email Us
+              </a>
+            </div>
           </div>
 
           {/* ── LEFT: Content (desktop only, CSS animations) ── */}
@@ -163,12 +171,12 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* ── Phone: Texts + Buttons (after form) ── */}
+          {/* ── Phone: Texts (after form) ── */}
           <div className="lg:hidden w-full text-center">
             <div className="mx-4 mt-4 mb-4">
               <h1 className="text-[26px] font-extrabold text-[#0f172a] leading-[1.15] mb-2">Your RO Not Working?<br/>We Fix It Today.</h1>
               <p className="text-[13px] text-[#64748b] leading-relaxed mb-3">Getting dirty water, low pressure, or strange noise from your RO? Our trained technicians come to your home and fix it the same day.</p>
-              <div className="flex flex-col items-start gap-1.5 mb-1 mx-auto max-w-[280px]">
+              <div className="flex flex-col items-start gap-1.5 mx-auto max-w-[280px]">
                 {['Same Day Service', 'Certified Engineers', 'Genuine Spare Parts', 'Service Warranty'].map((item) => (
                   <div key={item} className="flex items-center gap-1.5">
                     <span className="w-4 h-4 rounded-full bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center text-[9px] text-[#22c55e] font-bold shrink-0">✓</span>
@@ -176,14 +184,6 @@ export default function HeroSection() {
                   </div>
                 ))}
               </div>
-            </div>
-            <div className="flex flex-col gap-3 mx-4 mt-4">
-              <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center justify-center gap-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-semibold btn-ribbon px-6 py-4 text-[15px] transition-all duration-200 shadow-md hover:shadow-lg active:scale-[0.98]">
-                <Phone className="w-5 h-5" />Call Now
-              </a>
-              <a href={`mailto:${SITE.email}`} className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#f8fafc] text-[#334155] font-semibold btn-ribbon px-6 py-4 text-[15px] border border-[#e2e8f0] hover:border-[#cbd5e1] transition-all duration-200 shadow-sm hover:shadow active:scale-[0.98]">
-                <Mail className="w-5 h-5 text-[#2563eb]" />Email Us
-              </a>
             </div>
           </div>
 
