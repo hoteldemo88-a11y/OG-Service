@@ -125,12 +125,6 @@ const brandKeywords = {
   lg: 'Lg ro service, Lg water purifier service, Lg purifier service, Lg ro repair service',
   'ao-smith': 'Ao Smith ro service, Ao Smith water purifier service, Ao Smith service, Ao Smith ro repair service',
   pureit: 'Pureit service, Pureit ro service, Pureit water purifier service, Pureit repair service',
-  havells: 'Havells service, Havells water purifier service, Havells ro service, Havells repair service',
-  livpure: 'Livpure service, Livpure water purifier service, Livpure ro service, Livpure repair service',
-  'zero-b': 'Zero B service, Zero B water purifier service, Zero B ro service, Zero B repair service',
-  'aqua-grand': 'Aqua Grand service, Aqua Grand water purifier service, Aqua Grand ro service, Aqua Grand repair service',
-  'aqua-pearl': 'Aqua Pearl service, Aqua Pearl water purifier service, Aqua Pearl ro service, Aqua Pearl repair service',
-  puresis: 'Puresis service, Puresis water purifier service, Puresis ro service, Puresis repair service',
 };
 
 const brandServices = {

@@ -56,12 +56,6 @@ export const NAV_LINKS = [
       { name: 'Pureit', path: '/brands/pureit' },
       { name: 'AO Smith', path: '/brands/ao-smith' },
       { name: 'LG', path: '/brands/lg' },
-      { name: 'Havells', path: '/brands/havells' },
-      { name: 'Livpure', path: '/brands/livpure' },
-      { name: 'Zero B', path: '/brands/zero-b' },
-      { name: 'Aqua Grand', path: '/brands/aqua-grand' },
-      { name: 'Aqua Pearl', path: '/brands/aqua-pearl' },
-      { name: 'Puresis', path: '/brands/puresis' },
     ],
   },
   { name: 'Contact Us', path: '/contact', icon: 'Phone' },
@@ -215,13 +209,6 @@ export const BRANDS = [
     color: '#b91c1c',
     services: ['LG Repair', 'LG Service', 'LG Filter Change', 'LG AMC'],
   },
-  { id: 'havells', name: 'Havells', fullName: 'Havells Water Purifiers', tagline: 'Pure Water, Pure Life', description: 'Expert Havells water purifier service in Bangalore.', color: '#ea580c', services: ['Havells Repair', 'Havells Service', 'Havells Filter Change', 'Havells AMC'] },
-  { id: 'livpure', name: 'Livpure', fullName: 'Livpure Water Purifiers', tagline: 'Pure Water for You', description: 'Expert Livpure water purifier service in Bangalore.', color: '#0891b2', services: ['Livpure Repair', 'Livpure Service', 'Livpure Filter Change', 'Livpure AMC'] },
-  { id: 'zero-b', name: 'Zero B', fullName: 'Zero B Water Purifiers', tagline: 'Zero Compromise on Purity', description: 'Expert Zero B water purifier service in Bangalore.', color: '#4338ca', services: ['Zero B Repair', 'Zero B Service', 'Zero B Filter Change', 'Zero B AMC'] },
-  { id: 'aqua-grand', name: 'Aqua Grand', fullName: 'Aqua Grand Water Purifiers', tagline: 'Grand Purity', description: 'Expert Aqua Grand water purifier service in Bangalore.', color: '#0d9488', services: ['Aqua Grand Repair', 'Aqua Grand Service', 'Aqua Grand Filter Change', 'Aqua Grand AMC'] },
-  { id: 'aqua-pearl', name: 'Aqua Pearl', fullName: 'Aqua Pearl Water Purifiers', tagline: 'Purity Redefined', description: 'Expert Aqua Pearl water purifier service in Bangalore.', color: '#7c3aed', services: ['Aqua Pearl Repair', 'Aqua Pearl Service', 'Aqua Pearl Filter Change', 'Aqua Pearl AMC'] },
-  { id: 'puresis', name: 'Puresis', fullName: 'Puresis Water Purifiers', tagline: 'Pure Water Solution', description: 'Expert Puresis water purifier service in Bangalore.', color: '#2563eb', services: ['Puresis Repair', 'Puresis Service', 'Puresis Filter Change', 'Puresis AMC'] },
-  { id: 'others', name: 'Others', fullName: 'Other Brands', tagline: 'We Service All Brands', description: 'We service all water purifier brands available in India.', color: '#64748b', services: ['RO Repair', 'Filter Change', 'Membrane Replacement', 'AMC Plans'] },
 ];
 
 export const TESTIMONIALS = [

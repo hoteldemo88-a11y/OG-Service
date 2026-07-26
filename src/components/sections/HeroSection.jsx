@@ -186,6 +186,13 @@ export default function HeroSection() {
                     <select id="hero-brand" value={form.brand} onChange={set('brand')} required className="w-full px-3 py-3 bg-white/70 border border-[#e2e8f0] rounded-xl text-[13px] text-[#64748b] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/15 focus:border-[#2563eb]/40 focus:bg-white transition-all appearance-none" style={{fontFamily:'var(--font-body)'}}>
                       <option value="">Select Brand</option>
                       {BRANDS.map(b => <option key={b.id} value={b.id}>{b.name}</option>)}
+                      <option value="havells">Havells</option>
+                      <option value="livpure">Livpure</option>
+                      <option value="zero-b">Zero B</option>
+                      <option value="aqua-grand">Aqua Grand</option>
+                      <option value="aqua-pearl">Aqua Pearl</option>
+                      <option value="puresis">Puresis</option>
+                      <option value="others">Others</option>
                     </select>
                     <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#cbd5e1] pointer-events-none" aria-hidden="true" />
                   </div>
