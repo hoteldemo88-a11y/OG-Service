@@ -16,7 +16,7 @@ const BrandLogos = {
   ),
   'ao-smith': () => (
     <div className="w-full h-full flex items-center justify-center">
-      <img src="/images/logos/aosmith_new.png" alt="AO Smith" width="200" height="90" loading="lazy" decoding="async" className="max-h-[50px] max-w-[80px] sm:max-h-[70px] sm:max-w-[140px] lg:max-h-[90px] lg:max-w-[200px] object-contain" />
+      <img src="/images/logos/aosmith_new.webp" alt="AO Smith" width="200" height="90" loading="lazy" decoding="async" className="max-h-[50px] max-w-[80px] sm:max-h-[70px] sm:max-w-[140px] lg:max-h-[90px] lg:max-w-[200px] object-contain" />
     </div>
   ),
   lg: () => (

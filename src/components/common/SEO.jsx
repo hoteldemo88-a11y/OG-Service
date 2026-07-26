@@ -22,7 +22,7 @@ export default function SEO({
     telephone: SITE.phone,
     email: SITE.email,
     image: pageImage,
-    logo: `${SITE.url}/brandlogo.png`,
+    logo: `${SITE.url}/brandlogo.webp`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: SITE.address.street,

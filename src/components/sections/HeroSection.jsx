@@ -8,7 +8,7 @@ import { fadeUp, stagger } from '@/utils/animations';
 export default function HeroSection() {
   const [form, setForm] = useState({ name: '', phone: '', brand: '', location: '' });
   const [loading, setLoading] = useState(false);
-  const heroImages = ['/hero image 1.png', '/hero image 2.png', '/hero image 3.png'];
+  const heroImages = ['/hero image 1.webp', '/hero image 2.webp', '/hero image 3.webp'];
   const [heroIdx, setHeroIdx] = useState(0);
   useEffect(() => {
     const timer = setInterval(() => {
@@ -22,7 +22,7 @@ export default function HeroSection() {
   return (
     <section className="relative overflow-hidden min-h-[500px] lg:min-h-[calc(100vh-36px)] flex items-end lg:items-center">
       <div className="absolute inset-0 hidden lg:block">
-        <img src="/herobg.png" alt="RO water purifier service background" className="w-full h-full object-cover" width="1920" height="1080" fetchpriority="high" />
+        <img src="/herobg.webp" alt="RO water purifier service background" className="w-full h-full object-cover" width="1920" height="1080" fetchpriority="high" />
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/60" />
       </div>

@@ -12,7 +12,7 @@ export default function Footer() {
             {/* Company */}
             <div className="col-span-2 sm:col-span-2 lg:col-span-1">
               <Link to="/" className="flex items-center gap-2.5 mb-3 sm:mb-5">
-                <div className="flex items-center justify-center bg-white rounded-lg sm:rounded-xl overflow-hidden h-12 sm:h-14"><img src="/brandlogo.png" alt="RO Service Center" width="200" height="56" loading="lazy" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+                <div className="flex items-center justify-center bg-white rounded-lg sm:rounded-xl overflow-hidden h-12 sm:h-14"><img src="/brandlogo.webp" alt="RO Service Center" width="200" height="56" loading="lazy" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
               </Link>
               <p className="text-[#64748b] text-[12px] sm:text-[14px] leading-relaxed mb-3 sm:mb-5" style={{ fontFamily: 'var(--font-body)' }}>
                 We provide expert RO repair and service at your doorstep in Bangalore. Customer satisfaction is our first priority.
