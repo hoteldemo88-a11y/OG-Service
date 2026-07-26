@@ -1,11 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
-import { Phone, ArrowRight, Shield, Wrench, Calendar, Clock, CheckCircle } from 'lucide-react';
+import { Phone, ArrowRight, Shield, Wrench, Calendar, Clock, CheckCircle, Droplets, Gauge, Cog, Zap, Power, Filter, Settings, Star, Users } from 'lucide-react';
 import SEO from '@/components/common/SEO';
 import Container from '@/components/common/Container';
 import SectionHeading from '@/components/common/SectionHeading';
 import FAQAccordion from '@/components/common/FAQAccordion';
 import BrandLogos from '@/components/icons/BrandLogos';
-import { BRANDS, SITE } from '@/constants';
+import { BRANDS, SITE, TESTIMONIALS } from '@/constants';
 
 const brandFaqs = {
   kent: [
@@ -147,9 +147,9 @@ export default function BrandDetail() {
         <Container>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {[
-              { icon: Shield, title: 'Genuine Parts', description: `We use only genuine ${brand.name} spare parts for all repairs and replacements.` },
-              { icon: Clock, title: 'Same Day Service', description: `Get your ${brand.name} RO serviced on the same day. Quick response and expert technicians.` },
-              { icon: Calendar, title: 'Service Warranty', description: `We provide service warranty on all ${brand.name} repairs for your peace of mind.` },
+              { icon: Shield, title: 'Genuine Parts', description: `We use only genuine spare parts for all repairs and replacements.` },
+              { icon: Clock, title: 'Same Day Service', description: 'Get your RO serviced on the same day. Quick response and expert technicians.' },
+              { icon: Calendar, title: 'Service Warranty', description: 'We provide service warranty on all repairs for your peace of mind.' },
             ].map((item) => {
               const Icon = item.icon;
               return (
@@ -160,6 +160,93 @@ export default function BrandDetail() {
                 </div>
               );
             })}
+          </div>
+        </Container>
+      </section>
+
+      {/* Common Problems */}
+      <section className="py-12 sm:py-20 bg-white">
+        <Container>
+          <SectionHeading badge="Issues" title="Common RO Problems We Fix" icon={Wrench} />
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+            {[
+              { icon: Droplets, label: 'No Water' },
+              { icon: Droplets, label: 'Water Leakage' },
+              { icon: Droplets, label: 'Bad Taste' },
+              { icon: Droplets, label: 'Bad Smell' },
+              { icon: Gauge, label: 'Low Pressure' },
+              { icon: Cog, label: 'Noise' },
+              { icon: Filter, label: 'Filter Change' },
+              { icon: Power, label: 'RO Not Starting' },
+              { icon: Cog, label: 'Pump Problem' },
+              { icon: Zap, label: 'UV Light Problem' },
+            ].map((p) => {
+              const Icon = p.icon;
+              return (
+                <div key={p.label} className="flex flex-col items-center gap-2 p-4 sm:p-5 rounded-xl border border-[#f1f5f9] bg-[#f8fafc] hover:border-[#bfdbfe] hover:shadow-md transition-all">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#eff6ff] flex items-center justify-center"><Icon className="w-5 h-5 text-[#2563eb]" /></div>
+                  <span className="text-[12px] sm:text-[13px] text-[#475569] font-medium text-center">{p.label}</span>
+                </div>
+              );
+            })}
+          </div>
+          <div className="text-center mt-8">
+            <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center gap-2 bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] text-white font-semibold btn-ribbon px-6 sm:px-7 py-2.5 sm:py-3 text-[13px] sm:text-[14px] transition-all shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:scale-[1.02] active:scale-[0.98]">
+              <Phone className="w-4 h-4" />Book Service Now
+            </a>
+          </div>
+        </Container>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-12 sm:py-20 bg-[#f8fafc]">
+        <Container>
+          <SectionHeading badge="Process" title="Our Simple Service Process" subtitle="Get your RO serviced in 5 easy steps" icon={Settings} />
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+            {[
+              { icon: Phone, num: '01', title: 'Book Service', desc: 'Call us or fill the form to schedule your RO service.' },
+              { icon: Users, num: '02', title: 'Technician Assigned', desc: 'We assign the nearest trained technician to your area.' },
+              { icon: Wrench, num: '03', title: 'Home Visit', desc: 'Our technician visits your home at the scheduled time.' },
+              { icon: Settings, num: '04', title: 'Repair / Service', desc: 'Problem is diagnosed and fixed on the spot.' },
+              { icon: CheckCircle, num: '05', title: 'Payment', desc: 'Pay only after the service is completed to your satisfaction.' },
+            ].map((s) => {
+              const Icon = s.icon;
+              return (
+                <div key={s.num} className="relative bg-white p-4 sm:p-5 lg:p-6 rounded-xl sm:rounded-2xl border border-[#e2e8f0] text-center hover:shadow-lg hover:border-[#bfdbfe] transition-all">
+                  <span className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-4 h-4 sm:w-6 sm:h-6 bg-white rounded-full border-2 border-[#bfdbfe] flex items-center justify-center text-[8px] sm:text-[11px] font-bold text-[#2563eb] shadow-soft">{s.num}</span>
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#eff6ff] flex items-center justify-center mx-auto mb-3"><Icon className="w-5 h-5 text-[#2563eb]" /></div>
+                  <p className="font-semibold text-[#0a1a3a] text-[12px] sm:text-[13px] mb-0.5 leading-tight">{s.title}</p>
+                  <p className="text-[#64748b] text-[10px] sm:text-[11px] leading-snug">{s.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-12 sm:py-20 bg-white">
+        <Container>
+          <SectionHeading badge="Reviews" title="What Our Customers Say" subtitle="Trusted by thousands of happy customers in Bangalore" icon={Star} />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {TESTIMONIALS.map((review) => (
+              <div key={review.id} className="bg-white p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#e2e8f0] hover:shadow-lg hover:border-[#bfdbfe] transition-all">
+                <div className="flex items-center gap-0.5 mb-3">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 fill-[#f59e0b] text-[#f59e0b]" />
+                  ))}
+                </div>
+                <p className="text-[#475569] text-[12px] sm:text-[13px] leading-[1.6] mb-4 font-medium">"{review.text}"</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center text-[13px] font-bold text-[#2563eb] shrink-0">{review.name.charAt(0)}</div>
+                  <div className="min-w-0">
+                    <p className="font-bold text-[#0f172a] text-[11px] sm:text-[13px] truncate">{review.name}</p>
+                    <p className="text-[9px] sm:text-[11px] text-[#64748b] truncate">{review.location}</p>
+                  </div>
+                  <span className="ml-auto text-[9px] sm:text-[11px] font-semibold text-[#2563eb] bg-[#eff6ff] px-2 py-1 rounded-full whitespace-nowrap">{review.service}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
@@ -180,8 +267,8 @@ export default function BrandDetail() {
       <section className="py-12 sm:py-20 bg-gradient-to-r from-[#2563eb] to-[#0ea5e9] text-white">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">Need {brand.name} Service?</h2>
-            <p className="text-white/90 text-[14px] sm:text-lg mb-6 sm:mb-8 leading-relaxed">Call us now for expert {brand.name} RO water purifier service.</p>
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">Need RO Service?</h2>
+            <p className="text-white/90 text-[14px] sm:text-lg mb-6 sm:mb-8 leading-relaxed">Call us now for expert RO water purifier service in Bangalore.</p>
             <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-[#2563eb] font-semibold btn-ribbon hover:bg-white/90 transition-all shadow-lg text-[14px]">
               <Phone className="w-4 h-4 sm:w-5 sm:h-5" />Call Now: {SITE.phoneFormatted}
             </a>
