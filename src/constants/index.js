@@ -33,7 +33,6 @@ export const SITE = {
 };
 
 export const NAV_LINKS = [
-  { name: 'Home', path: '/', icon: 'Home' },
   { name: 'About Us', path: '/about', icon: 'Info' },
   {
     name: 'Services',

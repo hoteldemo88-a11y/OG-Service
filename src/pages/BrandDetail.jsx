@@ -172,6 +172,12 @@ export default function BrandDetail() {
                     {BRANDS.map((b) => (
                       <option key={b.id} value={b.id}>{b.name}</option>
                     ))}
+                    <option value="havells">Havells</option>
+                    <option value="purosis">Purosis</option>
+                    <option value="zero-b">Zero B</option>
+                    <option value="aqua-grand">Aqua Grand</option>
+                    <option value="aqua-pearl">Aqua Pearl</option>
+                    <option value="others">Others</option>
                   </select>
                 </div>
               </div>
