@@ -142,7 +142,7 @@ export default function About() {
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Ready to Experience the Best RO Service in Bangalore?</h2>
-            <p className="text-white/80 text-sm sm:text-lg mb-8">Join 10,000+ happy customers who trust us for their RO water purifier service.</p>
+            <p className="text-white/95 text-sm sm:text-lg mb-8">Join 10,000+ happy customers who trust us for their RO water purifier service.</p>
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
               <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-[#2563eb] font-semibold btn-ribbon hover:bg-white/90 transition-all shadow-lg">
                 <Phone className="w-5 h-5" />Call Now: {SITE.phoneFormatted}
