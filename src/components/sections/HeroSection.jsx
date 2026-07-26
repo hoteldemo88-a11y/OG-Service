@@ -32,6 +32,12 @@ export default function HeroSection() {
 
           {/* ── Phone: Image + Badge + Buttons ── */}
           <div className="lg:hidden pt-16 pb-6 text-center">
+            <div className="mx-4 mb-3 flex justify-center">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#eff6ff] border border-[#bfdbfe]">
+                <MapPin className="w-3 h-3 text-[#2563eb]" />
+                <span className="text-[12px] font-semibold text-[#2563eb]">Bangalore, India</span>
+              </div>
+            </div>
             <div className="mx-4 mb-4 relative overflow-hidden rounded-2xl">
               {heroImages.map((img, i) => (
                 <img
@@ -46,13 +52,21 @@ export default function HeroSection() {
                   className={`w-full h-auto object-cover object-left rounded-2xl shadow-2xl shadow-blue-500/20 transition-opacity duration-700 ease-in-out ${i === heroIdx ? 'opacity-100 relative' : 'opacity-0 absolute inset-0'}`}
                 />
               ))}
-              <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#eff6ff]/90 backdrop-blur-sm border border-[#bfdbfe]">
-                <MapPin className="w-3 h-3 text-[#2563eb]" />
-                <span className="text-[11px] font-medium text-[#2563eb]">Bangalore, India</span>
-              </div>
               <div className="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-2">
                 {heroImages.map((_, i) => (
                   <span key={i} className={`w-2 h-2 rounded-full transition-all duration-300 ${i === heroIdx ? 'bg-[#2563eb] w-5' : 'bg-white/70'}`} />
+                ))}
+              </div>
+            </div>
+            <div className="mx-4 mt-4 mb-4">
+              <h1 className="text-[26px] font-extrabold text-[#0f172a] leading-[1.15] mb-2">Your RO Not Working?<br/>We Fix It Today.</h1>
+              <p className="text-[13px] text-[#64748b] leading-relaxed mb-3">Getting dirty water, low pressure, or strange noise from your RO? Our trained technicians come to your home and fix it the same day.</p>
+              <div className="flex flex-col items-start gap-1.5 mb-1 mx-auto max-w-[280px]">
+                {['Same Day Service', 'Certified Engineers', 'Genuine Spare Parts', 'Service Warranty'].map((item) => (
+                  <div key={item} className="flex items-center gap-1.5">
+                    <span className="w-4 h-4 rounded-full bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center text-[9px] text-[#22c55e] font-bold shrink-0">✓</span>
+                    <span className="text-[12px] font-medium text-[#334155]">{item}</span>
+                  </div>
                 ))}
               </div>
             </div>
