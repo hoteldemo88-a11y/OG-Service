@@ -5,7 +5,7 @@ import { SITE, SERVICES, BRANDS } from '@/constants';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f8fafc] border-t border-[#e2e8f0] pb-20 lg:pb-0" role="contentinfo" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
+    <footer className="bg-[#f8fafc] border-t border-[#e2e8f0] pb-20 lg:pb-0" role="contentinfo">
       <div className="py-10 sm:py-12 lg:py-16">
         <Container>
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-8">

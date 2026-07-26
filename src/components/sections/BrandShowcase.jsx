@@ -7,7 +7,7 @@ import BrandLogos from '@/components/icons/BrandLogos';
 import { BRANDS } from '@/constants';
 
 export default function BrandShowcase() {
-  const duplicated = [...BRANDS, ...BRANDS];
+  const duplicated = [...BRANDS, ...BRANDS, ...BRANDS, ...BRANDS];
 
   return (
     <section className="pt-24 sm:pt-28 lg:pt-28 pb-10 sm:pb-12 lg:pb-14 bg-white relative overflow-hidden">
@@ -19,7 +19,7 @@ export default function BrandShowcase() {
           <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
           <div className="overflow-hidden">
-            <div className="flex gap-3 sm:gap-6">
+            <div className="flex gap-3 sm:gap-6 w-max animate-marquee">
               {duplicated.map((b, i) => {
                 const Logo = BrandLogos[b.id];
                 return (

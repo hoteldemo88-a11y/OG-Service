@@ -182,6 +182,18 @@
     100% { background-position: 200% 0; }
   }
 
+  /* ── Marquee Scroll ── */
+  @keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marqueeScroll 30s linear infinite;
+  }
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
   /* ── Gradients ── */
   .gradient-primary {
     background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);

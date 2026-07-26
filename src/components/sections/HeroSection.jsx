@@ -40,10 +40,11 @@ export default function HeroSection() {
                   alt="RO Service Technician"
                   width="800"
                   height="450"
+                  sizes="(max-width: 1023px) 100vw, 0px"
                   decoding="async"
                   loading={i === 0 ? 'eager' : 'lazy'}
                   fetchPriority={i === 0 ? 'high' : 'low'}
-                  className={`w-full h-auto object-cover object-left rounded-2xl shadow-2xl shadow-blue-500/20 transition-opacity duration-1000 ease-in-out ${i === heroIdx ? 'opacity-100 relative' : 'opacity-0 absolute inset-0'}`}
+                  className={`w-full h-auto object-cover object-left rounded-2xl shadow-2xl shadow-blue-500/20 transition-opacity duration-700 ease-in-out ${i === heroIdx ? 'opacity-100 relative' : 'opacity-0 absolute inset-0'}`}
                 />
               ))}
               <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#eff6ff]/90 backdrop-blur-sm border border-[#bfdbfe]">

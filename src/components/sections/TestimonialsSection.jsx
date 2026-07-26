@@ -61,7 +61,7 @@ function ReviewCard({ review, index }) {
 }
 
 export default function TestimonialsSection() {
-  const duplicated = [...TESTIMONIALS, ...TESTIMONIALS];
+  const duplicated = [...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS];
 
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-[#f8fafc] overflow-hidden">
@@ -74,7 +74,7 @@ export default function TestimonialsSection() {
         <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-24 lg:w-28 bg-gradient-to-l from-[#f8fafc] to-transparent z-10 pointer-events-none" />
 
         <div className="overflow-hidden py-2 sm:py-2">
-          <div className="flex gap-3 sm:gap-5 lg:gap-6 pl-3 sm:pl-6 lg:pl-0">
+          <div className="flex gap-3 sm:gap-5 lg:gap-6 w-max animate-marquee pl-3 sm:pl-6 lg:pl-0">
             {duplicated.map((review, i) => (
               <ReviewCard key={`${review.id}-${i}`} review={review} index={i % avatarImages.length} />
             ))}
