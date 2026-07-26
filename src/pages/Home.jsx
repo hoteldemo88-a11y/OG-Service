@@ -1,8 +1,7 @@
 import { lazy, Suspense } from 'react';
 import SEO from '@/components/common/SEO';
 import LazySection from '@/components/common/LazySection';
-
-const HeroSection = lazy(() => import('@/components/sections/HeroSection'));
+import HeroSection from '@/components/sections/HeroSection';
 const BrandShowcase = lazy(() => import('@/components/sections/BrandShowcase'));
 const ServicesSection = lazy(() => import('@/components/sections/ServicesSection'));
 const WhyChooseUs = lazy(() => import('@/components/sections/WhyChooseUs'));
@@ -20,9 +19,7 @@ export default function Home() {
         description="Expert RO water purifier repair, installation, and maintenance in Bangalore. Same day doorstep service by certified technicians with genuine spare parts. Call +91 98765 43210."
         url="/"
       />
-      <Suspense fallback={null}>
-        <HeroSection />
-      </Suspense>
+      <HeroSection />
       <LazySection>
         <Suspense fallback={null}>
           <BrandShowcase />

@@ -3,7 +3,7 @@ import { Phone, Mail, Users, MapPin, ChevronDown, ArrowRight, Shield } from 'luc
 import Container from '@/components/common/Container';
 import { BRANDS, SITE } from '@/constants';
 
-const heroImages = ['/hero image 1.webp', '/hero image 2.webp', '/hero image 3.webp'];
+const heroImages = ['/hero image 1-sm.webp', '/hero image 2-sm.webp', '/hero image 3-sm.webp'];
 
 export default function HeroSection() {
   const [form, setForm] = useState({ name: '', phone: '', brand: '', location: '' });
@@ -37,11 +37,9 @@ export default function HeroSection() {
                 <img
                   key={img}
                   src={img}
-                  srcSet={`${encodeURI(img.replace('.webp', '-sm.webp'))} 640w, ${encodeURI(img)} 800w`}
-                  sizes="(max-width: 1023px) calc(100vw - 32px), 0px"
                   alt="RO Service Technician"
-                  width="800"
-                  height="450"
+                  width="640"
+                  height="426"
                   decoding="async"
                   loading={i === 0 ? 'eager' : 'lazy'}
                   fetchPriority={i === 0 ? 'high' : 'low'}

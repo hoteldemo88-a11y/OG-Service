@@ -20,8 +20,31 @@ function nonBlockingCSS() {
   }
 }
 
+function preloadCriticalChunks() {
+  const chunks = [
+    'Home',
+    'HeroSection',
+  ]
+  return {
+    name: 'preload-critical-chunks',
+    enforce: 'post',
+    generateBundle(_, bundle) {
+      const htmlFile = Object.values(bundle).find(f => f.type === 'asset' && f.fileName.endsWith('.html'))
+      if (!htmlFile) return
+      let html = htmlFile.source
+      for (const chunk of Object.values(bundle)) {
+        if (chunk.type === 'chunk' && chunks.some(c => chunk.name?.startsWith(c))) {
+          const tag = `<link rel="modulepreload" crossorigin href="/${chunk.fileName}">`
+          html = html.replace('</head>', `  ${tag}\n  </head>`)
+        }
+      }
+      htmlFile.source = html
+    }
+  }
+}
+
 export default defineConfig({
-  plugins: [react(), tailwindcss(), nonBlockingCSS()],
+  plugins: [react(), tailwindcss(), nonBlockingCSS(), preloadCriticalChunks()],
   resolve: {
     alias: {
       '@': __dirname + '/src',
