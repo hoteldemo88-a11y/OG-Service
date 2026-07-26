@@ -8,10 +8,10 @@ export default function Footer() {
   const isBrandDetail = location.pathname.startsWith('/brands/');
   return (
     <footer className="bg-[#f8fafc] border-t border-[#e2e8f0] pb-20 lg:pb-0" role="contentinfo">
-      <div className="py-10 sm:py-12 lg:py-16">
+      <div className="py-8 sm:py-12 lg:py-16">
         <Container>
           {/* Trust Badges */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-10 sm:mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3 lg:gap-4 mb-8 sm:mb-10 lg:mb-12">
             {[
               { icon: Clock, text: 'Doorstep Service in 60 Minutes' },
               { icon: Headphones, text: '24x7 Customer Support' },
@@ -21,10 +21,10 @@ export default function Footer() {
               const Icon = item.icon;
               return (
                 <div key={item.text} className="flex items-center gap-2.5 bg-white px-3 sm:px-4 py-3 rounded-xl border border-[#e2e8f0]">
-                  <div className="w-8 h-8 bg-[#eff6ff] rounded-lg flex items-center justify-center shrink-0">
-                    <Icon className="w-4 h-4 text-[#2563eb]" />
+                  <div className="w-9 h-9 bg-[#eff6ff] rounded-lg flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5 text-[#2563eb]" />
                   </div>
-                  <span className="text-[11px] sm:text-[13px] font-semibold text-[#334155] leading-tight">{item.text}</span>
+                  <span className="text-[12px] sm:text-[13px] font-semibold text-[#334155] leading-tight">{item.text}</span>
                 </div>
               );
             })}
