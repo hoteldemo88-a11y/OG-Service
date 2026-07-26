@@ -105,6 +105,7 @@ export default function Footer() {
             <div className="flex items-center gap-5 sm:gap-6">
               <Link to="/privacy-policy" className="text-[#64748b] hover:text-[#2563eb] text-[12px] sm:text-[13px] transition-colors" style={{ fontFamily: 'var(--font-body)' }}>Privacy Policy</Link>
               <Link to="/terms" className="text-[#64748b] hover:text-[#2563eb] text-[12px] sm:text-[13px] transition-colors" style={{ fontFamily: 'var(--font-body)' }}>Terms & Conditions</Link>
+              <Link to="/disclaimer" className="text-[#64748b] hover:text-[#2563eb] text-[12px] sm:text-[13px] transition-colors" style={{ fontFamily: 'var(--font-body)' }}>Disclaimer</Link>
             </div>
           </div>
         </Container>

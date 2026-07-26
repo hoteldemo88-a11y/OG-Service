@@ -11,6 +11,7 @@ const BrandDetail = lazy(() => import('./pages/BrandDetail'));
 const Contact = lazy(() => import('./pages/Contact'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicyPage'));
 const Terms = lazy(() => import('./pages/Terms'));
+const Disclaimer = lazy(() => import('./pages/Disclaimer'));
 const ThankYou = lazy(() => import('./pages/ThankYou'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
@@ -37,6 +38,7 @@ export default function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="privacy-policy" element={<PrivacyPolicy />} />
             <Route path="terms" element={<Terms />} />
+            <Route path="disclaimer" element={<Disclaimer />} />
             <Route path="thank-you" element={<ThankYou />} />
             <Route path="*" element={<NotFound />} />
           </Route>

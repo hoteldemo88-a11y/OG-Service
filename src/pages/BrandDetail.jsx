@@ -148,7 +148,7 @@ export default function BrandDetail() {
 
           {/* Booking Form */}
           <div className="max-w-xl bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-xl">
-            <h2 className="text-lg sm:text-2xl font-bold text-[#0f172a] mb-1">Book Appointment</h2>
+            <h2 className="text-lg sm:text-2xl font-bold text-[#0f172a] mb-1">Book your Service</h2>
             <p className="text-[#64748b] text-[13px] sm:text-sm mb-5">Fill the form below and we&apos;ll call you to confirm.</p>
             <form onSubmit={(e) => { e.preventDefault(); }} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -177,7 +177,7 @@ export default function BrandDetail() {
                 </div>
               </div>
               <button type="submit" className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-[#2563eb] text-white font-semibold btn-ribbon hover:bg-[#1d4ed8] transition-all shadow-lg text-[14px]">
-                <Send className="w-4 h-4" /> Book Appointment
+                <Send className="w-4 h-4" /> Book your Service
               </button>
             </form>
             <p className="text-center text-[#94a3b8] text-[11px] sm:text-[12px] mt-3">We&apos;ll call you to confirm your appointment.</p>

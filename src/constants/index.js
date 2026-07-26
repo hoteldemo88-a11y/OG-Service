@@ -61,6 +61,7 @@ export const NAV_LINKS = [
   { name: 'Contact Us', path: '/contact', icon: 'Phone' },
   { name: 'Privacy Policy', path: '/privacy-policy', icon: 'Shield' },
   { name: 'Terms of Service', path: '/terms', icon: 'FileText' },
+  { name: 'Disclaimer', path: '/disclaimer', icon: 'Shield' },
 ];
 
 export const SERVICES = [
