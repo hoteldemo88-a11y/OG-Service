@@ -40,8 +40,7 @@ const brandFaqs = {
     { id: 8, question: 'What is the warranty on repair?', answer: 'We provide a 30-day service warranty on all repairs. Part warranty varies by component.' },
   ],
   'ao-smith': [
-    { id: 1, question: 'Do you service all models?', answer: 'Yes, we service all water purifier models including hot and cold water dispensers.' },
-    { id: 2, question: 'What is the cost of filter change?', answer: 'Filter replacement starts from ₹1,500 depending on the model and filter type.' },
+    { id: 1, question: 'What is the cost of filter change?', answer: 'Filter replacement starts from ₹1,500 depending on the model and filter type.' },
     { id: 3, question: 'Do you provide AMC?', answer: 'Yes, we offer annual maintenance contracts for all purifiers.' },
     { id: 4, question: 'How long does a service take?', answer: 'Most service visits are completed within 30-45 minutes. Same-day service is available.' },
     { id: 5, question: 'What areas do you cover?', answer: 'We cover all major areas in Bangalore including Koramangala, Whitefield, Electronic City, JP Nagar, and more.' },
@@ -50,8 +49,7 @@ const brandFaqs = {
     { id: 8, question: 'What is the warranty on repair?', answer: 'We provide a 30-day service warranty on all repairs. Part warranty varies by component.' },
   ],
   lg: [
-    { id: 1, question: 'Do you service all LG purifiers?', answer: 'Yes, we provide complete service for all models including mineral enhancer models.' },
-    { id: 2, question: 'How often should I service my RO?', answer: 'We recommend servicing your RO every 6-12 months for best performance.' },
+    { id: 1, question: 'How often should I service my RO?', answer: 'We recommend servicing your RO every 6-12 months for best performance.' },
     { id: 3, question: 'Do you use genuine parts?', answer: 'Yes, we use only genuine spare parts for all repairs and replacements.' },
     { id: 4, question: 'How long does a service take?', answer: 'Most service visits are completed within 30-45 minutes. Same-day service is available.' },
     { id: 5, question: 'What areas do you cover?', answer: 'We cover all major areas in Bangalore including Koramangala, Whitefield, Electronic City, JP Nagar, and more.' },
