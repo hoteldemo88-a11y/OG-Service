@@ -138,6 +138,10 @@ export default function BrandDetail() {
             </div>
           </div>
 
+          {/* Title */}
+          <h1 className="mt-6 sm:mt-8 text-[24px] sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[#0f172a] leading-[1.1] mb-2 sm:mb-3">Expert RO Service in Bangalore</h1>
+          <p className="text-[13px] sm:text-[15px] text-[#64748b] mb-5 sm:mb-6 leading-relaxed">Expert repair, filter replacement, membrane change, UV lamp service, and annual maintenance plans. Certified technicians, genuine parts, same-day doorstep service with warranty.</p>
+
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-10">
             <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#2563eb] text-white font-semibold btn-ribbon hover:bg-[#1d4ed8] transition-all shadow-lg text-[14px]">
