@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowRight, Clock, Headphones, CalendarCheck, ShieldAlert } from 'lucide-react';
 import Container from '@/components/common/Container';
 import { SITE, SERVICES, BRANDS } from '@/constants';
 
@@ -10,6 +10,26 @@ export default function Footer() {
     <footer className="bg-[#f8fafc] border-t border-[#e2e8f0] pb-20 lg:pb-0" role="contentinfo">
       <div className="py-10 sm:py-12 lg:py-16">
         <Container>
+          {/* Trust Badges */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-10 sm:mb-12">
+            {[
+              { icon: Clock, text: 'Doorstep Service in 60 Minutes' },
+              { icon: Headphones, text: '24x7 Customer Support' },
+              { icon: CalendarCheck, text: 'Book Your Appointment Today' },
+              { icon: ShieldAlert, text: 'Avoid Local Repairs' },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.text} className="flex items-center gap-2.5 bg-white px-3 sm:px-4 py-3 rounded-xl border border-[#e2e8f0]">
+                  <div className="w-8 h-8 bg-[#eff6ff] rounded-lg flex items-center justify-center shrink-0">
+                    <Icon className="w-4 h-4 text-[#2563eb]" />
+                  </div>
+                  <span className="text-[11px] sm:text-[13px] font-semibold text-[#334155] leading-tight">{item.text}</span>
+                </div>
+              );
+            })}
+          </div>
+
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-8">
             {/* Company */}
             <div className="col-span-2 sm:col-span-2 lg:col-span-1">
