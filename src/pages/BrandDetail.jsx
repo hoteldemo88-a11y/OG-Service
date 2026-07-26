@@ -134,10 +134,8 @@ export default function BrandDetail() {
           </div>
 
           {/* Title */}
-          <h1 className="mt-6 sm:mt-8 text-[28px] sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#0f172a] leading-[1.1] mb-3 sm:mb-4">Expert RO Service</h1>
-
-          {/* Description */}
-          <p className="text-[14px] sm:text-lg text-[#64748b] mb-6 sm:mb-8 leading-relaxed">Advanced multi-stage water purification with expert service in Bangalore. We provide complete repair, filter replacement, membrane change, UV lamp service, and annual maintenance plans. Our certified technicians use genuine spare parts and offer same-day doorstep service with a service warranty on all repairs. Trusted by thousands of happy customers across Bangalore.</p>
+          <h1 className="mt-6 sm:mt-8 text-[24px] sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[#0f172a] leading-[1.1] mb-2 sm:mb-3">Expert RO Service</h1>
+          <p className="text-[13px] sm:text-[15px] text-[#64748b] mb-5 sm:mb-6 leading-relaxed">Expert repair, filter replacement, membrane change, UV lamp service, and annual maintenance plans in Bangalore. Certified technicians, genuine parts, same-day doorstep service with warranty.</p>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-10">
@@ -180,7 +178,22 @@ export default function BrandDetail() {
                 <Send className="w-4 h-4" /> Book your Service
               </button>
             </form>
-            <p className="text-center text-[#94a3b8] text-[11px] sm:text-[12px] mt-3">We&apos;ll call you to confirm your appointment.</p>
+            <p className="text-center text-[#94a3b8] text-[11px] sm:text-[12px] mt-3">We respect your privacy. Your information is safe with us.</p>
+          </div>
+
+          {/* Trust Section */}
+          <div className="max-w-xl mt-8 sm:mt-10 text-white">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2">Your RO Not Working?</h2>
+            <p className="text-lg sm:text-xl font-semibold mb-3">We Fix It Today.</p>
+            <p className="text-white/80 text-[13px] sm:text-[15px] leading-relaxed mb-5">Getting dirty water, low pressure, or strange noise from your purifier? Our trained technicians come to your home in Bangalore and fix it the same day.</p>
+            <div className="grid grid-cols-2 gap-3">
+              {['Same Day Service Available', 'Certified & Trained Engineers', '100% Genuine Spare Parts', 'Service Warranty Included'].map((item) => (
+                <div key={item} className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 mt-0.5 shrink-0 text-[#86efac]" />
+                  <span className="text-[12px] sm:text-[13px] text-white/90 font-medium leading-snug">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
