@@ -169,44 +169,10 @@ export default function BrandDetail() {
                 <div>
                   <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Brand & Service</label>
                   <select required className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all appearance-none">
-                    <option value="" disabled selected>Select brand & service</option>
-                    {BRANDS.map((b) => (
-                      <optgroup key={b.id} label={b.name}>
-                        <option value={`${b.id}-service`}>{b.name} Water Purifier Service</option>
-                        <option value={`${b.id}-repair`}>{b.name} Water Purifier Repair</option>
-                        <option value={`${b.id}-amc`}>{b.name} Water Purifier AMC</option>
-                      </optgroup>
-                    ))}
-                    <optgroup label="Havells">
-                      <option value="havells-service">Havells Water Purifier Service</option>
-                      <option value="havells-repair">Havells Water Purifier Repair</option>
-                      <option value="havells-amc">Havells Water Purifier AMC</option>
-                    </optgroup>
-                    <optgroup label="Purosis">
-                      <option value="purosis-service">Purosis Water Purifier Service</option>
-                      <option value="purosis-repair">Purosis Water Purifier Repair</option>
-                      <option value="purosis-amc">Purosis Water Purifier AMC</option>
-                    </optgroup>
-                    <optgroup label="Zero B">
-                      <option value="zero-b-service">Zero B Water Purifier Service</option>
-                      <option value="zero-b-repair">Zero B Water Purifier Repair</option>
-                      <option value="zero-b-amc">Zero B Water Purifier AMC</option>
-                    </optgroup>
-                    <optgroup label="Aqua Grand">
-                      <option value="aqua-grand-service">Aqua Grand Water Purifier Service</option>
-                      <option value="aqua-grand-repair">Aqua Grand Water Purifier Repair</option>
-                      <option value="aqua-grand-amc">Aqua Grand Water Purifier AMC</option>
-                    </optgroup>
-                    <optgroup label="Aqua Pearl">
-                      <option value="aqua-pearl-service">Aqua Pearl Water Purifier Service</option>
-                      <option value="aqua-pearl-repair">Aqua Pearl Water Purifier Repair</option>
-                      <option value="aqua-pearl-amc">Aqua Pearl Water Purifier AMC</option>
-                    </optgroup>
-                    <optgroup label="Others">
-                      <option value="others-service">Other Brand Water Purifier Service</option>
-                      <option value="others-repair">Other Brand Water Purifier Repair</option>
-                      <option value="others-amc">Other Brand Water Purifier AMC</option>
-                    </optgroup>
+                    <option value="" disabled selected>Select service type</option>
+                    <option value={`${brand.id}-service`}>{brand.name} Water Purifier Service</option>
+                    <option value={`${brand.id}-repair`}>{brand.name} Water Purifier Repair</option>
+                    <option value={`${brand.id}-amc`}>{brand.name} Water Purifier AMC</option>
                   </select>
                 </div>
               </div>
