@@ -8,9 +8,31 @@ const heroImages = ['/hero image 1-sm.webp', '/hero image 2-sm.webp', '/hero ima
 export default function HeroSection() {
   const [form, setForm] = useState({ name: '', phone: '', brand: '', location: '' });
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [heroIdx, setHeroIdx] = useState(0);
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
-  const submit = (e) => { e.preventDefault(); setLoading(true); setTimeout(() => { setLoading(false); window.location.href = '/thank-you'; }, 1200); };
+  const submit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: form.name, phone: form.phone, brand: form.brand, location: form.location, source: 'homepage' }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        window.location.href = '/thank-you';
+      } else {
+        setError(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch {
+      setError('Network error. Please try again or call us.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -159,6 +181,12 @@ export default function HeroSection() {
                     <input id="hero-location" type="text" placeholder="e.g. Koramangala, Bangalore" value={form.location} onChange={set('location')} required className="w-full pl-10 pr-4 py-3 bg-white/70 border border-[#e2e8f0] rounded-xl text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/15 focus:border-[#2563eb]/40 focus:bg-white transition-all" style={{fontFamily:'var(--font-body)'}} />
                   </div>
                 </div>
+
+                {error && (
+                  <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-red-50 border border-red-200 text-red-700 text-[12px]" style={{fontFamily:'var(--font-body)'}}>
+                    <span className="shrink-0">⚠</span> {error}
+                  </div>
+                )}
 
                 <button type="submit" disabled={loading} className="w-full py-3.5 bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] hover:from-[#1d4ed8] hover:to-[#1e40af] text-white font-semibold btn-ribbon text-[14px] transition-all duration-300 shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 disabled:opacity-60 disabled:cursor-wait active:scale-[0.98] flex items-center justify-center gap-2" style={{fontFamily:'var(--font-heading)'}}>
                   {loading ? 'Booking...' : <><span>Book Now</span><ArrowRight className="w-4 h-4" /></>}

@@ -9,8 +9,30 @@ export default function Contact() {
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', brand: '', service: '', location: '', message: '' });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => { e.preventDefault(); setSubmitting(true); setTimeout(() => { setSubmitting(false); setSubmitted(true); }, 1500); };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, source: 'contact-page' }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch {
+      setError('Network error. Please try again or call us directly.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
   const handleChange = (e) => { setFormData({ ...formData, [e.target.name]: e.target.value }); };
 
   return (
@@ -60,6 +82,7 @@ export default function Contact() {
                   </div>
                   <div><label htmlFor="contact-location" className="block text-xs sm:text-sm font-medium text-[#334155] mb-1.5">Your Location in Bangalore *</label><input id="contact-location" type="text" name="location" value={formData.location} onChange={handleChange} placeholder="e.g. Koramangala, Whitefield" className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-[#e2e8f0] rounded-xl text-sm focus:ring-2 focus:ring-[#2563eb]/20 focus:border-[#2563eb]/50 outline-none transition-all" required /></div>
                   <div><label htmlFor="contact-message" className="block text-xs sm:text-sm font-medium text-[#334155] mb-1.5">Message</label><textarea id="contact-message" name="message" value={formData.message} onChange={handleChange} placeholder="Describe your issue (optional)" rows={4} className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-[#e2e8f0] rounded-xl text-sm focus:ring-2 focus:ring-[#2563eb]/20 focus:border-[#2563eb]/50 outline-none transition-all resize-none" /></div>
+                  {error && <p className="text-[#ef4444] text-xs sm:text-sm font-medium">{error}</p>}
                   <button type="submit" disabled={submitting} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 bg-[#2563eb] text-white font-semibold btn-ribbon hover:bg-[#1d4ed8] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-sm">
                     {submitting ? 'Sending...' : <><Send className="w-4 h-4" />Send Message</>}
                   </button>

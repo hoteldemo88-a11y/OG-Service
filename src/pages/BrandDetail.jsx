@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Phone, Shield, Wrench, Calendar, Clock, CheckCircle, Droplets, Gauge, Cog, Zap, Power, Filter, Settings, Star, Users, Quote, Send } from 'lucide-react';
 import SEO from '@/components/common/SEO';
@@ -96,6 +97,10 @@ const brandServices = {
 export default function BrandDetail() {
   const { brandId } = useParams();
   const brand = BRANDS.find((b) => b.id === brandId);
+  const [formData, setFormData] = useState({ name: '', phone: '', pincode: '', brandService: '' });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   if (!brand) {
     return (
@@ -146,39 +151,71 @@ export default function BrandDetail() {
 
           {/* Booking Form */}
           <div className="max-w-xl bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-xl">
-            <h2 className="text-lg sm:text-2xl font-bold text-[#0f172a] mb-1">Book your Service</h2>
-            <p className="text-[#64748b] text-[13px] sm:text-sm mb-5">Fill the form below and we&apos;ll call you to confirm.</p>
-            <form onSubmit={(e) => { e.preventDefault(); }} className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Name</label>
-                  <input type="text" placeholder="Your name" required className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
-                </div>
-                <div>
-                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Phone Number</label>
-                  <input type="tel" placeholder="+91 98765 43210" required pattern="[0-9+\s]{10,}" className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
-                </div>
+            {submitted ? (
+              <div className="bg-[#f0fdf4] border border-[#bbf7d0] rounded-2xl p-6 sm:p-8 text-center">
+                <div className="w-14 h-14 bg-[#22c55e] rounded-full flex items-center justify-center mx-auto mb-4"><CheckCircle className="w-7 h-7 text-white" /></div>
+                <h3 className="text-lg sm:text-xl font-bold text-[#0f172a] mb-2">Thank You!</h3>
+                <p className="text-[#64748b] text-[13px] sm:text-sm">Your appointment request has been submitted. We&apos;ll call you shortly to confirm.</p>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Pincode</label>
-                  <input type="text" placeholder="e.g. 560034" required pattern="[0-9]{6}" maxLength="6" className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
-                </div>
-                <div>
-                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Brand & Service</label>
-                  <select required className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all appearance-none">
-                    <option value="" disabled selected>Select service type</option>
-                    <option value={`${brand.id}-service`}>{brand.name} Water Purifier Service</option>
-                    <option value={`${brand.id}-repair`}>{brand.name} Water Purifier Repair</option>
-                    <option value={`${brand.id}-amc`}>{brand.name} Water Purifier AMC</option>
-                  </select>
-                </div>
-              </div>
-              <button type="submit" className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-[#2563eb] text-white font-semibold btn-ribbon hover:bg-[#1d4ed8] transition-all shadow-lg text-[14px]">
-                <Send className="w-4 h-4" /> Book your Service
-              </button>
-            </form>
-            <p className="text-center text-[#94a3b8] text-[11px] sm:text-[12px] mt-3">We respect your privacy. Your information is safe with us.</p>
+            ) : (
+              <>
+                <h2 className="text-lg sm:text-2xl font-bold text-[#0f172a] mb-1">Book your Service</h2>
+                <p className="text-[#64748b] text-[13px] sm:text-sm mb-5">Fill the form below and we&apos;ll call you to confirm.</p>
+                <form onSubmit={async (e) => {
+                  e.preventDefault();
+                  setSubmitting(true);
+                  setError('');
+                  try {
+                    const res = await fetch('/api/contact', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ name: formData.name, phone: formData.phone, pincode: formData.pincode, brand: formData.brandService, source: 'brand-detail' }),
+                    });
+                    const data = await res.json();
+                    if (res.ok) {
+                      setSubmitted(true);
+                    } else {
+                      setError(data.error || 'Something went wrong. Please try again.');
+                    }
+                  } catch {
+                    setError('Network error. Please try again or call us directly.');
+                  } finally {
+                    setSubmitting(false);
+                  }
+                }} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Name</label>
+                      <input type="text" placeholder="Your name" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
+                    </div>
+                    <div>
+                      <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Phone Number</label>
+                      <input type="tel" placeholder="+91 98765 43210" required pattern="[0-9+\s]{10,}" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Pincode</label>
+                      <input type="text" placeholder="e.g. 560034" required pattern="[0-9]{6}" maxLength="6" value={formData.pincode} onChange={(e) => setFormData({ ...formData, pincode: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
+                    </div>
+                    <div>
+                      <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Brand & Service</label>
+                      <select required value={formData.brandService} onChange={(e) => setFormData({ ...formData, brandService: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all appearance-none">
+                        <option value="" disabled>Select service type</option>
+                        <option value={`${brand.name} Water Purifier Service`}>{brand.name} Water Purifier Service</option>
+                        <option value={`${brand.name} Water Purifier Repair`}>{brand.name} Water Purifier Repair</option>
+                        <option value={`${brand.name} Water Purifier AMC`}>{brand.name} Water Purifier AMC</option>
+                      </select>
+                    </div>
+                  </div>
+                  {error && <p className="text-[#ef4444] text-[12px] sm:text-[13px] font-medium">{error}</p>}
+                  <button type="submit" disabled={submitting} className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-[#2563eb] text-white font-semibold btn-ribbon hover:bg-[#1d4ed8] transition-all shadow-lg text-[14px] disabled:opacity-50 disabled:cursor-not-allowed">
+                    {submitting ? 'Submitting...' : <><Send className="w-4 h-4" /> Book your Service</>}
+                  </button>
+                </form>
+                <p className="text-center text-[#94a3b8] text-[11px] sm:text-[12px] mt-3">We respect your privacy. Your information is safe with us.</p>
+              </>
+            )}
           </div>
 
           {/* Trust Section */}
