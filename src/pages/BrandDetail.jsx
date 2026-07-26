@@ -119,6 +119,14 @@ const brandFaqs = {
   ],
 };
 
+const brandPromoPhotos = {
+  kent: '/branddetails/kentforbrabddetails.png',
+  aquaguard: '/branddetails/aqyaguirdforbranddetails.png',
+  'ao-smith': '/branddetails/aismithforbrabddetails.png',
+  lg: '/branddetails/lgforbarnddetails.png',
+  pureit: '/branddetails/pureit.png',
+};
+
 const brandKeywords = {
   kent: 'Kent service, Kent water purifier service, Kent ro service, Kent repair service',
   aquaguard: 'Aquaguard service, Aquaguard water purifier service, Aquaguard ro service, Aquaguard repair service',
@@ -328,6 +336,13 @@ export default function BrandDetail() {
               </>
             )}
           </div>
+
+          {/* Brand Promo Photo */}
+          {brandPromoPhotos[brand.id] && (
+            <div className="max-w-xl mt-6 sm:mt-8">
+              <img src={brandPromoPhotos[brand.id]} alt={`${brand.name} service`} width="600" height="400" decoding="async" loading="lazy" className="w-full h-auto rounded-2xl sm:rounded-3xl" />
+            </div>
+          )}
 
           {/* Hero Text - under form */}
           <div className="max-w-xl mt-8 sm:mt-10 text-center">
