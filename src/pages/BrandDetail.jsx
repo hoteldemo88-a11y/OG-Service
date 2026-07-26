@@ -111,7 +111,7 @@ export default function BrandDetail() {
 
             {/* Content */}
             <div className="flex-1 min-w-0">
-              <h1 className="text-[28px] sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#0f172a] leading-[1.1] mb-3 sm:mb-4">{brand.name} Service</h1>
+              <h1 className="text-[28px] sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#0f172a] leading-[1.1] mb-3 sm:mb-4">Expert RO Service</h1>
               <p className="text-[14px] sm:text-lg text-[#64748b] mb-6 sm:mb-8 leading-relaxed">Advanced multi-stage water purification with expert service in Bangalore. Repair, filter replacement, and AMC plans.</p>
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                 <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#2563eb] text-white font-semibold btn-ribbon hover:bg-[#1d4ed8] transition-all shadow-lg text-[14px]">
