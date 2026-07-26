@@ -53,9 +53,15 @@ export default function Navbar() {
           <nav className={`flex items-center justify-between h-[64px] rounded-2xl px-5 transition-all duration-500 ${scrolled ? 'bg-white shadow-elevated border border-[#e2e8f0]' : 'bg-white border border-[#e2e8f0] shadow-soft'}`} aria-label="Main navigation">
 
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
-              <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14 sm:h-16"><img src="/brandlogo.webp" alt="RO Service Now" width="200" height="64" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
-            </Link>
+            {isBrandDetail ? (
+              <span className="flex items-center gap-2.5 shrink-0">
+                <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14 sm:h-16"><img src="/brandlogo.webp" alt="RO Service Now" width="200" height="64" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+              </span>
+            ) : (
+              <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
+                <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14 sm:h-16"><img src="/brandlogo.webp" alt="RO Service Now" width="200" height="64" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+              </Link>
+            )}
 
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-0.5">
@@ -104,9 +110,15 @@ export default function Navbar() {
       <div className={`fixed top-0 right-0 bottom-0 w-full max-w-[360px] bg-white z-[60] lg:hidden shadow-2xl transition-transform duration-300 ease-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between px-6 py-5 border-b border-[#f1f5f9]">
-              <Link to="/" className="flex items-center gap-2.5" onClick={() => setIsOpen(false)}>
-                <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14"><img src="/brandlogo.webp" alt="RO Service Now" width="200" height="56" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
-              </Link>
+              {isBrandDetail ? (
+                <span className="flex items-center gap-2.5">
+                  <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14"><img src="/brandlogo.webp" alt="RO Service Now" width="200" height="56" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+                </span>
+              ) : (
+                <Link to="/" className="flex items-center gap-2.5" onClick={() => setIsOpen(false)}>
+                  <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14"><img src="/brandlogo.webp" alt="RO Service Now" width="200" height="56" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+                </Link>
+              )}
             <button onClick={() => setIsOpen(false)} className="p-2 rounded-xl text-[#94a3b8] hover:bg-[#f1f5f9] transition-colors" aria-label="Close menu"><X className="w-5 h-5" /></button>
           </div>
           <nav className="flex-1 overflow-y-auto px-4 py-5">
