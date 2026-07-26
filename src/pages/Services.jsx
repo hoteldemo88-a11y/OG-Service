@@ -26,7 +26,7 @@ export default function Services() {
 
   return (
     <>
-      <SEO title="RO Service in Bangalore | Repair, Installation & Maintenance" description="Complete RO water purifier services in Bangalore - repair, installation, maintenance, filter replacement, AMC plans, and more. Same day doorstep service with genuine parts. Call +91 98765 43210." url="/services" />
+      <SEO title="RO Service in Bangalore | Repair, Installation & Maintenance" description="Complete RO water purifier services in Bangalore - repair, installation, maintenance, filter replacement, AMC plans, and more. Same day doorstep service with genuine parts. Call 080502 91180." url="/services" />
 
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 bg-[#f8fafc] overflow-hidden">

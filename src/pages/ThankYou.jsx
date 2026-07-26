@@ -7,7 +7,7 @@ import { SITE } from '@/constants';
 export default function ThankYou() {
   return (
     <>
-      <SEO title="Thank You" description="Thank you for contacting RO Service Center. We will get back to you shortly." url="/thank-you" />
+      <SEO title="Thank You" description="Thank you for contacting RO Service Now. We will get back to you shortly." url="/thank-you" />
 
       <section className="min-h-screen flex items-center justify-center bg-[#f8fafc] py-20">
         <Container>

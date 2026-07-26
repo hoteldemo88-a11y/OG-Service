@@ -176,7 +176,7 @@ export default function HeroSection() {
                   <label htmlFor="hero-phone" className="block text-[11px] sm:text-[11px] font-semibold text-[#64748b] mb-1.5 uppercase tracking-wider" style={{fontFamily:'var(--font-heading)'}}>Mobile Number</label>
                   <div className="relative">
                     <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#cbd5e1] group-focus-within:text-[#2563eb] transition-colors" aria-hidden="true" />
-                    <input id="hero-phone" type="tel" placeholder="+91 98765 43210" value={form.phone} onChange={set('phone')} required className="w-full pl-10 pr-4 py-3 bg-white/70 border border-[#e2e8f0] rounded-xl text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/15 focus:border-[#2563eb]/40 focus:bg-white transition-all" style={{fontFamily:'var(--font-body)'}} />
+                    <input id="hero-phone" type="tel" placeholder="080502 91180" value={form.phone} onChange={set('phone')} required className="w-full pl-10 pr-4 py-3 bg-white/70 border border-[#e2e8f0] rounded-xl text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/15 focus:border-[#2563eb]/40 focus:bg-white transition-all" style={{fontFamily:'var(--font-body)'}} />
                   </div>
                 </div>
 

@@ -35,11 +35,11 @@ export default function Footer() {
             <div className="col-span-2 sm:col-span-2 lg:col-span-1">
               {isBrandDetail ? (
                 <span className="flex items-center gap-2.5 mb-3 sm:mb-5">
-                  <div className="flex items-center justify-center bg-white rounded-lg sm:rounded-xl overflow-hidden h-12 sm:h-14"><img src="/brandlogo.webp" alt="RO Service Center" width="200" height="56" loading="lazy" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+                  <div className="flex items-center justify-center bg-white rounded-lg sm:rounded-xl overflow-hidden h-12 sm:h-14"><img src="/brandlogo.webp" alt="RO Service Now" width="200" height="56" loading="lazy" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
                 </span>
               ) : (
                 <Link to="/" className="flex items-center gap-2.5 mb-3 sm:mb-5">
-                  <div className="flex items-center justify-center bg-white rounded-lg sm:rounded-xl overflow-hidden h-12 sm:h-14"><img src="/brandlogo.webp" alt="RO Service Center" width="200" height="56" loading="lazy" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+                  <div className="flex items-center justify-center bg-white rounded-lg sm:rounded-xl overflow-hidden h-12 sm:h-14"><img src="/brandlogo.webp" alt="RO Service Now" width="200" height="56" loading="lazy" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
                 </Link>
               )}
               <p className="text-[#64748b] text-[12px] sm:text-[14px] leading-relaxed mb-3 sm:mb-5" style={{ fontFamily: 'var(--font-body)' }}>
@@ -114,6 +114,14 @@ export default function Footer() {
               </ul>
             </div>
           </div>
+        </Container>
+      </div>
+      {/* Disclaimer */}
+      <div className="bg-[#f1f5f9] border-t border-[#e2e8f0]">
+        <Container>
+          <p className="py-4 sm:py-5 text-[11px] sm:text-[12px] text-[#64748b] leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
+            <strong className="text-[#475569]">Disclaimer:</strong> {SITE.name} is an independent third-party service provider. We are not affiliated with, endorsed by, or connected to any water purifier brand or manufacturer. All brand names, logos, and trademarks are the property of their respective owners. We provide repair, installation, and maintenance services using genuine or compatible spare parts.
+          </p>
         </Container>
       </div>
       <div className="border-t border-[#e2e8f0]">

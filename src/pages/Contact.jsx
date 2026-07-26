@@ -37,7 +37,7 @@ export default function Contact() {
 
   return (
     <>
-      <SEO title="Contact Us | RO Service Center Bangalore" description="Contact RO Service Center for expert RO water purifier repair, installation, and maintenance services in Bangalore. Call +91 98765 43210 or fill the form." url="/contact" />
+      <SEO title="Contact Us | RO Service Now Bangalore" description="Contact RO Service Now for expert RO water purifier repair, installation, and maintenance services in Bangalore. Call 080502 91180 or fill the form." url="/contact" />
 
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 bg-[#f8fafc] overflow-hidden">
@@ -118,7 +118,7 @@ export default function Contact() {
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="RO Service Center location on Google Maps - Koramangala, Bangalore"
+                    title="RO Service Now location on Google Maps - Koramangala, Bangalore"
                   />
                 </div>
               </div>

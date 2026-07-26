@@ -19,7 +19,7 @@ const serviceDisclaimer = [
 export default function Disclaimer() {
   return (
     <>
-      <SEO title="Disclaimer" description="Important disclaimer for RO Service Centre (QuickRoFix). We are an independent third-party service provider and are not affiliated with any water purifier brand." url="/disclaimer" />
+      <SEO title="Disclaimer" description="Important disclaimer for RO Service Now (RO Service Now). We are an independent third-party service provider and are not affiliated with any water purifier brand." url="/disclaimer" />
 
       <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-16 bg-[#f8fafc]">
         <Container>
@@ -28,7 +28,7 @@ export default function Disclaimer() {
             <div className="flex items-center gap-2 text-[#94a3b8] text-sm sm:text-base mb-4">
               <span>Last Updated: January 1, 2024</span>
               <span className="w-1 h-1 rounded-full bg-[#cbd5e1]" />
-              <span>RO Service Centre / QuickRoFix</span>
+              <span>RO Service Now</span>
             </div>
             <div className="w-12 h-1 bg-gradient-to-r from-[#2563eb] to-[#60a5fa] rounded-full mb-6" />
           </div>
@@ -43,7 +43,7 @@ export default function Disclaimer() {
             <div className="bg-[#fef3c7] rounded-2xl p-6 sm:p-8 border border-[#fde68a] mb-8 sm:mb-10">
               <h2 className="text-lg sm:text-xl font-bold text-[#92400e] mb-3">Important Notice</h2>
               <p className="text-[#78350f] text-sm sm:text-base leading-relaxed">
-                RO Service Centre / QuickRoFix is an <strong>individual / independent third-party service provider</strong>. We are <strong>NOT</strong> the official service centre, authorized dealer, or company-owned service provider of any brand.
+                RO Service Now is an <strong>individual / independent third-party service provider</strong>. We are <strong>NOT</strong> the official service centre, authorized dealer, or company-owned service provider of any brand.
               </p>
             </div>
 
@@ -55,7 +55,7 @@ export default function Disclaimer() {
               </div>
               <div className="pl-10 space-y-3">
                 <p className="text-[#64748b] text-sm sm:text-base leading-[1.8]">
-                  RO Service Centre, operating under the trade name <strong className="text-[#334155]">QuickRoFix</strong>, is an individual proprietorship business providing water purifier repair, maintenance, and installation services. We operate as an independent service provider and are not owned, operated, or controlled by any water purifier manufacturing company.
+                  RO Service Now, operating under the trade name <strong className="text-[#334155]">RO Service Now</strong>, is an individual proprietorship business providing water purifier repair, maintenance, and installation services. We operate as an independent service provider and are not owned, operated, or controlled by any water purifier manufacturing company.
                 </p>
                 <p className="text-[#64748b] text-sm sm:text-base leading-[1.8]">
                   Our technicians are trained professionals with experience in servicing various water purifier brands, but they are employed by us and not by any manufacturing company.
@@ -111,7 +111,7 @@ export default function Disclaimer() {
               </div>
               <div className="pl-10 space-y-3">
                 <p className="text-[#64748b] text-sm sm:text-base leading-[1.8]">
-                  While we strive to provide the best possible service, RO Service Centre / QuickRoFix shall not be held liable for any indirect, incidental, or consequential damages arising from the use of our services.
+                  While we strive to provide the best possible service, RO Service Now shall not be held liable for any indirect, incidental, or consequential damages arising from the use of our services.
                 </p>
                 <p className="text-[#64748b] text-sm sm:text-base leading-[1.8]">
                   The information provided on this website is for general informational purposes only and should not be construed as professional advice. We make no representations or warranties of any kind about the completeness, accuracy, or reliability of the information.

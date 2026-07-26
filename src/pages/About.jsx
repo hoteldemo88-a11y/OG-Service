@@ -35,7 +35,7 @@ function Star(props) {
 export default function About() {
   return (
     <>
-      <SEO title="About Us | Bangalore's Most Trusted RO Service Provider" description="Learn about RO Service Center - Bangalore's most trusted RO water purifier service provider with 10+ years of experience and 10,000+ happy customers." url="/about" />
+      <SEO title="About Us | Bangalore's Most Trusted RO Service Provider" description="Learn about RO Service Now - Bangalore's most trusted RO water purifier service provider with 10+ years of experience and 10,000+ happy customers." url="/about" />
 
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 bg-[#f8fafc] overflow-hidden">
@@ -46,7 +46,7 @@ export default function About() {
               <span className="text-[12px] font-medium text-[#2563eb]">Since 2014</span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#0f172a] leading-[1.1] mb-6 text-center lg:text-left">
-              About RO Service Center
+              About RO Service Now
             </h1>
             <p className="text-base sm:text-lg text-[#64748b] leading-relaxed text-center lg:text-left">
               Bangalore's most trusted RO water purifier service provider. We are committed to delivering pure, safe drinking water to every home in Bangalore.
@@ -63,7 +63,7 @@ export default function About() {
               <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase text-[#2563eb] bg-[#eff6ff] rounded-full mb-4">Our Story</span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0f172a] mb-6 text-center lg:text-left">A Decade of Trust & Excellence in Bangalore</h2>
               <div className="space-y-4 text-[#64748b] text-[14px] sm:text-base leading-relaxed text-center lg:text-left">
-                <p>Founded in 2014 in Koramangala, Bangalore, RO Service Center started with a simple mission: to provide reliable, affordable, and high-quality RO water purifier service to every household in Bangalore.</p>
+                <p>Founded in 2014 in Koramangala, Bangalore, RO Service Now started with a simple mission: to provide reliable, affordable, and high-quality RO water purifier service to every household in Bangalore.</p>
                 <p>What began as a small team of 3 passionate technicians has now grown into Bangalore's most trusted RO service provider, with over 50 expert technicians covering every major area in the city.</p>
                 <p>Our commitment to using genuine spare parts, transparent pricing, and customer-first approach has earned us a 4.8-star Google rating and the trust of over 10,000 families across Bangalore.</p>
               </div>

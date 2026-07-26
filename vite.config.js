@@ -67,7 +67,7 @@ function localApiProxy() {
             })
             const sourceLabel = source === 'brand-detail' ? 'Brand Detail Page' : source === 'homepage' ? 'Homepage' : 'Contact Page'
             await transporter.sendMail({
-              from: `"RO Service Center" <${smtpEmail}>`,
+              from: `"RO Service Now" <${smtpEmail}>`,
               to: smtpEmail,
               replyTo: email || undefined,
               subject: `New Service Request from ${name}${brand ? ` — ${brand}` : ''}`,

@@ -79,7 +79,7 @@ export default async function handler(req, res) {
     `;
 
     await transporter.sendMail({
-      from: `"RO Service Center" <${process.env.SMTP_EMAIL}>`,
+      from: `"RO Service Now" <${process.env.SMTP_EMAIL}>`,
       to: process.env.SMTP_EMAIL,
       replyTo: email || undefined,
       subject: `New Service Request from ${name}${brand ? ` — ${brand}` : ''}`,

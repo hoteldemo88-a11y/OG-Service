@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <SEO
         title="RO Service in Bangalore | Same Day Doorstep RO Repair & Service"
-        description="Expert RO water purifier repair, installation, and maintenance in Bangalore. Same day doorstep service by certified technicians with genuine spare parts. Call +91 98765 43210."
+        description="Expert RO water purifier repair, installation, and maintenance in Bangalore. Same day doorstep service by certified technicians with genuine spare parts. Call 080502 91180."
         url="/"
       />
       <HeroSection />

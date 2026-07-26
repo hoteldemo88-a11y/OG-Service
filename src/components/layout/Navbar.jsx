@@ -56,11 +56,11 @@ export default function Navbar() {
             {/* Logo */}
             {location.pathname.startsWith('/brands/') ? (
               <span className="flex items-center gap-2.5 shrink-0 group">
-                <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14 sm:h-16"><img src="/brandlogo.webp" alt="RO Service Center" width="200" height="64" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+                <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14 sm:h-16"><img src="/brandlogo.webp" alt="RO Service Now" width="200" height="64" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
               </span>
             ) : (
               <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
-                <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14 sm:h-16"><img src="/brandlogo.webp" alt="RO Service Center" width="200" height="64" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+                <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14 sm:h-16"><img src="/brandlogo.webp" alt="RO Service Now" width="200" height="64" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
               </Link>
             )}
 
@@ -94,10 +94,10 @@ export default function Navbar() {
 
             {/* CTA */}
             <div className="flex items-center gap-3">
-              <Link to="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] text-white text-[13.5px] font-semibold px-4 py-2 btn-ribbon-sm hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 active:scale-[0.97] lg:px-5 lg:py-2.5" style={{ fontFamily: 'var(--font-heading)' }}>
+              <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center gap-2 bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] text-white text-[13.5px] font-semibold px-4 py-2 btn-ribbon-sm hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 active:scale-[0.97] lg:px-5 lg:py-2.5" style={{ fontFamily: 'var(--font-heading)' }}>
                 <Phone className="w-3.5 h-3.5" />
-                Book Service
-              </Link>
+                Book Now
+              </a>
               <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden p-2 rounded-xl text-[#475569] hover:bg-[#f1f5f9] transition-colors" aria-label="Menu">
                 {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -113,11 +113,11 @@ export default function Navbar() {
           <div className="flex items-center justify-between px-6 py-5 border-b border-[#f1f5f9]">
               {location.pathname.startsWith('/brands/') ? (
                 <span className="flex items-center gap-2.5">
-                  <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14"><img src="/brandlogo.webp" alt="RO Service Center" width="200" height="56" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+                  <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14"><img src="/brandlogo.webp" alt="RO Service Now" width="200" height="56" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
                 </span>
               ) : (
                 <Link to="/" className="flex items-center gap-2.5" onClick={() => setIsOpen(false)}>
-                  <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14"><img src="/brandlogo.webp" alt="RO Service Center" width="200" height="56" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+                  <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14"><img src="/brandlogo.webp" alt="RO Service Now" width="200" height="56" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
                 </Link>
               )}
             <button onClick={() => setIsOpen(false)} className="p-2 rounded-xl text-[#94a3b8] hover:bg-[#f1f5f9] transition-colors" aria-label="Close menu"><X className="w-5 h-5" /></button>
@@ -146,10 +146,10 @@ export default function Navbar() {
             </div>
           </nav>
           <div className="px-5 py-5 border-t border-[#f1f5f9] space-y-3">
-            <Link to="/contact" className="flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] text-white font-semibold btn-ribbon text-[15px] shadow-md shadow-blue-500/20" style={{ fontFamily: 'var(--font-heading)' }} onClick={() => setIsOpen(false)}>
+            <a href={`tel:${SITE.phoneRaw}`} className="flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] text-white font-semibold btn-ribbon text-[15px] shadow-md shadow-blue-500/20" style={{ fontFamily: 'var(--font-heading)' }} onClick={() => setIsOpen(false)}>
               <Phone className="w-4 h-4" />
-              Book Service
-            </Link>
+              Book Now
+            </a>
             <a href={`tel:${SITE.phoneRaw}`} className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#f8fafc] text-[#334155] font-semibold btn-ribbon text-[15px] border border-[#e2e8f0]" style={{ fontFamily: 'var(--font-heading)' }}>
               <Phone className="w-4 h-4" /> Call Now
             </a>

@@ -190,7 +190,7 @@ export default function BrandDetail() {
                     </div>
                     <div>
                       <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Phone Number</label>
-                      <input type="tel" placeholder="+91 98765 43210" required pattern="[0-9+\s]{10,}" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
+                      <input type="tel" placeholder="080502 91180" required pattern="[0-9+\s]{10,}" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

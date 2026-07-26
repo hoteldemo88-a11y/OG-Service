@@ -28,7 +28,7 @@ const sections = [
   },
   {
     title: 'Your Rights',
-    content: 'Under applicable data protection laws, you have the following rights:\n\n• Right to Access — Request a copy of all personal data we hold about you\n• Right to Correction — Request correction of inaccurate or incomplete data\n• Right to Deletion — Request deletion of your personal data from our records\n• Right to Opt-Out — Unsubscribe from marketing communications at any time\n• Right to Restrict Processing — Limit how we use your data\n• Right to Data Portability — Request your data in a structured, machine-readable format\n\nTo exercise any of these rights, please contact us at info@roservicecenter.in or call +91 98765 43210.',
+    content: 'Under applicable data protection laws, you have the following rights:\n\n• Right to Access — Request a copy of all personal data we hold about you\n• Right to Correction — Request correction of inaccurate or incomplete data\n• Right to Deletion — Request deletion of your personal data from our records\n• Right to Opt-Out — Unsubscribe from marketing communications at any time\n• Right to Restrict Processing — Limit how we use your data\n• Right to Data Portability — Request your data in a structured, machine-readable format\n\nTo exercise any of these rights, please contact us at info@roservicenow.in or call 080502 91180.',
   },
   {
     title: 'Data Retention',
@@ -44,14 +44,14 @@ const sections = [
   },
   {
     title: 'Contact Us',
-    content: 'If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please reach out to us:\n\nEmail: info@roservicecenter.in\nPhone: +91 98765 43210\nAddress: 123 Service Road, Koramangala, Bangalore, Karnataka 560034, India\n\nWe aim to respond to all privacy-related inquiries within 48 business hours.',
+    content: 'If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please reach out to us:\n\nEmail: info@roservicenow.in\nPhone: 080502 91180\nAddress: Bangalore, Karnataka, India\n\nWe aim to respond to all privacy-related inquiries within 48 business hours.',
   },
 ];
 
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <SEO title="Privacy Policy" description="Privacy Policy for RO Service Center. Learn how we collect, use, protect, and handle your personal information when you use our website and services." url="/privacy-policy" />
+      <SEO title="Privacy Policy" description="Privacy Policy for RO Service Now. Learn how we collect, use, protect, and handle your personal information when you use our website and services." url="/privacy-policy" />
 
       <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-16 bg-[#f8fafc]">
         <Container>
@@ -60,7 +60,7 @@ export default function PrivacyPolicyPage() {
             <div className="flex items-center gap-2 text-[#94a3b8] text-sm sm:text-base mb-4">
               <span>Last Revised: January 1, 2024</span>
               <span className="w-1 h-1 rounded-full bg-[#cbd5e1]" />
-              <span>RO Service Center</span>
+              <span>RO Service Now</span>
             </div>
             <div className="w-12 h-1 bg-gradient-to-r from-[#2563eb] to-[#60a5fa] rounded-full mb-6" />
           </div>
@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-[#f8fafc] rounded-2xl p-6 sm:p-8 border border-[#e2e8f0] mb-8 sm:mb-10">
               <p className="text-[#475569] text-sm sm:text-base leading-relaxed">
-                At RO Service Center, your privacy is our top priority. This Privacy Policy outlines how we collect, use, store, and protect your personal information when you visit our website, book a service, or interact with us in any capacity. By using our website and services, you consent to the practices described in this policy.
+                At RO Service Now, your privacy is our top priority. This Privacy Policy outlines how we collect, use, store, and protect your personal information when you visit our website, book a service, or interact with us in any capacity. By using our website and services, you consent to the practices described in this policy.
               </p>
             </div>
 
@@ -92,7 +92,7 @@ export default function PrivacyPolicyPage() {
 
             <div className="mt-10 sm:mt-12 bg-[#f8fafc] rounded-2xl p-6 sm:p-8 border border-[#e2e8f0]">
               <h3 className="font-bold text-[#0f172a] mb-2">Questions About Your Privacy?</h3>
-              <p className="text-[#64748b] text-sm leading-relaxed">We are committed to protecting your data. If you have any questions about this policy, please contact us at <a href="mailto:info@roservicecenter.in" className="text-[#2563eb] hover:underline font-medium">info@roservicecenter.in</a> or call us at <a href="tel:919876543210" className="text-[#2563eb] hover:underline font-medium">+91 98765 43210</a>.</p>
+              <p className="text-[#64748b] text-sm leading-relaxed">We are committed to protecting your data. If you have any questions about this policy, please contact us at <a href="mailto:info@roservicenow.in" className="text-[#2563eb] hover:underline font-medium">info@roservicenow.in</a> or call us at <a href="tel:918050291180" className="text-[#2563eb] hover:underline font-medium">080502 91180</a>.</p>
             </div>
           </div>
         </Container>
