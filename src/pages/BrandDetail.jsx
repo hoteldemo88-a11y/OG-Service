@@ -1,5 +1,4 @@
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Phone, ArrowRight, Shield, Wrench, Calendar, Clock, CheckCircle } from 'lucide-react';
 import SEO from '@/components/common/SEO';
 import Container from '@/components/common/Container';
@@ -97,7 +96,7 @@ export default function BrandDetail() {
       <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 bg-[#f8fafc] overflow-hidden">
         <Container className="relative z-10">
           <Breadcrumb items={[{ label: 'Brands', path: '/brands' }, { label: brand.name }]} />
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-2xl mt-6">
+          <div className="max-w-2xl mt-6">
             <div className="mb-5 sm:mb-6 scale-75 sm:scale-90 lg:scale-100 origin-left">
               {Logo ? <Logo /> : (
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#eff6ff] rounded-3xl flex items-center justify-center text-2xl sm:text-3xl font-bold text-[#2563eb]">{brand.name.charAt(0)}</div>
@@ -113,7 +112,7 @@ export default function BrandDetail() {
                 Book Service <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
-          </motion.div>
+          </div>
         </Container>
       </section>
 
@@ -122,12 +121,12 @@ export default function BrandDetail() {
         <Container>
           <SectionHeading badge="Services" title={`${brand.name} Services We Offer`} icon={Wrench} />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-            {services.map((service, i) => (
-              <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white p-5 sm:p-6 rounded-2xl border border-[#e2e8f0] hover:shadow-lg hover:border-[#bfdbfe] transition-all">
+            {services.map((service) => (
+              <div key={service.title} className="bg-white p-5 sm:p-6 rounded-2xl border border-[#e2e8f0] hover:shadow-lg hover:border-[#bfdbfe] transition-all">
                 <div className="w-11 h-11 sm:w-12 sm:h-12 bg-[#eff6ff] rounded-xl flex items-center justify-center mb-3 sm:mb-4"><Wrench className="w-5 h-5 sm:w-6 sm:h-6 text-[#2563eb]" /></div>
                 <h3 className="font-bold text-[#0f172a] mb-2 text-[15px]">{service.title}</h3>
                 <p className="text-[#64748b] text-sm leading-relaxed">{service.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </Container>
@@ -141,14 +140,14 @@ export default function BrandDetail() {
               { icon: Shield, title: 'Genuine Parts', description: `We use only genuine ${brand.name} spare parts for all repairs and replacements.` },
               { icon: Clock, title: 'Same Day Service', description: `Get your ${brand.name} RO serviced on the same day. Quick response and expert technicians.` },
               { icon: Calendar, title: 'Service Warranty', description: `We provide service warranty on all ${brand.name} repairs for your peace of mind.` },
-            ].map((item, i) => {
+            ].map((item) => {
               const Icon = item.icon;
               return (
-                <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white p-6 sm:p-8 rounded-2xl border border-[#e2e8f0] text-center">
+                <div key={item.title} className="bg-white p-6 sm:p-8 rounded-2xl border border-[#e2e8f0] text-center">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#eff6ff] rounded-2xl flex items-center justify-center mx-auto mb-4"><Icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#2563eb]" /></div>
                   <h3 className="font-bold text-[#0f172a] mb-2 text-base sm:text-lg">{item.title}</h3>
                   <p className="text-[#64748b] text-sm leading-relaxed">{item.description}</p>
-                </motion.div>
+                </div>
               );
             })}
           </div>

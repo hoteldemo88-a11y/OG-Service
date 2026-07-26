@@ -19,12 +19,24 @@ export default function Home() {
       />
       <HeroSection />
       <BrandShowcase />
-      <ServicesSection />
-      <WhyChooseUs />
-      <CommonProblems />
-      <ServiceProcess />
-      <TestimonialsSection />
-      <FAQSection />
+      <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
+        <ServicesSection />
+      </div>
+      <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }}>
+        <WhyChooseUs />
+      </div>
+      <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
+        <CommonProblems />
+      </div>
+      <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }}>
+        <ServiceProcess />
+      </div>
+      <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 700px' }}>
+        <TestimonialsSection />
+      </div>
+      <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}>
+        <FAQSection />
+      </div>
       <ContactCTA />
     </>
   );

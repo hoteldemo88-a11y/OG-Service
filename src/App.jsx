@@ -1,6 +1,5 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import Layout from '@/components/layout/Layout';
 import LoadingSpinner from '@/components/common/LoadingSpinner';
 
@@ -25,25 +24,23 @@ function PageLoader() {
 
 export default function App() {
   return (
-    <HelmetProvider>
-      <BrowserRouter>
-        <Suspense fallback={<PageLoader />}>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="about" element={<About />} />
-              <Route path="services" element={<Services />} />
-              <Route path="brands" element={<Brands />} />
-              <Route path="brands/:brandId" element={<BrandDetail />} />
-              <Route path="contact" element={<Contact />} />
-              <Route path="privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="terms" element={<Terms />} />
-              <Route path="thank-you" element={<ThankYou />} />
-              <Route path="*" element={<NotFound />} />
-            </Route>
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
-    </HelmetProvider>
+    <BrowserRouter>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="services" element={<Services />} />
+            <Route path="brands" element={<Brands />} />
+            <Route path="brands/:brandId" element={<BrandDetail />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="terms" element={<Terms />} />
+            <Route path="thank-you" element={<ThankYou />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 }

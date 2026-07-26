@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, ArrowRight, Wrench, Settings, Filter, CircleDot, Calendar, Droplets, Gauge, Cog, Zap, Activity, RefreshCw, Power, Shield } from 'lucide-react';
 import SEO from '@/components/common/SEO';
 import Container from '@/components/common/Container';
@@ -34,10 +33,10 @@ export default function Services() {
       <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 bg-[#f8fafc] overflow-hidden">
         <Container className="relative z-10">
           <Breadcrumb items={[{ label: 'Services' }]} />
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-2xl mt-6 text-center lg:text-left">
+          <div className="max-w-2xl mt-6 text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#0f172a] leading-[1.1] mb-6 text-center lg:text-left">Our Services</h1>
             <p className="text-base sm:text-lg text-[#64748b] leading-relaxed text-center lg:text-left">Complete RO water purifier solutions for all brands in Bangalore. From repair to installation, we do it all.</p>
-          </motion.div>
+          </div>
         </Container>
       </section>
 
@@ -51,12 +50,11 @@ export default function Services() {
               </button>
             ))}
           </div>
-          <AnimatePresence mode="wait">
-            <motion.div key={activeCategory} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.2 }} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-              {filteredServices.map((service, i) => {
+          <div key={activeCategory} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+              {filteredServices.map((service) => {
                 const Icon = serviceIcons[service.id] || Wrench;
                 return (
-                  <motion.div key={service.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="group bg-white rounded-2xl border border-[#e2e8f0] p-5 sm:p-6 hover:border-[#bfdbfe] hover:shadow-lg transition-all duration-300">
+                  <div key={service.id} className="group bg-white rounded-2xl border border-[#e2e8f0] p-5 sm:p-6 hover:border-[#bfdbfe] hover:shadow-lg transition-all duration-300">
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#eff6ff] rounded-2xl flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-[#2563eb] transition-colors">
                       <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#2563eb] group-hover:text-white transition-colors" />
                     </div>
@@ -65,11 +63,10 @@ export default function Services() {
                     <Link to="/contact" className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563eb] hover:text-[#1d4ed8] transition-colors">
                       Book Now <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
-                  </motion.div>
+                  </div>
                 );
               })}
-            </motion.div>
-          </AnimatePresence>
+          </div>
         </Container>
       </section>
 

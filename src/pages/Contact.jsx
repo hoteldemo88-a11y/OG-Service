@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Send, Shield, CheckCircle } from 'lucide-react';
 import SEO from '@/components/common/SEO';
 import Container from '@/components/common/Container';
@@ -23,7 +22,7 @@ export default function Contact() {
       <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 bg-[#f8fafc] overflow-hidden">
         <Container className="relative z-10">
           <Breadcrumb items={[{ label: 'Contact Us' }]} />
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-2xl mt-6 text-center lg:text-left">
+          <div className="max-w-2xl mt-6 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#eff6ff] border border-[#bfdbfe] mb-5">
               <span className="text-[12px] font-medium text-[#2563eb]">We're here to help</span>
             </div>
@@ -33,7 +32,7 @@ export default function Contact() {
             <p className="text-base sm:text-lg text-[#64748b] leading-relaxed text-center lg:text-left">
               Whether you need RO repair, want to book a service, or just have a query — call us or fill the form below. We typically respond within a few hours.
             </p>
-          </motion.div>
+          </div>
         </Container>
       </section>
 
@@ -45,11 +44,11 @@ export default function Contact() {
               <h2 className="text-xl sm:text-2xl font-bold text-[#0f172a] mb-2">Book a Service in Bangalore</h2>
               <p className="text-[#64748b] text-sm sm:text-base mb-6 sm:mb-8">Fill out the form and our team will get back to you shortly.</p>
               {submitted ? (
-                <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="bg-[#f0fdf4] border border-[#bbf7d0] rounded-2xl p-8 sm:p-10 text-center">
+                <div className="bg-[#f0fdf4] border border-[#bbf7d0] rounded-2xl p-8 sm:p-10 text-center">
                   <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#22c55e] rounded-full flex items-center justify-center mx-auto mb-4"><CheckCircle className="w-7 h-7 sm:w-8 sm:h-8 text-white" /></div>
                   <h3 className="text-lg sm:text-xl font-bold text-[#0f172a] mb-2">Thank You!</h3>
                   <p className="text-[#64748b] text-sm sm:text-base">Your message has been sent successfully. We'll get back to you soon.</p>
-                </motion.div>
+                </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5" aria-label="Contact form">
                   <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
@@ -77,15 +76,15 @@ export default function Contact() {
                   <div className="space-y-3 sm:space-y-4">
                     <a href={`tel:${SITE.phoneRaw}`} className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-white rounded-xl border border-[#e2e8f0] hover:border-[#bfdbfe] hover:shadow-sm transition-all">
                       <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#eff6ff] rounded-lg flex items-center justify-center shrink-0"><Phone className="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb]" /></div>
-                      <div><p className="text-xs sm:text-sm text-[#94a3b8] mb-0.5">Call Us</p><p className="font-semibold text-[#0f172a] text-sm">{SITE.phoneFormatted}</p></div>
+                       <div><p className="text-xs sm:text-sm text-[#64748b] mb-0.5">Call Us</p><p className="font-semibold text-[#0f172a] text-sm">{SITE.phoneFormatted}</p></div>
                     </a>
                     <a href={`mailto:${SITE.email}`} className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-white rounded-xl border border-[#e2e8f0] hover:border-[#bfdbfe] hover:shadow-sm transition-all">
                       <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#f0fdf4] rounded-lg flex items-center justify-center shrink-0"><Mail className="w-4 h-4 sm:w-5 sm:h-5 text-[#22c55e]" /></div>
-                      <div><p className="text-xs sm:text-sm text-[#94a3b8] mb-0.5">Email Us</p><p className="font-semibold text-[#0f172a] text-sm">{SITE.email}</p></div>
+                       <div><p className="text-xs sm:text-sm text-[#64748b] mb-0.5">Email Us</p><p className="font-semibold text-[#0f172a] text-sm">{SITE.email}</p></div>
                     </a>
                     <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-white rounded-xl border border-[#e2e8f0]">
                       <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#eff6ff] rounded-lg flex items-center justify-center shrink-0"><MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb]" /></div>
-                      <div><p className="text-xs sm:text-sm text-[#94a3b8] mb-0.5">Visit Us</p><p className="font-semibold text-[#0f172a] text-sm">{SITE.address.full}</p></div>
+                       <div><p className="text-xs sm:text-sm text-[#64748b] mb-0.5">Visit Us</p><p className="font-semibold text-[#0f172a] text-sm">{SITE.address.full}</p></div>
                     </div>
                   </div>
                 </div>

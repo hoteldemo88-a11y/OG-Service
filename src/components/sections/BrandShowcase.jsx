@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+
 import { Award } from 'lucide-react';
 import Container from '@/components/common/Container';
 import SectionHeading from '@/components/common/SectionHeading';
@@ -8,8 +7,7 @@ import BrandLogos from '@/components/icons/BrandLogos';
 import { BRANDS } from '@/constants';
 
 export default function BrandShowcase() {
-  const [isPaused, setIsPaused] = useState(false);
-  const duplicated = [...BRANDS, ...BRANDS, ...BRANDS];
+  const duplicated = [...BRANDS, ...BRANDS];
 
   return (
     <section className="pt-24 sm:pt-28 lg:pt-28 pb-10 sm:pb-12 lg:pb-14 bg-white relative overflow-hidden">
@@ -20,17 +18,8 @@ export default function BrandShowcase() {
           <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-          <div
-            className="overflow-hidden"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            <motion.div
-              className="flex gap-3 sm:gap-6"
-              animate={{ x: ['0%', '-33.333%'] }}
-              transition={{ duration: 20, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
-              style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
-            >
+          <div className="overflow-hidden">
+            <div className="flex gap-3 sm:gap-6">
               {duplicated.map((b, i) => {
                 const Logo = BrandLogos[b.id];
                 return (
@@ -49,7 +38,7 @@ export default function BrandShowcase() {
                   </Link>
                 );
               })}
-            </motion.div>
+            </div>
           </div>
         </div>
 

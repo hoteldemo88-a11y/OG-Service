@@ -7,6 +7,7 @@
 
     <!-- LCP image: preload FIRST for fastest discovery -->
     <link rel="preload" as="image" href="/herobg.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/hero image 1.webp" fetchpriority="high" media="(max-width: 1023px)" />
 
     <meta name="theme-color" content="#1d4ed8" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -17,18 +18,23 @@
     <style>
       body { margin: 0; padding: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
       #root { min-height: 100vh; }
+      .preload-screen{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f8fafc}
+      .preload-logo{width:120px;height:40px;background:#e2e8f0;border-radius:8px;animation:pulse 1.5s ease-in-out infinite}
+      .preload-bar{width:200px;height:8px;background:#e2e8f0;border-radius:4px;margin-top:16px;animation:pulse 1.5s ease-in-out infinite}
     </style>
 
     <!-- Preconnect for fonts (needed for font CSS) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://randomuser.me" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
-    <!-- Google Fonts: non-render-blocking -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@300;400;500;600;700;800&display=swap" /></noscript>
+    <!-- Google Fonts: non-render-blocking, minimal weights -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" /></noscript>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><div class="preload-screen"><div class="preload-logo"></div><div class="preload-bar"></div></div></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

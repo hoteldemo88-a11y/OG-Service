@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Home, ArrowLeft, Droplets } from 'lucide-react';
 import SEO from '@/components/common/SEO';
 import Container from '@/components/common/Container';
@@ -11,7 +10,7 @@ export default function NotFound() {
 
       <section className="min-h-screen flex items-center justify-center bg-[#f8fafc] py-20">
         <Container>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-lg mx-auto text-center">
+          <div className="max-w-lg mx-auto text-center">
             <div className="mb-8 px-4">
               <div className="w-20 h-20 sm:w-24 sm:h-24 bg-[#eff6ff] rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-5 sm:mb-6">
                 <Droplets className="w-10 h-10 sm:w-12 sm:h-12 text-[#2563eb]" />
@@ -28,7 +27,7 @@ export default function NotFound() {
                 <ArrowLeft className="w-4 h-4" />Go Back
               </button>
             </div>
-          </motion.div>
+          </div>
         </Container>
       </section>
     </>

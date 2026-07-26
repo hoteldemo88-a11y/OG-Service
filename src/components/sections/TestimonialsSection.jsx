@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 import Container from '@/components/common/Container';
 import SectionHeading from '@/components/common/SectionHeading';
@@ -38,6 +36,10 @@ function ReviewCard({ review, index }) {
           <img
             src={avatarImages[index % avatarImages.length]}
             alt={review.name}
+            loading="lazy"
+            decoding="async"
+            width="48"
+            height="48"
             className="w-9 h-9 sm:w-12 sm:h-12 rounded-full object-cover ring-2 ring-[#eff6ff] ring-offset-1 sm:ring-offset-2"
           />
           <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 sm:w-4 sm:h-4 bg-[#22c55e] rounded-full border-2 border-white flex items-center justify-center">
@@ -48,7 +50,7 @@ function ReviewCard({ review, index }) {
         </div>
         <div className="flex-1 min-w-0">
           <p className="font-bold text-[#0f172a] text-[11px] sm:text-[13.5px] truncate">{review.name}</p>
-          <p className="text-[#94a3b8] text-[10px] sm:text-[12px] truncate">{review.location}</p>
+          <p className="text-[#64748b] text-[10px] sm:text-[12px] truncate">{review.location}</p>
         </div>
         <span className="text-[9px] sm:text-[11px] font-semibold text-[#2563eb] bg-[#eff6ff] px-2 sm:px-3 py-1 sm:py-1.5 rounded-full whitespace-nowrap">
           {review.service}
@@ -59,8 +61,7 @@ function ReviewCard({ review, index }) {
 }
 
 export default function TestimonialsSection() {
-  const [isPaused, setIsPaused] = useState(false);
-  const duplicated = [...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS];
+  const duplicated = [...TESTIMONIALS, ...TESTIMONIALS];
 
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-[#f8fafc] overflow-hidden">
@@ -68,25 +69,16 @@ export default function TestimonialsSection() {
         <SectionHeading badge="Testimonials" title="What Our Customers Say" subtitle="Trusted by thousands of happy customers in Bangalore" icon={Star} />
       </Container>
 
-      <div
-        className="relative"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
+      <div className="relative">
         <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-24 lg:w-28 bg-gradient-to-r from-[#f8fafc] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-24 lg:w-28 bg-gradient-to-l from-[#f8fafc] to-transparent z-10 pointer-events-none" />
 
         <div className="overflow-hidden py-2 sm:py-2">
-          <motion.div
-            className="flex gap-3 sm:gap-5 lg:gap-6 pl-3 sm:pl-6 lg:pl-0"
-            animate={{ x: ['0%', '-33.333%'] }}
-            transition={{ duration: 25, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
-            style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
-          >
+          <div className="flex gap-3 sm:gap-5 lg:gap-6 pl-3 sm:pl-6 lg:pl-0">
             {duplicated.map((review, i) => (
               <ReviewCard key={`${review.id}-${i}`} review={review} index={i % avatarImages.length} />
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

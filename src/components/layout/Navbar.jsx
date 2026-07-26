@@ -105,7 +105,7 @@ export default function Navbar() {
               <Link to="/" className="flex items-center gap-2.5" onClick={() => setIsOpen(false)}>
                 <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14"><img src="/brandlogo.webp" alt="RO Service Center" width="200" height="56" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
               </Link>
-            <button onClick={() => setIsOpen(false)} className="p-2 rounded-xl text-[#94a3b8] hover:bg-[#f1f5f9] transition-colors"><X className="w-5 h-5" /></button>
+            <button onClick={() => setIsOpen(false)} className="p-2 rounded-xl text-[#94a3b8] hover:bg-[#f1f5f9] transition-colors" aria-label="Close menu"><X className="w-5 h-5" /></button>
           </div>
           <nav className="flex-1 overflow-y-auto px-4 py-5">
             <div className="space-y-0.5">
@@ -120,7 +120,7 @@ export default function Navbar() {
                     {link.children && (
                       <div className="ml-4 mt-1 space-y-0.5">
                         {link.children.map((child) => (
-                          <Link key={child.path} to={child.path} className="block px-4 py-2 rounded-lg text-[13px] text-[#94a3b8] hover:text-[#2563eb] hover:bg-[#eff6ff]/60 transition-colors" style={{ fontFamily: 'var(--font-body)' }} onClick={() => setIsOpen(false)}>
+                          <Link key={child.path} to={child.path} className="block px-4 py-2 rounded-lg text-[13px] text-[#64748b] hover:text-[#2563eb] hover:bg-[#eff6ff]/60 transition-colors" style={{ fontFamily: 'var(--font-body)' }} onClick={() => setIsOpen(false)}>
                             {child.name}
                           </Link>
                         ))}

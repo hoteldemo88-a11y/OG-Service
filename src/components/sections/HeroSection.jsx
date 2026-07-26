@@ -41,6 +41,8 @@ export default function HeroSection() {
                   width="800"
                   height="450"
                   decoding="async"
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  fetchPriority={i === 0 ? 'high' : 'low'}
                   className={`w-full h-auto object-cover object-left rounded-2xl shadow-2xl shadow-blue-500/20 transition-opacity duration-1000 ease-in-out ${i === heroIdx ? 'opacity-100 relative' : 'opacity-0 absolute inset-0'}`}
                 />
               ))}

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { ArrowRight, Phone, Shield, Check } from 'lucide-react';
 import SEO from '@/components/common/SEO';
 import Container from '@/components/common/Container';
@@ -16,10 +15,10 @@ export default function Brands() {
       <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 bg-[#f8fafc] overflow-hidden">
         <Container className="relative z-10">
           <Breadcrumb items={[{ label: 'Brands' }]} />
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-2xl mt-6 text-center lg:text-left">
+          <div className="max-w-2xl mt-6 text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#0f172a] leading-[1.1] mb-6 text-center lg:text-left">Brands We Service</h1>
             <p className="text-base sm:text-lg text-[#64748b] leading-relaxed text-center lg:text-left">We provide expert service for all major RO water purifier brands. Choose your brand for specialized service.</p>
-          </motion.div>
+          </div>
         </Container>
       </section>
 
@@ -27,10 +26,10 @@ export default function Brands() {
       <section className="py-16 sm:py-20 bg-white">
         <Container>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-            {BRANDS.map((brand, i) => {
+            {BRANDS.map((brand) => {
               const Logo = BrandLogos[brand.id];
               return (
-                <motion.div key={brand.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+                <div key={brand.id}>
                   <Link to={`/brands/${brand.id}`} className="group block bg-white rounded-2xl border border-[#e2e8f0] overflow-hidden hover:shadow-xl transition-all duration-300">
                     <div className="bg-[#eff6ff] p-6 sm:p-8 flex items-center justify-center h-32 sm:h-40">
                       <div className="group-hover:scale-110 transition-transform duration-300 scale-75 sm:scale-90 lg:scale-100">
@@ -41,7 +40,7 @@ export default function Brands() {
                     </div>
                     <div className="p-5 sm:p-6">
                       <h3 className="text-lg sm:text-xl font-bold text-[#0f172a] mb-1">{brand.name}</h3>
-                      <p className="text-[#94a3b8] text-xs sm:text-sm mb-3">{brand.tagline}</p>
+                      <p className="text-[#64748b] text-xs sm:text-sm mb-3">{brand.tagline}</p>
                       <p className="text-[#64748b] text-xs sm:text-sm leading-relaxed mb-4">{brand.description}</p>
                       <ul className="space-y-2 mb-5">
                         {brand.services.slice(0, 3).map((service) => (
@@ -55,7 +54,7 @@ export default function Brands() {
                       </span>
                     </div>
                   </Link>
-                </motion.div>
+                </div>
               );
             })}
           </div>
