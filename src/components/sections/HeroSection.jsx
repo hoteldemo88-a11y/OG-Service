@@ -1,34 +1,33 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { Phone, Mail, Users, MapPin, ChevronDown, ArrowRight, Shield } from 'lucide-react';
 import Container from '@/components/common/Container';
 import { BRANDS, SITE } from '@/constants';
-import { fadeUp, stagger } from '@/utils/animations';
+
+const heroImages = ['/hero image 1.webp', '/hero image 2.webp', '/hero image 3.webp'];
 
 export default function HeroSection() {
   const [form, setForm] = useState({ name: '', phone: '', brand: '', location: '' });
   const [loading, setLoading] = useState(false);
-  const heroImages = ['/hero image 1.webp', '/hero image 2.webp', '/hero image 3.webp'];
   const [heroIdx, setHeroIdx] = useState(0);
+  const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
+  const submit = (e) => { e.preventDefault(); setLoading(true); setTimeout(() => { setLoading(false); window.location.href = '/thank-you'; }, 1200); };
+
   useEffect(() => {
     const timer = setInterval(() => {
       setHeroIdx((prev) => (prev + 1) % heroImages.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [heroImages.length]);
-  const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
-  const submit = (e) => { e.preventDefault(); setLoading(true); setTimeout(() => { setLoading(false); window.location.href = '/thank-you'; }, 1200); };
+  }, []);
 
   return (
     <section className="relative overflow-hidden min-h-[500px] lg:min-h-[calc(100vh-36px)] flex items-end lg:items-center">
       <div className="absolute inset-0 hidden lg:block">
-        <img src="/herobg.webp" alt="RO water purifier service background" className="w-full h-full object-cover" width="1920" height="1080" fetchpriority="high" />
+        <img src="/herobg.webp" alt="RO water purifier service background" className="w-full h-full object-cover" width="1920" height="1080" />
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/60" />
       </div>
 
       <Container className="relative z-10 w-full py-10 sm:py-16 lg:py-0 lg:min-h-[calc(100vh-36px)] flex items-center">
-        {/* ── Phone: stacked (image then form). Desktop: side by side ── */}
         <div className="w-full lg:grid lg:grid-cols-[1fr_400px] lg:gap-12 lg:items-center">
 
           {/* ── Phone: Image + Badge + Buttons ── */}
@@ -65,22 +64,24 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* ── LEFT: Content (desktop only) ── */}
-          <motion.div initial="hidden" animate="visible" variants={stagger} className="hidden lg:block pt-16 sm:pt-20 lg:pt-0 pb-6 lg:pb-0 text-center lg:text-left">
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#eff6ff] border border-[#bfdbfe] mb-3 sm:mb-5">
-              <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#2563eb]" />
-              <span className="text-[11px] sm:text-[12px] font-medium text-[#2563eb]">Bangalore, India</span>
-            </motion.div>
+          {/* ── LEFT: Content (desktop only, CSS animations) ── */}
+          <div className="hidden lg:block pt-16 sm:pt-20 lg:pt-0 pb-6 lg:pb-0 text-center lg:text-left">
+            <div className="animate-[fadeUp_0.5s_ease-out_0s_both]">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#eff6ff] border border-[#bfdbfe] mb-3 sm:mb-5">
+                <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#2563eb]" />
+                <span className="text-[11px] sm:text-[12px] font-medium text-[#2563eb]">Bangalore, India</span>
+              </div>
+            </div>
 
-            <motion.h1 variants={fadeUp} className="text-[28px] sm:text-[42px] lg:text-[54px] xl:text-[60px] font-extrabold text-[#0f172a] leading-[1.1] tracking-[-0.02em] mb-3 sm:mb-4">
-              Your RO Not Working?<br className="hidden sm:block" /> We Fix It Today.
-            </motion.h1>
+            <h1 className="text-[28px] sm:text-[42px] lg:text-[54px] xl:text-[60px] font-extrabold text-[#0f172a] leading-[1.1] tracking-[-0.02em] mb-3 sm:mb-4 animate-[fadeUp_0.5s_ease-out_0.1s_both]">
+              Your RO Not Working?<br /> We Fix It Today.
+            </h1>
 
-            <motion.p variants={fadeUp} className="text-[13px] sm:text-[15px] lg:text-[16px] text-[#64748b] max-w-[500px] leading-relaxed mb-4 sm:mb-6 mx-auto lg:mx-0">
+            <p className="text-[13px] sm:text-[15px] lg:text-[16px] text-[#64748b] max-w-[500px] leading-relaxed mb-4 sm:mb-6 mx-auto lg:mx-0 animate-[fadeUp_0.5s_ease-out_0.2s_both]">
               Getting dirty water, low pressure, or strange noise from your RO? Our trained technicians come to your home in Bangalore and fix it the same day.
-            </motion.p>
+            </p>
 
-            <motion.div variants={fadeUp} className="grid grid-cols-2 gap-x-3 gap-y-2 lg:grid-cols-1 lg:gap-1 lg:items-start mb-5 sm:mb-7 text-center lg:text-left">
+            <div className="flex flex-col lg:items-start lg:gap-2.5 mb-5 sm:mb-7 text-center lg:text-left animate-[fadeUp_0.5s_ease-out_0.3s_both]">
               {[
                 'Same Day Service Available',
                 'Certified & Trained Engineers',
@@ -92,9 +93,9 @@ export default function HeroSection() {
                   <span className="text-[11px] sm:text-[13px] font-medium text-[#334155]">{item}</span>
                 </div>
               ))}
-            </motion.div>
+            </div>
 
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 sm:gap-3 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-3 justify-center lg:justify-start animate-[fadeUp_0.5s_ease-out_0.4s_both]">
               <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center justify-center gap-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-semibold btn-ribbon px-6 py-4 text-[15px] transition-all duration-200 shadow-md hover:shadow-lg active:scale-[0.98]">
                 <Phone className="w-5 h-5" />
                 Call Now — {SITE.phoneFormatted}
@@ -103,15 +104,15 @@ export default function HeroSection() {
                 <Mail className="w-5 h-5 text-[#2563eb]" />
                 {SITE.email}
               </a>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* ── RIGHT: Booking Form ── */}
-          <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="relative pb-12 lg:pb-0 max-w-[400px] mx-auto lg:max-w-none w-full">
+          <div className="relative pb-12 lg:pb-0 max-w-[400px] mx-auto lg:max-w-none w-full animate-[slideIn_0.6s_ease-out_0.2s_both]">
             <div className="glass-strong rounded-2xl sm:rounded-[24px] shadow-[0_8px_32px_-8px_rgba(0,0,0,0.12)] border border-white/60 p-5 sm:p-6">
               <div className="flex items-center gap-2.5 sm:gap-3 mb-4 sm:mb-5">
                 <div className="w-9 h-9 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-br from-[#2563eb] to-[#1d4ed8] flex items-center justify-center shadow-md shadow-blue-500/20">
-                  <Phone className="w-4 h-4 text-white" />
+                  <Phone className="w-4 h-4 text-white" aria-hidden="true" />
                 </div>
                 <div>
                   <h3 className="text-[15px] sm:text-[17px] font-bold text-[#0a1a3a]" style={{fontFamily:'var(--font-heading)'}}>Book Your Service</h3>
@@ -137,9 +138,9 @@ export default function HeroSection() {
                 </div>
 
                 <div className="relative group">
-                    <label htmlFor="hero-brand" className="block text-[11px] sm:text-[11px] font-semibold text-[#64748b] mb-1.5 uppercase tracking-wider" style={{fontFamily:'var(--font-heading)'}}>Brand</label>
-                    <div className="relative">
-                      <select id="hero-brand" value={form.brand} onChange={set('brand')} required className="w-full px-3 py-3 bg-white/70 border border-[#e2e8f0] rounded-xl text-[13px] text-[#64748b] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/15 focus:border-[#2563eb]/40 focus:bg-white transition-all appearance-none" style={{fontFamily:'var(--font-body)'}}>
+                  <label htmlFor="hero-brand" className="block text-[11px] sm:text-[11px] font-semibold text-[#64748b] mb-1.5 uppercase tracking-wider" style={{fontFamily:'var(--font-heading)'}}>Brand</label>
+                  <div className="relative">
+                    <select id="hero-brand" value={form.brand} onChange={set('brand')} required className="w-full px-3 py-3 bg-white/70 border border-[#e2e8f0] rounded-xl text-[13px] text-[#64748b] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/15 focus:border-[#2563eb]/40 focus:bg-white transition-all appearance-none" style={{fontFamily:'var(--font-body)'}}>
                       <option value="">Select Brand</option>
                       {BRANDS.map(b => <option key={b.id} value={b.id}>{b.name}</option>)}
                     </select>
@@ -160,11 +161,11 @@ export default function HeroSection() {
                 </button>
 
                 <p className="text-center text-[11px] text-[#64748b] flex items-center justify-center gap-1.5 pt-0.5" style={{fontFamily:'var(--font-body)'}}>
-                  <Shield className="w-3 h-3 text-[#22c55e]" /> We respect your privacy
+                  <Shield className="w-3 h-3 text-[#22c55e]" aria-hidden="true" /> We respect your privacy
                 </p>
               </form>
             </div>
-          </motion.div>
+          </div>
         </div>
       </Container>
     </section>
