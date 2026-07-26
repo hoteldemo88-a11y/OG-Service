@@ -65,9 +65,8 @@ export default function Navbar() {
             )}
 
             {/* Desktop Nav */}
-            {!isBrandDetail && (
             <div className="hidden lg:flex items-center gap-0.5">
-              {NAV_LINKS.map((link) => {
+              {NAV_LINKS.filter((link) => !isBrandDetail || link.name !== 'Brands').map((link) => {
                 const Icon = navIcons[link.icon];
                 const isOpen = link.children && activeDropdown === link.name;
                 return (
@@ -92,7 +91,6 @@ export default function Navbar() {
                 );
               })}
             </div>
-            )}
 
             {/* CTA */}
             <div className="flex items-center gap-3">
@@ -126,8 +124,7 @@ export default function Navbar() {
           </div>
           <nav className="flex-1 overflow-y-auto px-4 py-5">
             <div className="space-y-0.5">
-              {NAV_LINKS.map((link) => {
-                const Icon = navIcons[link.icon];
+              {NAV_LINKS.filter((link) => !isBrandDetail || link.name !== 'Brands').map((link) => {                const Icon = navIcons[link.icon];
                 return (
                   <div key={link.name}>
                     <Link to={link.path} className={`flex items-center gap-2.5 px-4 py-3 rounded-xl text-[15px] font-medium transition-colors ${location.pathname === link.path ? 'text-[#2563eb] bg-[#eff6ff]' : 'text-[#334155] hover:bg-[#f8fafc]'}`} style={{ fontFamily: 'var(--font-heading)' }} onClick={() => setIsOpen(false)}>
