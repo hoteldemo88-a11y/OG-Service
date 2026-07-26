@@ -19,10 +19,10 @@ export default function Footer() {
               </p>
               <div className="flex items-center gap-2 mb-3 sm:mb-5">
                 <div className="flex -space-x-2.5">
-                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Happy customer" width="36" height="36" loading="lazy" decoding="async" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" />
-                  <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Happy customer" width="36" height="36" loading="lazy" decoding="async" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" />
-                  <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Happy customer" width="36" height="36" loading="lazy" decoding="async" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" />
-                  <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Happy customer" width="36" height="36" loading="lazy" decoding="async" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" />
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg?size=64" alt="Happy customer" width="36" height="36" loading="lazy" decoding="async" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" />
+                  <img src="https://randomuser.me/api/portraits/women/44.jpg?size=64" alt="Happy customer" width="36" height="36" loading="lazy" decoding="async" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" />
+                  <img src="https://randomuser.me/api/portraits/men/75.jpg?size=64" alt="Happy customer" width="36" height="36" loading="lazy" decoding="async" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" />
+                  <img src="https://randomuser.me/api/portraits/women/68.jpg?size=64" alt="Happy customer" width="36" height="36" loading="lazy" decoding="async" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" />
                 </div>
                 <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-[#fffbeb] rounded-lg border border-[#fde68a]">
                   <span className="text-[#f59e0b] text-xs sm:text-sm">★</span>

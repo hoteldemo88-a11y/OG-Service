@@ -1,9 +1,11 @@
+import { lazy, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/common/ScrollToTop';
-import FloatingCallButton from '@/components/common/FloatingCallButton';
-import BottomNav from '@/components/common/BottomNav';
+
+const Footer = lazy(() => import('@/components/layout/Footer'));
+const FloatingCallButton = lazy(() => import('@/components/common/FloatingCallButton'));
+const BottomNav = lazy(() => import('@/components/common/BottomNav'));
 
 export default function Layout() {
   return (
@@ -13,10 +15,16 @@ export default function Layout() {
       <main className="flex-1 pb-20 lg:pb-0" id="main-content" role="main">
         <Outlet />
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
       <ScrollToTop />
-      <div className="hidden lg:block"><FloatingCallButton /></div>
-      <BottomNav />
+      <Suspense fallback={null}>
+        <div className="hidden lg:block"><FloatingCallButton /></div>
+      </Suspense>
+      <Suspense fallback={null}>
+        <BottomNav />
+      </Suspense>
     </div>
   );
 }
