@@ -59,8 +59,7 @@ export default function Navbar() {
             {isBrandDetail ? (
               <span className="flex items-center gap-2.5 shrink-0 group">
                 <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14 sm:h-16 lg:h-[50px]">
-                  <img src="/brandlogo.webp" alt="RO Service Now" width="200" height="64" decoding="async" className="h-full w-auto object-contain mix-blend-multiply lg:hidden" />
-                  {brandId && <img src={`/images/logos/${brandLogoMap[brandId] || 'brand1'}.webp`} alt="Brand" width="200" height="64" decoding="async" className="hidden lg:block h-full w-auto object-contain" />}
+                  {brandId && <img src={`/images/logos/${brandLogoMap[brandId] || 'brand1'}.webp`} alt="Brand" width="200" height="64" decoding="async" className="h-full w-auto object-contain" />}
                 </div>
               </span>
             ) : (
@@ -116,9 +115,9 @@ export default function Navbar() {
       <div className={`fixed top-0 right-0 bottom-0 w-full max-w-[360px] bg-white z-[60] lg:hidden shadow-2xl transition-transform duration-300 ease-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between px-6 py-5 border-b border-[#f1f5f9]">
-              {location.pathname.startsWith('/brands/') ? (
+              {isBrandDetail ? (
                 <span className="flex items-center gap-2.5">
-                  <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14"><img src="/brandlogo.webp" alt="RO Service Now" width="200" height="56" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+                  <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14">{brandId && <img src={`/images/logos/${brandLogoMap[brandId] || 'brand1'}.webp`} alt="Brand" width="200" height="56" decoding="async" className="h-full w-auto object-contain" />}</div>
                 </span>
               ) : (
                 <Link to="/" className="flex items-center gap-2.5" onClick={() => setIsOpen(false)}>

@@ -113,7 +113,11 @@ export default function BrandDetail() {
     );
   }
 
-  const faqs = brandFaqs[brand.id] || [];
+  const faqs = (brandFaqs[brand.id] || []).map(faq => ({
+    ...faq,
+    question: faq.question.replace(/my RO/g, `my ${brand.name} RO`).replace(/your RO/g, `your ${brand.name} RO`).replace(/your purifier/g, `your ${brand.name} purifier`),
+    answer: faq.answer.replace(/your RO/g, `your ${brand.name} RO`).replace(/your purifier/g, `your ${brand.name} purifier`).replace(/all purifiers/g, `all ${brand.name} purifiers`).replace(/all repairs/g, `all ${brand.name} repairs`),
+  }));
   const services = brandServices[brand.id] || [];
   const Logo = BrandLogos[brand.id];
 
