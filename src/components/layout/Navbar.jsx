@@ -5,6 +5,7 @@ import Container from '@/components/common/Container';
 import { NAV_LINKS, SITE } from '@/constants';
 
 const navIcons = { Home, Info, Wrench, Award, Phone, Shield, FileText };
+const brandLogoMap = { 'ao-smith': 'aosmith_new', kent: 'brand2', aquaguard: 'brand5', pureit: 'brand4' };
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,7 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const location = useLocation();
   const isBrandDetail = location.pathname.startsWith('/brands/');
+  const brandId = isBrandDetail ? location.pathname.split('/brands/')[1]?.split('/')[0] : null;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -54,9 +56,12 @@ export default function Navbar() {
           <nav className={`flex items-center justify-between h-[64px] rounded-2xl px-5 transition-all duration-500 ${scrolled ? 'bg-white shadow-elevated border border-[#e2e8f0]' : 'bg-white border border-[#e2e8f0] shadow-soft'}`} aria-label="Main navigation">
 
             {/* Logo */}
-            {location.pathname.startsWith('/brands/') ? (
+            {isBrandDetail ? (
               <span className="flex items-center gap-2.5 shrink-0 group">
-                <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14 sm:h-16"><img src="/brandlogo.webp" alt="RO Service Now" width="200" height="64" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+                <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14 sm:h-16 lg:h-[50px]">
+                  <img src="/brandlogo.webp" alt="RO Service Now" width="200" height="64" decoding="async" className="h-full w-auto object-contain mix-blend-multiply lg:hidden" />
+                  {brandId && <img src={`/images/logos/${brandLogoMap[brandId] || 'brand1'}.webp`} alt="Brand" width="200" height="64" decoding="async" className="hidden lg:block h-full w-auto object-contain" />}
+                </div>
               </span>
             ) : (
               <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
