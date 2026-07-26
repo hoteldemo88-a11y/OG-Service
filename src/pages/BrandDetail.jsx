@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { Phone, ArrowRight, Shield, Wrench, Calendar, Clock, CheckCircle, Droplets, Gauge, Cog, Zap, Power, Filter, Settings, Star, Users } from 'lucide-react';
+import { Phone, ArrowRight, Shield, Wrench, Calendar, Clock, CheckCircle, Droplets, Gauge, Cog, Zap, Power, Filter, Settings, Star, Users, Quote, Send } from 'lucide-react';
 import SEO from '@/components/common/SEO';
 import Container from '@/components/common/Container';
 import SectionHeading from '@/components/common/SectionHeading';
@@ -130,7 +130,17 @@ export default function BrandDetail() {
       <section className="py-12 sm:py-20 bg-white">
         <Container>
           <SectionHeading badge="Services" title="Services We Offer" icon={Wrench} />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
+          {/* Mobile: compact 2-per-row horizontal cards */}
+          <div className="grid grid-cols-2 gap-2.5 sm:hidden">
+            {services.map((service) => (
+              <div key={service.title} className="flex items-center gap-2.5 bg-white p-3 rounded-xl border border-[#e2e8f0] hover:shadow-md hover:border-[#bfdbfe] transition-all">
+                <div className="w-8 h-8 bg-[#eff6ff] rounded-lg flex items-center justify-center shrink-0"><Wrench className="w-4 h-4 text-[#2563eb]" /></div>
+                <span className="font-semibold text-[#0f172a] text-[12px] leading-tight">{service.title}</span>
+              </div>
+            ))}
+          </div>
+          {/* Tablet+: full cards with description */}
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
             {services.map((service) => (
               <div key={service.title} className="bg-white p-4 sm:p-5 lg:p-6 rounded-xl sm:rounded-2xl border border-[#e2e8f0] hover:shadow-lg hover:border-[#bfdbfe] transition-all">
                 <div className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-[#eff6ff] rounded-xl flex items-center justify-center mb-3"><Wrench className="w-4.5 h-4.5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-[#2563eb]" /></div>
@@ -225,30 +235,43 @@ export default function BrandDetail() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-12 sm:py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white overflow-hidden">
         <Container>
           <SectionHeading badge="Reviews" title="What Our Customers Say" subtitle="Trusted by thousands of happy customers in Bangalore" icon={Star} />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-            {TESTIMONIALS.map((review) => (
-              <div key={review.id} className="bg-white p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#e2e8f0] hover:shadow-lg hover:border-[#bfdbfe] transition-all">
-                <div className="flex items-center gap-0.5 mb-3">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-[#f59e0b] text-[#f59e0b]" />
-                  ))}
-                </div>
-                <p className="text-[#475569] text-[12px] sm:text-[13px] leading-[1.6] mb-4 font-medium">"{review.text}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center text-[13px] font-bold text-[#2563eb] shrink-0">{review.name.charAt(0)}</div>
-                  <div className="min-w-0">
-                    <p className="font-bold text-[#0f172a] text-[11px] sm:text-[13px] truncate">{review.name}</p>
-                    <p className="text-[9px] sm:text-[11px] text-[#64748b] truncate">{review.location}</p>
-                  </div>
-                  <span className="ml-auto text-[9px] sm:text-[11px] font-semibold text-[#2563eb] bg-[#eff6ff] px-2 py-1 rounded-full whitespace-nowrap">{review.service}</span>
-                </div>
-              </div>
-            ))}
-          </div>
         </Container>
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-24 lg:w-28 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-24 lg:w-28 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="overflow-hidden py-2">
+            <div className="flex gap-3 sm:gap-5 lg:gap-6 w-max animate-marquee pl-3 sm:pl-6 lg:pl-0">
+              {[...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS].map((review, i) => (
+                <div key={`${review.id}-${i}`} className="group relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 w-[260px] sm:w-[320px] lg:w-[350px] shrink-0 transition-all duration-500 hover:-translate-y-2 border border-[#e2e8f0]" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(37,99,235,0.06)' }}>
+                  <div className="absolute top-0 left-6 sm:left-8 right-6 sm:right-8 h-[3px] rounded-full bg-gradient-to-r from-[#2563eb] via-[#60a5fa] to-[#2563eb] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-br from-[#eff6ff] to-[#dbeafe] flex items-center justify-center mb-3 sm:mb-4">
+                    <Quote className="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 text-[#2563eb]" />
+                  </div>
+                  <div className="flex items-center gap-0.5 mb-2 sm:mb-3">
+                    {[...Array(review.rating)].map((_, j) => (
+                      <Star key={j} className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-[#f59e0b] text-[#f59e0b]" />
+                    ))}
+                  </div>
+                  <p className="text-[#475569] text-[12px] sm:text-[14px] leading-[1.6] mb-4 sm:mb-6 font-medium">&ldquo;{review.text}&rdquo;</p>
+                  <div className="h-px bg-gradient-to-r from-transparent via-[#e2e8f0] to-transparent mb-3 sm:mb-4" />
+                  <div className="flex items-center gap-2.5 sm:gap-3.5">
+                    <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center text-[13px] sm:text-[15px] font-bold text-[#2563eb] shrink-0">
+                      {review.name.charAt(0)}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-bold text-[#0f172a] text-[11px] sm:text-[13px] truncate">{review.name}</p>
+                      <p className="text-[#64748b] text-[9px] sm:text-[11px] truncate">{review.location}</p>
+                    </div>
+                    <span className="text-[9px] sm:text-[11px] font-semibold text-[#2563eb] bg-[#eff6ff] px-2 sm:px-3 py-1 sm:py-1.5 rounded-full whitespace-nowrap">{review.service}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* FAQ */}
@@ -263,15 +286,44 @@ export default function BrandDetail() {
         </section>
       )}
 
-      {/* CTA */}
+      {/* CTA + Booking Form */}
       <section className="py-12 sm:py-20 bg-gradient-to-r from-[#2563eb] to-[#0ea5e9] text-white">
         <Container>
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-10">
             <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">Need RO Service?</h2>
-            <p className="text-white/90 text-[14px] sm:text-lg mb-6 sm:mb-8 leading-relaxed">Call us now for expert RO water purifier service in Bangalore.</p>
-            <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-[#2563eb] font-semibold btn-ribbon hover:bg-white/90 transition-all shadow-lg text-[14px]">
-              <Phone className="w-4 h-4 sm:w-5 sm:h-5" />Call Now: {SITE.phoneFormatted}
-            </a>
+            <p className="text-white/90 text-[14px] sm:text-lg leading-relaxed">Book an appointment — we&apos;ll call you to confirm.</p>
+          </div>
+          <div className="max-w-xl mx-auto bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-xl">
+            <form onSubmit={(e) => { e.preventDefault(); }} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Name</label>
+                  <input type="text" placeholder="Your name" required className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
+                </div>
+                <div>
+                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Phone Number</label>
+                  <input type="tel" placeholder="+91 98765 43210" required pattern="[0-9+\s]{10,}" className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Pincode</label>
+                  <input type="text" placeholder="e.g. 560034" required pattern="[0-9]{6}" maxLength="6" className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
+                </div>
+                <div>
+                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Brand</label>
+                  <select defaultValue={brand.id} required className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all appearance-none">
+                    {BRANDS.map((b) => (
+                      <option key={b.id} value={b.id}>{b.name}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+              <button type="submit" className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-[#2563eb] text-white font-semibold btn-ribbon hover:bg-[#1d4ed8] transition-all shadow-lg text-[14px]">
+                <Send className="w-4 h-4" /> Book Appointment
+              </button>
+            </form>
+            <p className="text-center text-[#94a3b8] text-[11px] sm:text-[12px] mt-3">We&apos;ll call you to confirm your appointment.</p>
           </div>
         </Container>
       </section>
