@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, ChevronDown, MapPin, Home, Info, Wrench, Award, Shield, FileText } from 'lucide-react';
 import Container from '@/components/common/Container';
 import { NAV_LINKS, SITE } from '@/constants';
@@ -60,6 +59,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-0.5">
               {NAV_LINKS.map((link) => {
                 const Icon = navIcons[link.icon];
+                const isOpen = link.children && activeDropdown === link.name;
                 return (
                   <div key={link.name} className="relative" onMouseEnter={() => link.children && setActiveDropdown(link.name)} onMouseLeave={() => setActiveDropdown(null)}>
                     <Link
@@ -69,17 +69,15 @@ export default function Navbar() {
                     >
                       {Icon && <Icon className="w-3.5 h-3.5" />}
                       {link.name}
-                      {link.children && <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />}
+                      {link.children && <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />}
                     </Link>
-                    <AnimatePresence>
-                      {link.children && activeDropdown === link.name && (
-                        <motion.div initial={{ opacity: 0, y: 8, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 6, scale: 0.97 }} transition={{ duration: 0.18, ease: 'easeOut' }} className="absolute top-full left-0 mt-2 w-52 glass-strong rounded-xl shadow-elevated border border-white/60 py-1.5 z-50">
-                          {link.children.map((child) => (
-                            <Link key={child.path} to={child.path} className="block px-4 py-2.5 text-[13px] text-[#475569] hover:text-[#2563eb] hover:bg-[#eff6ff]/60 transition-colors mx-1.5 rounded-lg" style={{ fontFamily: 'var(--font-body)' }}>{child.name}</Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                    {link.children && (
+                      <div className={`absolute top-full left-0 mt-2 w-52 glass-strong rounded-xl shadow-elevated border border-white/60 py-1.5 z-50 transition-all duration-150 ease-out ${isOpen ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto' : 'opacity-0 translate-y-1 scale-[0.97] pointer-events-none'}`}>
+                        {link.children.map((child) => (
+                          <Link key={child.path} to={child.path} className="block px-4 py-2.5 text-[13px] text-[#475569] hover:text-[#2563eb] hover:bg-[#eff6ff]/60 transition-colors mx-1.5 rounded-lg" style={{ fontFamily: 'var(--font-body)' }}>{child.name}</Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 );
               })}
@@ -99,57 +97,51 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* ── Mobile Drawer ── */}
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[55] lg:hidden" onClick={() => setIsOpen(false)} />
-            <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} transition={{ type: 'spring', damping: 28, stiffness: 220 }} className="fixed top-0 right-0 bottom-0 w-full max-w-[360px] bg-white z-[60] lg:hidden shadow-2xl">
-              <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between px-6 py-5 border-b border-[#f1f5f9]">
-                    <Link to="/" className="flex items-center gap-2.5" onClick={() => setIsOpen(false)}>
-                      <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14"><img src="/brandlogo.webp" alt="RO Service Center" width="200" height="56" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+      {/* ── Mobile Drawer (CSS-only animations) ── */}
+      <div className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-[55] lg:hidden transition-opacity duration-200 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsOpen(false)} />
+      <div className={`fixed top-0 right-0 bottom-0 w-full max-w-[360px] bg-white z-[60] lg:hidden shadow-2xl transition-transform duration-300 ease-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex flex-col h-full">
+          <div className="flex items-center justify-between px-6 py-5 border-b border-[#f1f5f9]">
+              <Link to="/" className="flex items-center gap-2.5" onClick={() => setIsOpen(false)}>
+                <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14"><img src="/brandlogo.webp" alt="RO Service Center" width="200" height="56" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+              </Link>
+            <button onClick={() => setIsOpen(false)} className="p-2 rounded-xl text-[#94a3b8] hover:bg-[#f1f5f9] transition-colors"><X className="w-5 h-5" /></button>
+          </div>
+          <nav className="flex-1 overflow-y-auto px-4 py-5">
+            <div className="space-y-0.5">
+              {NAV_LINKS.map((link) => {
+                const Icon = navIcons[link.icon];
+                return (
+                  <div key={link.name}>
+                    <Link to={link.path} className={`flex items-center gap-2.5 px-4 py-3 rounded-xl text-[15px] font-medium transition-colors ${location.pathname === link.path ? 'text-[#2563eb] bg-[#eff6ff]' : 'text-[#334155] hover:bg-[#f8fafc]'}`} style={{ fontFamily: 'var(--font-heading)' }} onClick={() => setIsOpen(false)}>
+                      {Icon && <Icon className="w-4 h-4" />}
+                      {link.name}
                     </Link>
-                  <button onClick={() => setIsOpen(false)} className="p-2 rounded-xl text-[#94a3b8] hover:bg-[#f1f5f9] transition-colors"><X className="w-5 h-5" /></button>
-                </div>
-                <nav className="flex-1 overflow-y-auto px-4 py-5">
-                  <div className="space-y-0.5">
-                    {NAV_LINKS.map((link) => {
-                      const Icon = navIcons[link.icon];
-                      return (
-                        <div key={link.name}>
-                          <Link to={link.path} className={`flex items-center gap-2.5 px-4 py-3 rounded-xl text-[15px] font-medium transition-colors ${location.pathname === link.path ? 'text-[#2563eb] bg-[#eff6ff]' : 'text-[#334155] hover:bg-[#f8fafc]'}`} style={{ fontFamily: 'var(--font-heading)' }} onClick={() => setIsOpen(false)}>
-                            {Icon && <Icon className="w-4 h-4" />}
-                            {link.name}
+                    {link.children && (
+                      <div className="ml-4 mt-1 space-y-0.5">
+                        {link.children.map((child) => (
+                          <Link key={child.path} to={child.path} className="block px-4 py-2 rounded-lg text-[13px] text-[#94a3b8] hover:text-[#2563eb] hover:bg-[#eff6ff]/60 transition-colors" style={{ fontFamily: 'var(--font-body)' }} onClick={() => setIsOpen(false)}>
+                            {child.name}
                           </Link>
-                          {link.children && (
-                            <div className="ml-4 mt-1 space-y-0.5">
-                              {link.children.map((child) => (
-                                <Link key={child.path} to={child.path} className="block px-4 py-2 rounded-lg text-[13px] text-[#94a3b8] hover:text-[#2563eb] hover:bg-[#eff6ff]/60 transition-colors" style={{ fontFamily: 'var(--font-body)' }} onClick={() => setIsOpen(false)}>
-                                  {child.name}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
+                        ))}
+                      </div>
+                    )}
                   </div>
-                </nav>
-                <div className="px-5 py-5 border-t border-[#f1f5f9] space-y-3">
-                  <Link to="/contact" className="flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] text-white font-semibold btn-ribbon text-[15px] shadow-md shadow-blue-500/20" style={{ fontFamily: 'var(--font-heading)' }} onClick={() => setIsOpen(false)}>
-                    <Phone className="w-4 h-4" />
-                    Book Service
-                  </Link>
-                  <a href={`tel:${SITE.phoneRaw}`} className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#f8fafc] text-[#334155] font-semibold btn-ribbon text-[15px] border border-[#e2e8f0]" style={{ fontFamily: 'var(--font-heading)' }}>
-                    <Phone className="w-4 h-4" /> Call Now
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+                );
+              })}
+            </div>
+          </nav>
+          <div className="px-5 py-5 border-t border-[#f1f5f9] space-y-3">
+            <Link to="/contact" className="flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] text-white font-semibold btn-ribbon text-[15px] shadow-md shadow-blue-500/20" style={{ fontFamily: 'var(--font-heading)' }} onClick={() => setIsOpen(false)}>
+              <Phone className="w-4 h-4" />
+              Book Service
+            </Link>
+            <a href={`tel:${SITE.phoneRaw}`} className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#f8fafc] text-[#334155] font-semibold btn-ribbon text-[15px] border border-[#e2e8f0]" style={{ fontFamily: 'var(--font-heading)' }}>
+              <Phone className="w-4 h-4" /> Call Now
+            </a>
+          </div>
+       </div>
+      </div>
     </>
   );
 }
