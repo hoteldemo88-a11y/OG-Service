@@ -49,7 +49,7 @@ export default function BrandShowcase() {
               24/7 Service Available Across Bangalore
             </span>
           </div>
-          <Link to="/brands" className="inline-flex items-center gap-2 text-[13px] sm:text-[14px] font-semibold text-[#2563eb] hover:text-[#1d4ed8] transition-colors">
+          <Link to="/brands" className="inline-flex items-center gap-2 bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] text-white font-semibold btn-ribbon px-6 sm:px-7 py-2.5 sm:py-3 text-[13px] sm:text-[14px] transition-all shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:scale-[1.02] active:scale-[0.98]">
             View All Brands <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
