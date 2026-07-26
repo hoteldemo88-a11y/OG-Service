@@ -53,7 +53,7 @@ export default function Navbar() {
 
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
-              <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14 sm:h-16"><img src="/brandlogo.png" alt="RO Service Center" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+              <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14 sm:h-16"><img src="/brandlogo.png" alt="RO Service Center" width="200" height="64" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
             </Link>
 
             {/* Desktop Nav */}
@@ -108,7 +108,7 @@ export default function Navbar() {
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between px-6 py-5 border-b border-[#f1f5f9]">
                     <Link to="/" className="flex items-center gap-2.5" onClick={() => setIsOpen(false)}>
-                      <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14"><img src="/brandlogo.png" alt="RO Service Center" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+                      <div className="flex items-center justify-center bg-white rounded-xl overflow-hidden h-14"><img src="/brandlogo.png" alt="RO Service Center" width="200" height="56" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
                     </Link>
                   <button onClick={() => setIsOpen(false)} className="p-2 rounded-xl text-[#94a3b8] hover:bg-[#f1f5f9] transition-colors"><X className="w-5 h-5" /></button>
                 </div>

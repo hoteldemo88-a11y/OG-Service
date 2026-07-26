@@ -12,22 +12,22 @@ export default function Footer() {
             {/* Company */}
             <div className="col-span-2 sm:col-span-2 lg:col-span-1">
               <Link to="/" className="flex items-center gap-2.5 mb-3 sm:mb-5">
-                <div className="flex items-center justify-center bg-white rounded-lg sm:rounded-xl overflow-hidden h-12 sm:h-14"><img src="/brandlogo.png" alt="RO Service Center" className="h-full w-auto object-contain mix-blend-multiply" /></div>
+                <div className="flex items-center justify-center bg-white rounded-lg sm:rounded-xl overflow-hidden h-12 sm:h-14"><img src="/brandlogo.png" alt="RO Service Center" width="200" height="56" loading="lazy" decoding="async" className="h-full w-auto object-contain mix-blend-multiply" /></div>
               </Link>
               <p className="text-[#64748b] text-[12px] sm:text-[14px] leading-relaxed mb-3 sm:mb-5" style={{ fontFamily: 'var(--font-body)' }}>
                 We provide expert RO repair and service at your doorstep in Bangalore. Customer satisfaction is our first priority.
               </p>
               <div className="flex items-center gap-2 mb-3 sm:mb-5">
                 <div className="flex -space-x-2.5">
-                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Happy customer" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" loading="lazy" />
-                  <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Happy customer" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" loading="lazy" />
-                  <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Happy customer" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" loading="lazy" />
-                  <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Happy customer" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" loading="lazy" />
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Happy customer" width="36" height="36" loading="lazy" decoding="async" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" />
+                  <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Happy customer" width="36" height="36" loading="lazy" decoding="async" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" />
+                  <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Happy customer" width="36" height="36" loading="lazy" decoding="async" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" />
+                  <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Happy customer" width="36" height="36" loading="lazy" decoding="async" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover" />
                 </div>
                 <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-[#fffbeb] rounded-lg border border-[#fde68a]">
                   <span className="text-[#f59e0b] text-xs sm:text-sm">★</span>
                   <span className="font-semibold text-[12px] sm:text-[13px] text-[#0f172a]" style={{ fontFamily: 'var(--font-heading)' }}>{SITE.googleRating}</span>
-                  <span className="text-[#94a3b8] text-[10px] sm:text-[12px]" style={{ fontFamily: 'var(--font-body)' }}>Google Rating</span>
+                  <span className="text-[#64748b] text-[10px] sm:text-[12px]" style={{ fontFamily: 'var(--font-body)' }}>Google Rating</span>
                 </div>
               </div>
             </div>
@@ -91,12 +91,12 @@ export default function Footer() {
       <div className="border-t border-[#e2e8f0]">
         <Container>
           <div className="py-4 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
-            <p className="text-[#94a3b8] text-[12px] sm:text-[13px]" style={{ fontFamily: 'var(--font-body)' }}>
+            <p className="text-[#64748b] text-[12px] sm:text-[13px]" style={{ fontFamily: 'var(--font-body)' }}>
               © {new Date().getFullYear()} {SITE.name}. All Rights Reserved.
             </p>
             <div className="flex items-center gap-5 sm:gap-6">
-              <Link to="/privacy-policy" className="text-[#94a3b8] hover:text-[#2563eb] text-[12px] sm:text-[13px] transition-colors" style={{ fontFamily: 'var(--font-body)' }}>Privacy Policy</Link>
-              <Link to="/terms" className="text-[#94a3b8] hover:text-[#2563eb] text-[12px] sm:text-[13px] transition-colors" style={{ fontFamily: 'var(--font-body)' }}>Terms & Conditions</Link>
+              <Link to="/privacy-policy" className="text-[#64748b] hover:text-[#2563eb] text-[12px] sm:text-[13px] transition-colors" style={{ fontFamily: 'var(--font-body)' }}>Privacy Policy</Link>
+              <Link to="/terms" className="text-[#64748b] hover:text-[#2563eb] text-[12px] sm:text-[13px] transition-colors" style={{ fontFamily: 'var(--font-body)' }}>Terms & Conditions</Link>
             </div>
           </div>
         </Container>

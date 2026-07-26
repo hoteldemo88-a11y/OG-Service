@@ -22,7 +22,7 @@ export default function HeroSection() {
   return (
     <section className="relative overflow-hidden min-h-[500px] lg:min-h-[calc(100vh-36px)] flex items-end lg:items-center">
       <div className="absolute inset-0 hidden lg:block">
-        <img src="/herobg.png" alt="RO water purifier service background" className="w-full h-full object-cover" />
+        <img src="/herobg.png" alt="RO water purifier service background" className="w-full h-full object-cover" width="1920" height="1080" fetchpriority="high" />
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/60" />
       </div>
@@ -39,6 +39,9 @@ export default function HeroSection() {
                   key={img}
                   src={img}
                   alt="RO Service Technician"
+                  width="800"
+                  height="450"
+                  decoding="async"
                   className={`w-full h-auto object-cover object-left rounded-2xl shadow-2xl shadow-blue-500/20 transition-opacity duration-1000 ease-in-out ${i === heroIdx ? 'opacity-100 relative' : 'opacity-0 absolute inset-0'}`}
                 />
               ))}
@@ -112,43 +115,43 @@ export default function HeroSection() {
                 </div>
                 <div>
                   <h3 className="text-[15px] sm:text-[17px] font-bold text-[#0a1a3a]" style={{fontFamily:'var(--font-heading)'}}>Book Your Service</h3>
-                  <p className="text-[11px] sm:text-[11px] text-[#94a3b8]" style={{fontFamily:'var(--font-body)'}}>Fill the form &amp; we'll call you back</p>
+                  <p className="text-[11px] sm:text-[11px] text-[#64748b]" style={{fontFamily:'var(--font-body)'}}>Fill the form &amp; we'll call you back</p>
                 </div>
               </div>
 
               <form onSubmit={submit} className="space-y-3" aria-label="Book a service">
                 <div className="relative group">
-                  <label className="block text-[11px] sm:text-[11px] font-semibold text-[#64748b] mb-1.5 uppercase tracking-wider" style={{fontFamily:'var(--font-heading)'}}>Full Name</label>
+                  <label htmlFor="hero-name" className="block text-[11px] sm:text-[11px] font-semibold text-[#64748b] mb-1.5 uppercase tracking-wider" style={{fontFamily:'var(--font-heading)'}}>Full Name</label>
                   <div className="relative">
-                    <Users className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#cbd5e1] group-focus-within:text-[#2563eb] transition-colors" />
-                    <input type="text" placeholder="John Doe" value={form.name} onChange={set('name')} required className="w-full pl-10 pr-4 py-3 bg-white/70 border border-[#e2e8f0] rounded-xl text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/15 focus:border-[#2563eb]/40 focus:bg-white transition-all" style={{fontFamily:'var(--font-body)'}} />
+                    <Users className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#cbd5e1] group-focus-within:text-[#2563eb] transition-colors" aria-hidden="true" />
+                    <input id="hero-name" type="text" placeholder="John Doe" value={form.name} onChange={set('name')} required className="w-full pl-10 pr-4 py-3 bg-white/70 border border-[#e2e8f0] rounded-xl text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/15 focus:border-[#2563eb]/40 focus:bg-white transition-all" style={{fontFamily:'var(--font-body)'}} />
                   </div>
                 </div>
 
                 <div className="relative group">
-                  <label className="block text-[11px] sm:text-[11px] font-semibold text-[#64748b] mb-1.5 uppercase tracking-wider" style={{fontFamily:'var(--font-heading)'}}>Mobile Number</label>
+                  <label htmlFor="hero-phone" className="block text-[11px] sm:text-[11px] font-semibold text-[#64748b] mb-1.5 uppercase tracking-wider" style={{fontFamily:'var(--font-heading)'}}>Mobile Number</label>
                   <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#cbd5e1] group-focus-within:text-[#2563eb] transition-colors" />
-                    <input type="tel" placeholder="+91 98765 43210" value={form.phone} onChange={set('phone')} required className="w-full pl-10 pr-4 py-3 bg-white/70 border border-[#e2e8f0] rounded-xl text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/15 focus:border-[#2563eb]/40 focus:bg-white transition-all" style={{fontFamily:'var(--font-body)'}} />
+                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#cbd5e1] group-focus-within:text-[#2563eb] transition-colors" aria-hidden="true" />
+                    <input id="hero-phone" type="tel" placeholder="+91 98765 43210" value={form.phone} onChange={set('phone')} required className="w-full pl-10 pr-4 py-3 bg-white/70 border border-[#e2e8f0] rounded-xl text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/15 focus:border-[#2563eb]/40 focus:bg-white transition-all" style={{fontFamily:'var(--font-body)'}} />
                   </div>
                 </div>
 
                 <div className="relative group">
-                  <label className="block text-[11px] sm:text-[11px] font-semibold text-[#64748b] mb-1.5 uppercase tracking-wider" style={{fontFamily:'var(--font-heading)'}}>Brand</label>
-                  <div className="relative">
-                    <select value={form.brand} onChange={set('brand')} required className="w-full px-3 py-3 bg-white/70 border border-[#e2e8f0] rounded-xl text-[13px] text-[#64748b] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/15 focus:border-[#2563eb]/40 focus:bg-white transition-all appearance-none" style={{fontFamily:'var(--font-body)'}}>
+                    <label htmlFor="hero-brand" className="block text-[11px] sm:text-[11px] font-semibold text-[#64748b] mb-1.5 uppercase tracking-wider" style={{fontFamily:'var(--font-heading)'}}>Brand</label>
+                    <div className="relative">
+                      <select id="hero-brand" value={form.brand} onChange={set('brand')} required className="w-full px-3 py-3 bg-white/70 border border-[#e2e8f0] rounded-xl text-[13px] text-[#64748b] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/15 focus:border-[#2563eb]/40 focus:bg-white transition-all appearance-none" style={{fontFamily:'var(--font-body)'}}>
                       <option value="">Select Brand</option>
                       {BRANDS.map(b => <option key={b.id} value={b.id}>{b.name}</option>)}
                     </select>
-                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#cbd5e1] pointer-events-none" />
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#cbd5e1] pointer-events-none" aria-hidden="true" />
                   </div>
                 </div>
 
                 <div className="relative group">
-                  <label className="block text-[11px] sm:text-[11px] font-semibold text-[#64748b] mb-1.5 uppercase tracking-wider" style={{fontFamily:'var(--font-heading)'}}>Your Location</label>
+                  <label htmlFor="hero-location" className="block text-[11px] sm:text-[11px] font-semibold text-[#64748b] mb-1.5 uppercase tracking-wider" style={{fontFamily:'var(--font-heading)'}}>Your Location</label>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#cbd5e1] group-focus-within:text-[#2563eb] transition-colors" />
-                    <input type="text" placeholder="e.g. Koramangala, Bangalore" value={form.location} onChange={set('location')} required className="w-full pl-10 pr-4 py-3 bg-white/70 border border-[#e2e8f0] rounded-xl text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/15 focus:border-[#2563eb]/40 focus:bg-white transition-all" style={{fontFamily:'var(--font-body)'}} />
+                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#cbd5e1] group-focus-within:text-[#2563eb] transition-colors" aria-hidden="true" />
+                    <input id="hero-location" type="text" placeholder="e.g. Koramangala, Bangalore" value={form.location} onChange={set('location')} required className="w-full pl-10 pr-4 py-3 bg-white/70 border border-[#e2e8f0] rounded-xl text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/15 focus:border-[#2563eb]/40 focus:bg-white transition-all" style={{fontFamily:'var(--font-body)'}} />
                   </div>
                 </div>
 
@@ -156,7 +159,7 @@ export default function HeroSection() {
                   {loading ? 'Booking...' : <><span>Book Now</span><ArrowRight className="w-4 h-4" /></>}
                 </button>
 
-                <p className="text-center text-[11px] text-[#94a3b8] flex items-center justify-center gap-1.5 pt-0.5" style={{fontFamily:'var(--font-body)'}}>
+                <p className="text-center text-[11px] text-[#64748b] flex items-center justify-center gap-1.5 pt-0.5" style={{fontFamily:'var(--font-body)'}}>
                   <Shield className="w-3 h-3 text-[#22c55e]" /> We respect your privacy
                 </p>
               </form>

@@ -66,7 +66,7 @@ export default function Contact() {
                   <button type="submit" disabled={submitting} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 bg-[#2563eb] text-white font-semibold btn-ribbon hover:bg-[#1d4ed8] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-sm">
                     {submitting ? 'Sending...' : <><Send className="w-4 h-4" />Send Message</>}
                   </button>
-                  <p className="text-xs text-[#94a3b8] flex items-center gap-1"><Shield className="w-3 h-3" /> We respect your privacy. No spam ever.</p>
+                   <p className="text-xs text-[#64748b] flex items-center gap-1"><Shield className="w-3 h-3" /> We respect your privacy. No spam ever.</p>
                 </form>
               )}
             </div>
