@@ -12,26 +12,51 @@ const brandFaqs = {
     { id: 1, question: 'How often should I service my RO?', answer: 'We recommend servicing your RO every 6-12 months, depending on your water quality and usage.' },
     { id: 2, question: 'Do you use genuine spare parts?', answer: 'Yes, we use 100% genuine spare parts for all repairs and replacements.' },
     { id: 3, question: 'What is the warranty on repair?', answer: 'We provide a 30-day service warranty on all repairs. Part warranty varies by component.' },
+    { id: 4, question: 'How long does a service take?', answer: 'Most service visits are completed within 30-45 minutes. Same-day service is available.' },
+    { id: 5, question: 'What areas do you cover?', answer: 'We cover all major areas in Bangalore including Koramangala, Whitefield, Electronic City, JP Nagar, and more.' },
+    { id: 6, question: 'What is the cost of filter replacement?', answer: 'Filter replacement starts from ₹1,500 depending on the model and filter type required.' },
+    { id: 7, question: 'Do you offer AMC plans?', answer: 'Yes, we offer comprehensive Annual Maintenance Contracts that include regular service, filter changes, and priority support.' },
+    { id: 8, question: 'How do I book a service?', answer: 'You can call us directly or fill the booking form on this page. We will call you to confirm the appointment.' },
   ],
   aquaguard: [
     { id: 1, question: 'How often should I service my RO?', answer: 'Regular service every 6-12 months is recommended for optimal performance of your purifier.' },
     { id: 2, question: 'Do you provide filter replacement?', answer: 'Yes, we replace all types of filters with genuine parts.' },
     { id: 3, question: 'What areas do you cover?', answer: 'We cover all major areas in Bangalore for service.' },
+    { id: 4, question: 'How long does a service take?', answer: 'Most service visits are completed within 30-45 minutes. Same-day service is available.' },
+    { id: 5, question: 'What is the cost of filter replacement?', answer: 'Filter replacement starts from ₹1,500 depending on the model and filter type required.' },
+    { id: 6, question: 'Do you offer AMC plans?', answer: 'Yes, we offer comprehensive Annual Maintenance Contracts that include regular service, filter changes, and priority support.' },
+    { id: 7, question: 'How do I book a service?', answer: 'You can call us directly or fill the booking form on this page. We will call you to confirm the appointment.' },
+    { id: 8, question: 'What is the warranty on repair?', answer: 'We provide a 30-day service warranty on all repairs. Part warranty varies by component.' },
   ],
   pureit: [
     { id: 1, question: 'How do I know when to service my RO?', answer: 'If you notice reduced water flow, bad taste, or unusual noise, it\'s time to service your RO.' },
     { id: 2, question: 'Do you provide AMC plans?', answer: 'Yes, we offer comprehensive Annual Maintenance Contracts for all purifiers.' },
     { id: 3, question: 'How long does a service take?', answer: 'Most service visits are completed within 30-45 minutes.' },
+    { id: 4, question: 'What areas do you cover?', answer: 'We cover all major areas in Bangalore including Koramangala, Whitefield, Electronic City, JP Nagar, and more.' },
+    { id: 5, question: 'What is the cost of filter replacement?', answer: 'Filter replacement starts from ₹1,500 depending on the model and filter type required.' },
+    { id: 6, question: 'Do you use genuine spare parts?', answer: 'Yes, we use 100% genuine spare parts for all repairs and replacements.' },
+    { id: 7, question: 'How do I book a service?', answer: 'You can call us directly or fill the booking form on this page. We will call you to confirm the appointment.' },
+    { id: 8, question: 'What is the warranty on repair?', answer: 'We provide a 30-day service warranty on all repairs. Part warranty varies by component.' },
   ],
   'ao-smith': [
     { id: 1, question: 'Do you service all models?', answer: 'Yes, we service all water purifier models including hot and cold water dispensers.' },
     { id: 2, question: 'What is the cost of filter change?', answer: 'Filter replacement starts from ₹1,500 depending on the model and filter type.' },
     { id: 3, question: 'Do you provide AMC?', answer: 'Yes, we offer annual maintenance contracts for all purifiers.' },
+    { id: 4, question: 'How long does a service take?', answer: 'Most service visits are completed within 30-45 minutes. Same-day service is available.' },
+    { id: 5, question: 'What areas do you cover?', answer: 'We cover all major areas in Bangalore including Koramangala, Whitefield, Electronic City, JP Nagar, and more.' },
+    { id: 6, question: 'Do you use genuine spare parts?', answer: 'Yes, we use 100% genuine spare parts for all repairs and replacements.' },
+    { id: 7, question: 'How do I book a service?', answer: 'You can call us directly or fill the booking form on this page. We will call you to confirm the appointment.' },
+    { id: 8, question: 'What is the warranty on repair?', answer: 'We provide a 30-day service warranty on all repairs. Part warranty varies by component.' },
   ],
   lg: [
     { id: 1, question: 'Do you service all LG purifiers?', answer: 'Yes, we provide complete service for all models including mineral enhancer models.' },
     { id: 2, question: 'How often should I service my RO?', answer: 'We recommend servicing your RO every 6-12 months for best performance.' },
     { id: 3, question: 'Do you use genuine parts?', answer: 'Yes, we use only genuine spare parts for all repairs and replacements.' },
+    { id: 4, question: 'How long does a service take?', answer: 'Most service visits are completed within 30-45 minutes. Same-day service is available.' },
+    { id: 5, question: 'What areas do you cover?', answer: 'We cover all major areas in Bangalore including Koramangala, Whitefield, Electronic City, JP Nagar, and more.' },
+    { id: 6, question: 'What is the cost of filter replacement?', answer: 'Filter replacement starts from ₹1,500 depending on the model and filter type required.' },
+    { id: 7, question: 'Do you offer AMC plans?', answer: 'Yes, we offer comprehensive Annual Maintenance Contracts that include regular service, filter changes, and priority support.' },
+    { id: 8, question: 'How do I book a service?', answer: 'You can call us directly or fill the booking form on this page. We will call you to confirm the appointment.' },
   ],
 };
 
@@ -91,40 +116,85 @@ export default function BrandDetail() {
     <>
       <SEO title={`${brand.name} RO Service`} description={`Expert ${brand.name} RO water purifier service in Bangalore. Repair, filter replacement, AMC plans, and more. Genuine parts and certified technicians.`} url={`/brands/${brand.id}`} />
 
-      {/* Hero */}
+      {/* Hero + Form + FAQs — Mobile-first order */}
       <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 bg-[#f8fafc] overflow-hidden">
         <Container className="relative z-10">
-          
-          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-start sm:gap-10 lg:gap-14">
-            {/* Logo */}
-            <div className="flex-shrink-0 mb-6 sm:mb-0 w-full sm:w-auto">
-              <div className="w-[calc(100%-20px)] mx-auto sm:mx-0 sm:w-[200px] h-[120px] sm:h-[120px] lg:w-[240px] lg:h-[140px] bg-white rounded-2xl sm:rounded-3xl border border-[#e2e8f0] shadow-sm flex items-center justify-center p-4 sm:p-6">
-                {Logo ? (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <img src={`/images/logos/${brand.id === 'ao-smith' ? 'aosmith_new' : brand.id === 'kent' ? 'brand2' : brand.id === 'aquaguard' ? 'brand5' : brand.id === 'pureit' ? 'brand4' : 'brand1'}.webp`} alt={brand.name} width="240" height="140" decoding="async" className="max-w-full max-h-full object-contain" />
-                  </div>
-                ) : (
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#eff6ff] rounded-3xl flex items-center justify-center text-2xl sm:text-3xl font-bold text-[#2563eb]">{brand.name.charAt(0)}</div>
-                )}
-              </div>
-            </div>
 
-            {/* Content */}
-            <div className="flex-1 min-w-0">
-              <h1 className="text-[28px] sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#0f172a] leading-[1.1] mb-3 sm:mb-4">Expert RO Service</h1>
-              <p className="text-[14px] sm:text-lg text-[#64748b] mb-6 sm:mb-8 leading-relaxed">Advanced multi-stage water purification with expert service in Bangalore. Repair, filter replacement, and AMC plans.</p>
-              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-                <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#2563eb] text-white font-semibold btn-ribbon hover:bg-[#1d4ed8] transition-all shadow-lg text-[14px]">
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5" />Call Now: {SITE.phoneFormatted}
-                </a>
-                <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-[#334155] font-semibold btn-ribbon hover:bg-[#f8fafc] transition-all border border-[#e2e8f0] text-[14px]">
-                  Book Service <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                </Link>
-              </div>
+          {/* Logo — full width on phone */}
+          <div className="mt-6 sm:mt-8">
+            <div className="w-[calc(100%-20px)] mx-auto sm:mx-0 sm:w-[200px] h-[120px] sm:h-[120px] lg:w-[240px] lg:h-[140px] bg-white rounded-2xl sm:rounded-3xl border border-[#e2e8f0] shadow-sm flex items-center justify-center p-4 sm:p-6">
+              {Logo ? (
+                <div className="w-full h-full flex items-center justify-center">
+                  <img src={`/images/logos/${brand.id === 'ao-smith' ? 'aosmith_new' : brand.id === 'kent' ? 'brand2' : brand.id === 'aquaguard' ? 'brand5' : brand.id === 'pureit' ? 'brand4' : 'brand1'}.webp`} alt={brand.name} width="240" height="140" decoding="async" className="max-w-full max-h-full object-contain" />
+                </div>
+              ) : (
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#eff6ff] rounded-3xl flex items-center justify-center text-2xl sm:text-3xl font-bold text-[#2563eb]">{brand.name.charAt(0)}</div>
+              )}
             </div>
+          </div>
+
+          {/* Title */}
+          <h1 className="mt-6 sm:mt-8 text-[28px] sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#0f172a] leading-[1.1] mb-3 sm:mb-4">Expert RO Service</h1>
+
+          {/* Description */}
+          <p className="text-[14px] sm:text-lg text-[#64748b] mb-6 sm:mb-8 leading-relaxed">Advanced multi-stage water purification with expert service in Bangalore. We provide complete repair, filter replacement, membrane change, UV lamp service, and annual maintenance plans. Our certified technicians use genuine spare parts and offer same-day doorstep service with a service warranty on all repairs. Trusted by thousands of happy customers across Bangalore.</p>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-10">
+            <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#2563eb] text-white font-semibold btn-ribbon hover:bg-[#1d4ed8] transition-all shadow-lg text-[14px]">
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5" />Call Now: {SITE.phoneFormatted}
+            </a>
+          </div>
+
+          {/* Booking Form */}
+          <div className="max-w-xl bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-xl">
+            <h2 className="text-lg sm:text-2xl font-bold text-[#0f172a] mb-1">Book Appointment</h2>
+            <p className="text-[#64748b] text-[13px] sm:text-sm mb-5">Fill the form below and we&apos;ll call you to confirm.</p>
+            <form onSubmit={(e) => { e.preventDefault(); }} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Name</label>
+                  <input type="text" placeholder="Your name" required className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
+                </div>
+                <div>
+                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Phone Number</label>
+                  <input type="tel" placeholder="+91 98765 43210" required pattern="[0-9+\s]{10,}" className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Pincode</label>
+                  <input type="text" placeholder="e.g. 560034" required pattern="[0-9]{6}" maxLength="6" className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
+                </div>
+                <div>
+                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Brand</label>
+                  <select defaultValue={brand.id} required className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all appearance-none">
+                    {BRANDS.map((b) => (
+                      <option key={b.id} value={b.id}>{b.name}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+              <button type="submit" className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-[#2563eb] text-white font-semibold btn-ribbon hover:bg-[#1d4ed8] transition-all shadow-lg text-[14px]">
+                <Send className="w-4 h-4" /> Book Appointment
+              </button>
+            </form>
+            <p className="text-center text-[#94a3b8] text-[11px] sm:text-[12px] mt-3">We&apos;ll call you to confirm your appointment.</p>
           </div>
         </Container>
       </section>
+
+      {/* FAQs — right after form */}
+      {faqs.length > 0 && (
+        <section className="py-12 sm:py-20 bg-white">
+          <Container>
+            <div className="max-w-3xl mx-auto">
+              <SectionHeading badge="FAQ" title="Frequently Asked Questions" icon={CheckCircle} />
+              <FAQAccordion items={faqs} />
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* Services */}
       <section className="py-12 sm:py-20 bg-white">
@@ -272,60 +342,6 @@ export default function BrandDetail() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* FAQ */}
-      {faqs.length > 0 && (
-        <section className="py-12 sm:py-20 bg-white">
-          <Container>
-            <div className="max-w-3xl mx-auto">
-              <SectionHeading badge="FAQ" title="Frequently Asked Questions" icon={CheckCircle} />
-              <FAQAccordion items={faqs} />
-            </div>
-          </Container>
-        </section>
-      )}
-
-      {/* CTA + Booking Form */}
-      <section className="py-12 sm:py-20 bg-gradient-to-r from-[#2563eb] to-[#0ea5e9] text-white">
-        <Container>
-          <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-10">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">Need RO Service?</h2>
-            <p className="text-white/90 text-[14px] sm:text-lg leading-relaxed">Book an appointment — we&apos;ll call you to confirm.</p>
-          </div>
-          <div className="max-w-xl mx-auto bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-xl">
-            <form onSubmit={(e) => { e.preventDefault(); }} className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Name</label>
-                  <input type="text" placeholder="Your name" required className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
-                </div>
-                <div>
-                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Phone Number</label>
-                  <input type="tel" placeholder="+91 98765 43210" required pattern="[0-9+\s]{10,}" className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Pincode</label>
-                  <input type="text" placeholder="e.g. 560034" required pattern="[0-9]{6}" maxLength="6" className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all" />
-                </div>
-                <div>
-                  <label className="block text-[12px] sm:text-[13px] font-semibold text-[#475569] mb-1.5">Brand</label>
-                  <select defaultValue={brand.id} required className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] text-[#0f172a] text-[14px] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/30 focus:border-[#2563eb] transition-all appearance-none">
-                    {BRANDS.map((b) => (
-                      <option key={b.id} value={b.id}>{b.name}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <button type="submit" className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-[#2563eb] text-white font-semibold btn-ribbon hover:bg-[#1d4ed8] transition-all shadow-lg text-[14px]">
-                <Send className="w-4 h-4" /> Book Appointment
-              </button>
-            </form>
-            <p className="text-center text-[#94a3b8] text-[11px] sm:text-[12px] mt-3">We&apos;ll call you to confirm your appointment.</p>
-          </div>
-        </Container>
       </section>
     </>
   );
