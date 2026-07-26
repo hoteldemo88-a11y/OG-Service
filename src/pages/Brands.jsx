@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Phone, Shield, Check } from 'lucide-react';
 import SEO from '@/components/common/SEO';
 import Container from '@/components/common/Container';
-import Breadcrumb from '@/components/common/Breadcrumb';
 import BrandLogos from '@/components/icons/BrandLogos';
 import { BRANDS, SITE } from '@/constants';
 
@@ -14,7 +13,6 @@ export default function Brands() {
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 bg-[#f8fafc] overflow-hidden">
         <Container className="relative z-10">
-          <Breadcrumb items={[{ label: 'Brands' }]} />
           <div className="max-w-2xl mt-6 text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#0f172a] leading-[1.1] mb-6 text-center lg:text-left">Brands We Service</h1>
             <p className="text-base sm:text-lg text-[#64748b] leading-relaxed text-center lg:text-left">We provide expert service for all major RO water purifier brands. Choose your brand for specialized service.</p>

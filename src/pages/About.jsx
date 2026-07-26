@@ -3,7 +3,6 @@ import { Phone, ArrowRight, Shield, Award, Users, Clock, Target, Eye, Heart } fr
 import SEO from '@/components/common/SEO';
 import Container from '@/components/common/Container';
 import SectionHeading from '@/components/common/SectionHeading';
-import Breadcrumb from '@/components/common/Breadcrumb';
 import { SITE } from '@/constants';
 
 const values = [
@@ -41,7 +40,6 @@ export default function About() {
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 bg-[#f8fafc] overflow-hidden">
         <Container className="relative z-10">
-          <Breadcrumb items={[{ label: 'About Us' }]} />
           <div className="max-w-2xl mt-6 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#eff6ff] border border-[#bfdbfe] mb-5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />

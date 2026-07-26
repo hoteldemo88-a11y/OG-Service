@@ -1,6 +1,5 @@
 import SEO from '@/components/common/SEO';
 import Container from '@/components/common/Container';
-import Breadcrumb from '@/components/common/Breadcrumb';
 
 const sections = [
   { title: 'Information We Collect', content: 'We collect information you provide directly to us, such as when you fill out a contact form, request a service, or contact us for support. This may include your name, email address, phone number, and address.' },
@@ -20,7 +19,6 @@ export default function PrivacyPolicyPage() {
 
       <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-16 bg-[#f8fafc]">
         <Container>
-          <Breadcrumb items={[{ label: 'Privacy Policy' }]} />
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] mt-6">Privacy Policy</h1>
           <p className="text-[#64748b] mt-2 text-sm sm:text-base">Last Updated: January 2024</p>
         </Container>

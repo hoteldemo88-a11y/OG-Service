@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Phone, ArrowRight, Wrench, Settings, Filter, CircleDot, Calendar, Droplets, Gauge, Cog, Zap, Activity, RefreshCw, Power, Shield } from 'lucide-react';
 import SEO from '@/components/common/SEO';
 import Container from '@/components/common/Container';
-import Breadcrumb from '@/components/common/Breadcrumb';
 import { SERVICES, SITE } from '@/constants';
 
 const serviceIcons = {
@@ -32,7 +31,6 @@ export default function Services() {
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 bg-[#f8fafc] overflow-hidden">
         <Container className="relative z-10">
-          <Breadcrumb items={[{ label: 'Services' }]} />
           <div className="max-w-2xl mt-6 text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#0f172a] leading-[1.1] mb-6 text-center lg:text-left">Our Services</h1>
             <p className="text-base sm:text-lg text-[#64748b] leading-relaxed text-center lg:text-left">Complete RO water purifier solutions for all brands in Bangalore. From repair to installation, we do it all.</p>

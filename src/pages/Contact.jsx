@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Phone, Mail, MapPin, Send, Shield, CheckCircle } from 'lucide-react';
 import SEO from '@/components/common/SEO';
 import Container from '@/components/common/Container';
-import Breadcrumb from '@/components/common/Breadcrumb';
 import FAQAccordion from '@/components/common/FAQAccordion';
 import { SITE, FAQS } from '@/constants';
 
@@ -21,7 +20,6 @@ export default function Contact() {
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 bg-[#f8fafc] overflow-hidden">
         <Container className="relative z-10">
-          <Breadcrumb items={[{ label: 'Contact Us' }]} />
           <div className="max-w-2xl mt-6 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#eff6ff] border border-[#bfdbfe] mb-5">
               <span className="text-[12px] font-medium text-[#2563eb]">We're here to help</span>
