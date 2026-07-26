@@ -37,10 +37,11 @@ export default function HeroSection() {
                 <img
                   key={img}
                   src={img}
+                  srcSet={`${img.replace('.webp', '-sm.webp')} 640w, ${img} 800w`}
+                  sizes="(max-width: 1023px) calc(100vw - 32px), 0px"
                   alt="RO Service Technician"
                   width="800"
                   height="450"
-                  sizes="(max-width: 1023px) 100vw, 0px"
                   decoding="async"
                   loading={i === 0 ? 'eager' : 'lazy'}
                   fetchPriority={i === 0 ? 'high' : 'low'}
