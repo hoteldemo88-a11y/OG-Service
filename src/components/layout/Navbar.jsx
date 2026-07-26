@@ -96,17 +96,13 @@ export default function Navbar() {
 
             {/* CTA */}
             <div className="flex items-center gap-3">
-              {!isBrandDetail && (
               <Link to="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] text-white text-[13.5px] font-semibold px-4 py-2 btn-ribbon-sm hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 active:scale-[0.97] lg:px-5 lg:py-2.5" style={{ fontFamily: 'var(--font-heading)' }}>
                 <Phone className="w-3.5 h-3.5" />
                 Book Service
               </Link>
-              )}
-              {!isBrandDetail && (
               <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden p-2 rounded-xl text-[#475569] hover:bg-[#f1f5f9] transition-colors" aria-label="Menu">
                 {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
-              )}
             </div>
           </nav>
         </div>
