@@ -59,6 +59,14 @@ const brandFaqs = {
   ],
 };
 
+const brandKeywords = {
+  kent: 'Kent service, Kent water purifier service, Kent ro service, Kent repair service',
+  aquaguard: 'Aquaguard service, Aquaguard water purifier service, Aquaguard ro service, Aquaguard repair service',
+  lg: 'Lg ro service, Lg water purifier service, Lg purifier service, Lg ro repair service',
+  'ao-smith': 'Ao Smith ro service, Ao Smith water purifier service, Ao Smith service, Ao Smith ro repair service',
+  pureit: 'Pureit service, Pureit ro service, Pureit water purifier service, Pureit repair service',
+};
+
 const brandServices = {
   kent: [
     { title: 'RO Repair', description: 'Expert repair for all models including Pearl, Prime, and Elite.' },
@@ -125,6 +133,8 @@ export default function BrandDetail() {
   return (
     <>
       <SEO title={`${brand.name} RO Service`} description={`Expert ${brand.name} RO water purifier service in Bangalore. Repair, filter replacement, AMC plans, and more. Genuine parts and certified technicians.`} url={`/brands/${brand.id}`} />
+
+      <div className="sr-only" aria-hidden="true">{brandKeywords[brand.id] || ''}</div>
 
       {/* Hero + Form + FAQs — Mobile-first order */}
       <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 bg-[#f8fafc] overflow-hidden">
