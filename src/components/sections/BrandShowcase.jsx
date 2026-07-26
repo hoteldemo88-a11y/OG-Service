@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { Award } from 'lucide-react';
+import { Award, ArrowRight } from 'lucide-react';
 import Container from '@/components/common/Container';
 import SectionHeading from '@/components/common/SectionHeading';
 import BrandLogos from '@/components/icons/BrandLogos';
@@ -26,9 +26,9 @@ export default function BrandShowcase() {
                   <Link
                     key={`${b.id}-${i}`}
                     to={`/brands/${b.id}`}
-                    className="group flex items-center justify-center rounded-xl sm:rounded-2xl border border-[#f1f5f9] hover:border-[#bfdbfe] hover:shadow-elevated transition-all duration-300 w-[130px] h-[80px] sm:w-[220px] sm:h-[120px] lg:w-[260px] lg:h-[140px] bg-white shrink-0"
+                    className="group flex items-center justify-center rounded-xl sm:rounded-2xl border border-[#f1f5f9] hover:border-[#bfdbfe] hover:shadow-elevated transition-all duration-300 w-[140px] h-[90px] sm:w-[220px] sm:h-[120px] lg:w-[260px] lg:h-[140px] bg-white shrink-0"
                   >
-                    <div className="group-hover:scale-110 transition-transform duration-300 scale-65 sm:scale-90 lg:scale-100">
+                    <div className="group-hover:scale-110 transition-transform duration-300">
                       {Logo ? <Logo /> : (
                         <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-white font-bold text-base sm:text-lg" style={{background:b.color}}>
                           {b.name.charAt(0)}
@@ -42,11 +42,16 @@ export default function BrandShowcase() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center mt-6 sm:mt-8 gap-2 sm:gap-2">
-          <span className="w-2 h-2 sm:w-2 sm:h-2 rounded-full bg-[#22c55e] animate-pulse" />
-          <span className="text-[11px] sm:text-[13px] text-[#64748b] font-medium" style={{fontFamily:'var(--font-body)'}}>
-            24/7 Service Available Across Bangalore
-          </span>
+        <div className="flex flex-col items-center mt-6 sm:mt-8 gap-3">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#22c55e] animate-pulse" />
+            <span className="text-[11px] sm:text-[13px] text-[#64748b] font-medium" style={{fontFamily:'var(--font-body)'}}>
+              24/7 Service Available Across Bangalore
+            </span>
+          </div>
+          <Link to="/brands" className="inline-flex items-center gap-2 text-[13px] sm:text-[14px] font-semibold text-[#2563eb] hover:text-[#1d4ed8] transition-colors">
+            View All Brands <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </Container>
     </section>
