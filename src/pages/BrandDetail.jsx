@@ -334,9 +334,7 @@ export default function BrandDetail() {
                   <p className="text-[#475569] text-[12px] sm:text-[14px] leading-[1.6] mb-4 sm:mb-6 font-medium">&ldquo;{review.text}&rdquo;</p>
                   <div className="h-px bg-gradient-to-r from-transparent via-[#e2e8f0] to-transparent mb-3 sm:mb-4" />
                   <div className="flex items-center gap-2.5 sm:gap-3.5">
-                    <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center text-[13px] sm:text-[15px] font-bold text-[#2563eb] shrink-0">
-                      {review.name.charAt(0)}
-                    </div>
+                    <img src={`https://i.pravatar.cc/100?img=${i % 48 + 1}`} alt={review.name} loading="lazy" decoding="async" width="44" height="44" className="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-[#eff6ff] ring-offset-1 shrink-0" />
                     <div className="flex-1 min-w-0">
                       <p className="font-bold text-[#0f172a] text-[11px] sm:text-[13px] truncate">{review.name}</p>
                       <p className="text-[#64748b] text-[9px] sm:text-[11px] truncate">{review.location}</p>
