@@ -56,7 +56,7 @@ const sections = [
   },
   {
     title: 'Contact Information',
-    content: 'For any questions, concerns, or disputes related to these Terms and Conditions, please contact us:\n\nEmail: info@roservicenow.in\nPhone: 080502 91180\nAddress: Bangalore, Karnataka, India\nBusiness Hours: Monday to Saturday — 8:00 AM to 8:00 PM | Sunday — 9:00 AM to 5:00 PM',
+    content: 'For any questions, concerns, or disputes related to these Terms and Conditions, please contact us:\n\nEmail: customercaresupports22@gmail.com\nPhone: 080502 91180\nAddress: Bangalore, Karnataka, India\nBusiness Hours: Monday to Saturday — 8:00 AM to 8:00 PM | Sunday — 9:00 AM to 5:00 PM',
   },
 ];
 
@@ -104,7 +104,7 @@ export default function Terms() {
 
             <div className="mt-10 sm:mt-12 bg-[#f8fafc] rounded-2xl p-6 sm:p-8 border border-[#e2e8f0]">
               <h3 className="font-bold text-[#0f172a] mb-2">Need Help?</h3>
-              <p className="text-[#64748b] text-sm leading-relaxed">If you have any questions about these Terms & Conditions, please contact us at <a href="mailto:info@roservicenow.in" className="text-[#2563eb] hover:underline font-medium">info@roservicenow.in</a> or call us at <a href="tel:918050291180" className="text-[#2563eb] hover:underline font-medium">080502 91180</a>.</p>
+              <p className="text-[#64748b] text-sm leading-relaxed">If you have any questions about these Terms & Conditions, please contact us at <a href="mailto:customercaresupports22@gmail.com" className="text-[#2563eb] hover:underline font-medium">customercaresupports22@gmail.com</a> or call us at <a href="tel:08050291180" className="text-[#2563eb] hover:underline font-medium">080502 91180</a>.</p>
             </div>
           </div>
         </Container>

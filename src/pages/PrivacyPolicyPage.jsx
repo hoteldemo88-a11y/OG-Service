@@ -28,7 +28,7 @@ const sections = [
   },
   {
     title: 'Your Rights',
-    content: 'Under applicable data protection laws, you have the following rights:\n\n• Right to Access — Request a copy of all personal data we hold about you\n• Right to Correction — Request correction of inaccurate or incomplete data\n• Right to Deletion — Request deletion of your personal data from our records\n• Right to Opt-Out — Unsubscribe from marketing communications at any time\n• Right to Restrict Processing — Limit how we use your data\n• Right to Data Portability — Request your data in a structured, machine-readable format\n\nTo exercise any of these rights, please contact us at info@roservicenow.in or call 080502 91180.',
+    content: 'Under applicable data protection laws, you have the following rights:\n\n• Right to Access — Request a copy of all personal data we hold about you\n• Right to Correction — Request correction of inaccurate or incomplete data\n• Right to Deletion — Request deletion of your personal data from our records\n• Right to Opt-Out — Unsubscribe from marketing communications at any time\n• Right to Restrict Processing — Limit how we use your data\n• Right to Data Portability — Request your data in a structured, machine-readable format\n\nTo exercise any of these rights, please contact us at customercaresupports22@gmail.com or call 080502 91180.',
   },
   {
     title: 'Data Retention',
@@ -44,7 +44,7 @@ const sections = [
   },
   {
     title: 'Contact Us',
-    content: 'If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please reach out to us:\n\nEmail: info@roservicenow.in\nPhone: 080502 91180\nAddress: Bangalore, Karnataka, India\n\nWe aim to respond to all privacy-related inquiries within 48 business hours.',
+    content: 'If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please reach out to us:\n\nEmail: customercaresupports22@gmail.com\nPhone: 080502 91180\nAddress: Bangalore, Karnataka, India\n\nWe aim to respond to all privacy-related inquiries within 48 business hours.',
   },
 ];
 
@@ -92,7 +92,7 @@ export default function PrivacyPolicyPage() {
 
             <div className="mt-10 sm:mt-12 bg-[#f8fafc] rounded-2xl p-6 sm:p-8 border border-[#e2e8f0]">
               <h3 className="font-bold text-[#0f172a] mb-2">Questions About Your Privacy?</h3>
-              <p className="text-[#64748b] text-sm leading-relaxed">We are committed to protecting your data. If you have any questions about this policy, please contact us at <a href="mailto:info@roservicenow.in" className="text-[#2563eb] hover:underline font-medium">info@roservicenow.in</a> or call us at <a href="tel:918050291180" className="text-[#2563eb] hover:underline font-medium">080502 91180</a>.</p>
+              <p className="text-[#64748b] text-sm leading-relaxed">We are committed to protecting your data. If you have any questions about this policy, please contact us at <a href="mailto:customercaresupports22@gmail.com" className="text-[#2563eb] hover:underline font-medium">customercaresupports22@gmail.com</a> or call us at <a href="tel:08050291180" className="text-[#2563eb] hover:underline font-medium">080502 91180</a>.</p>
             </div>
           </div>
         </Container>
