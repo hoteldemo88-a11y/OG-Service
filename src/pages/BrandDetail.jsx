@@ -227,21 +227,6 @@ export default function BrandDetail() {
               ))}
             </div>
           </div>
-
-          {/* Trust Section */}
-          <div className="max-w-xl mt-8 sm:mt-10 bg-gradient-to-r from-[#2563eb] to-[#0ea5e9] rounded-2xl p-6 sm:p-8 text-white">
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2">Your RO Not Working?</h2>
-            <p className="text-lg sm:text-xl font-semibold mb-3">We Fix It Today.</p>
-            <p className="text-white/80 text-[13px] sm:text-[15px] leading-relaxed mb-5">Getting dirty water, low pressure, or strange noise from your purifier? Our trained technicians come to your home in Bangalore and fix it the same day.</p>
-            <div className="grid grid-cols-2 gap-3">
-              {['Same Day Service Available', 'Certified & Trained Engineers', '100% Genuine Spare Parts', 'Service Warranty Included'].map((item) => (
-                <div key={item} className="flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 mt-0.5 shrink-0 text-[#86efac]" />
-                  <span className="text-[12px] sm:text-[13px] text-white/90 font-medium leading-snug">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
         </Container>
       </section>
 
