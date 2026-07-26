@@ -182,7 +182,7 @@ export default function BrandDetail() {
           </div>
 
           {/* Trust Section */}
-          <div className="max-w-xl mt-8 sm:mt-10 text-white">
+          <div className="max-w-xl mt-8 sm:mt-10 bg-gradient-to-r from-[#0f172a] to-[#1e293b] rounded-2xl p-6 sm:p-8 text-white">
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2">Your RO Not Working?</h2>
             <p className="text-lg sm:text-xl font-semibold mb-3">We Fix It Today.</p>
             <p className="text-white/80 text-[13px] sm:text-[15px] leading-relaxed mb-5">Getting dirty water, low pressure, or strange noise from your purifier? Our trained technicians come to your home in Bangalore and fix it the same day.</p>

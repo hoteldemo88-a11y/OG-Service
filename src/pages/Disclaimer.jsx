@@ -1,53 +1,25 @@
 import SEO from '@/components/common/SEO';
 import Container from '@/components/common/Container';
+import { SITE } from '@/constants';
 
-const sections = [
-  {
-    title: 'General Information',
-    content: 'The information displayed on the RO Service Center website (roservicecenter.in) is published in good faith and for general information purposes only. RO Service Center makes no warranty about the completeness, reliability, or accuracy of this information. Any action you take based on the information found on this website is strictly at your own risk. RO Service Center will not be liable for any losses and/or damages in connection with the use of our website.',
-  },
-  {
-    title: 'External Links Disclaimer',
-    content: 'Our website may contain links to external websites that are not operated by us. We have no control over the content and practices of these sites and cannot accept responsibility for their privacy policies or content. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them. Users should exercise their own discretion when leaving our site and review the privacy policies of third-party websites.',
-  },
-  {
-    title: 'Professional Advice Disclaimer',
-    content: 'The content on this website is not intended to be a substitute for professional technical advice, diagnosis, or service. Always seek the guidance of a qualified technician or service professional with any questions you may have regarding your water purifier. Never disregard professional advice or delay in seeking it because of something you have read on this website. RO Service Center is not responsible for any damage or loss that may result from following information provided on this site.',
-  },
-  {
-    title: 'Service Estimates & Pricing',
-    content: 'All pricing information, cost estimates, and service charges displayed on this website are indicative and subject to change without prior notice. Actual service costs may vary depending on multiple factors including but not limited to the brand, model, age of the unit, type of malfunction, spare parts required, and the technician\'s on-site assessment. The final service cost will be communicated to the customer and approved before any repair work begins. RO Service Center reserves the right to modify pricing at any time without prior notice.',
-  },
-  {
-    title: 'Brand Affiliation Disclaimer',
-    content: 'RO Service Center is an independent, third-party service provider. We are not affiliated with, endorsed by, sponsored by, or officially connected to any water purifier manufacturer or brand whose products and services are mentioned on this website. All brand names, trademarks, registered trademarks, and product names used on this site are the property of their respective owners. The use of any trade name or trademark is for identification and reference purposes only and does not imply any association with the trademark holder.',
-  },
-  {
-    title: 'Testimonials & Reviews Disclaimer',
-    content: 'Testimonials, reviews, and customer feedback displayed on this website represent the personal experiences and opinions of individual customers. Results may vary depending on individual circumstances, water quality, usage patterns, and other factors. RO Service Center does not claim, nor should any visitor assume, that every customer will experience the same or similar results. Testimonials are not intended to guarantee that all customers will achieve the same or similar outcomes.',
-  },
-  {
-    title: 'Service Availability Disclaimer',
-    content: 'While we strive to provide same-day service in most areas of Bangalore, service availability depends on multiple factors including technician availability, geographic location, time of request, and current demand. RO Service Center does not guarantee specific service timelines or availability. Estimated response times are approximate and may vary. We will do our best to accommodate your preferred time slot, but cannot guarantee specific appointment times.',
-  },
-  {
-    title: 'Website Availability',
-    content: 'RO Service Center strives to ensure that the website is available at all times. However, we shall not be held responsible if, for any reason, the website is unavailable for any period of time. Access to the website may be suspended temporarily and without notice in case of system failure, maintenance, or repair, or for any other reason beyond our control.',
-  },
-  {
-    title: 'Errors & Omissions',
-    content: 'While we have made every attempt to ensure that the information contained on this website is accurate and up to date, RO Service Center is not responsible for any errors or omissions, or for the results obtained from the use of this information. All information on this website is provided "as is," with no guarantee of completeness, accuracy, timeliness, or of the results obtained from the use of this information.',
-  },
-  {
-    title: 'Consent',
-    content: 'By using our website, you hereby consent to our disclaimer and agree to its terms. If you do not agree with any part of this disclaimer, please do not use our website or services. This disclaimer was last updated on January 1, 2024, and applies to all visitors, users, and others who access or use the service.',
-  },
+const brandList = [
+  'Kent RO', 'AO Smith', 'Aquaguard', 'Eureka Forbes', 'LG', 'Pureit', 'HUL',
+  'Havells', 'Livpure', 'Blue Star', 'Whirlpool', 'Samsung',
+];
+
+const serviceDisclaimer = [
+  'We are an independent service provider offering repair and maintenance services for water purifiers of all brands.',
+  'We are not the official or authorized service centre of any brand mentioned on this website.',
+  'Spare parts used in our services may be genuine, compatible, or aftermarket parts based on availability and customer preference.',
+  'Our service warranty is provided by us and is independent of any manufacturer warranty.',
+  'Availing our services may affect your existing manufacturer warranty. Please check with the respective brand before proceeding.',
+  'Prices and services mentioned are indicative and may vary based on the actual condition of the product and parts required.',
 ];
 
 export default function Disclaimer() {
   return (
     <>
-      <SEO title="Disclaimer" description="Disclaimer for RO Service Center. Read our official disclaimer regarding the information, services, and content provided on this website." url="/disclaimer" />
+      <SEO title="Disclaimer" description="Important disclaimer for RO Service Centre (QuickRoFix). We are an independent third-party service provider and are not affiliated with any water purifier brand." url="/disclaimer" />
 
       <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-16 bg-[#f8fafc]">
         <Container>
@@ -56,7 +28,7 @@ export default function Disclaimer() {
             <div className="flex items-center gap-2 text-[#94a3b8] text-sm sm:text-base mb-4">
               <span>Last Updated: January 1, 2024</span>
               <span className="w-1 h-1 rounded-full bg-[#cbd5e1]" />
-              <span>RO Service Center</span>
+              <span>RO Service Centre / QuickRoFix</span>
             </div>
             <div className="w-12 h-1 bg-gradient-to-r from-[#2563eb] to-[#60a5fa] rounded-full mb-6" />
           </div>
@@ -66,25 +38,99 @@ export default function Disclaimer() {
       <section className="py-12 sm:py-16 bg-white">
         <Container>
           <div className="max-w-4xl mx-auto">
-            <div className="bg-[#f8fafc] rounded-2xl p-6 sm:p-8 border border-[#e2e8f0] mb-8 sm:mb-10">
-              <p className="text-[#475569] text-sm sm:text-base leading-relaxed">
-                The information contained on the RO Service Center website is provided on an &ldquo;as is&rdquo; basis for general informational purposes only. By accessing or using this website and our services, you acknowledge and agree to the terms of this disclaimer. If you do not agree with any part of this disclaimer, please discontinue use of our website immediately.
+
+            {/* Important Notice */}
+            <div className="bg-[#fef3c7] rounded-2xl p-6 sm:p-8 border border-[#fde68a] mb-8 sm:mb-10">
+              <h2 className="text-lg sm:text-xl font-bold text-[#92400e] mb-3">Important Notice</h2>
+              <p className="text-[#78350f] text-sm sm:text-base leading-relaxed">
+                RO Service Centre / QuickRoFix is an <strong>individual / independent third-party service provider</strong>. We are <strong>NOT</strong> the official service centre, authorized dealer, or company-owned service provider of any brand.
               </p>
             </div>
 
-            {sections.map((section, i) => (
-              <div key={i} className="mb-8 sm:mb-10 last:mb-0">
-                <div className="flex items-start gap-3 mb-3 sm:mb-4">
-                  <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center text-[11px] font-bold text-[#2563eb]">{String(i + 1).padStart(2, '0')}</span>
-                  <h2 className="text-lg sm:text-xl font-bold text-[#0f172a] pt-0.5">{section.title}</h2>
-                </div>
-                <p className="text-[#64748b] text-sm sm:text-base leading-[1.8] pl-10">{section.content}</p>
+            {/* About Our Business */}
+            <div className="mb-8 sm:mb-10">
+              <div className="flex items-start gap-3 mb-3 sm:mb-4">
+                <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center text-[11px] font-bold text-[#2563eb]">01</span>
+                <h2 className="text-lg sm:text-xl font-bold text-[#0f172a] pt-0.5">About Our Business</h2>
               </div>
-            ))}
+              <div className="pl-10 space-y-3">
+                <p className="text-[#64748b] text-sm sm:text-base leading-[1.8]">
+                  RO Service Centre, operating under the trade name <strong className="text-[#334155]">QuickRoFix</strong>, is an individual proprietorship business providing water purifier repair, maintenance, and installation services. We operate as an independent service provider and are not owned, operated, or controlled by any water purifier manufacturing company.
+                </p>
+                <p className="text-[#64748b] text-sm sm:text-base leading-[1.8]">
+                  Our technicians are trained professionals with experience in servicing various water purifier brands, but they are employed by us and not by any manufacturing company.
+                </p>
+              </div>
+            </div>
 
+            {/* Brand Affiliation Disclaimer */}
+            <div className="mb-8 sm:mb-10">
+              <div className="flex items-start gap-3 mb-3 sm:mb-4">
+                <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center text-[11px] font-bold text-[#2563eb]">02</span>
+                <h2 className="text-lg sm:text-xl font-bold text-[#0f172a] pt-0.5">Brand Affiliation Disclaimer</h2>
+              </div>
+              <div className="pl-10">
+                <p className="text-[#64748b] text-sm sm:text-base leading-[1.8] mb-4">
+                  We are <strong className="text-[#334155]">NOT affiliated with any brand</strong>. This includes but is not limited to:
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-4">
+                  {brandList.map((brand) => (
+                    <div key={brand} className="flex items-center gap-2 bg-[#f8fafc] rounded-lg px-3 py-2 border border-[#f1f5f9]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#ef4444] shrink-0" />
+                      <span className="text-[13px] font-medium text-[#334155]">{brand}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-[#64748b] text-sm sm:text-base leading-[1.8]">
+                  All brand names, product names, logos, and trademarks mentioned on this website are the property of their respective owners. The use of these names is solely for identification purposes and does not imply any endorsement, sponsorship, or affiliation.
+                </p>
+              </div>
+            </div>
+
+            {/* Service Disclaimer */}
+            <div className="mb-8 sm:mb-10">
+              <div className="flex items-start gap-3 mb-3 sm:mb-4">
+                <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center text-[11px] font-bold text-[#2563eb]">03</span>
+                <h2 className="text-lg sm:text-xl font-bold text-[#0f172a] pt-0.5">Service Disclaimer</h2>
+              </div>
+              <div className="pl-10 space-y-2.5">
+                {serviceDisclaimer.map((item, i) => (
+                  <div key={i} className="flex items-start gap-2.5">
+                    <span className="flex-shrink-0 w-5 h-5 rounded bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center text-[10px] font-bold text-[#2563eb] mt-0.5">{i + 1}</span>
+                    <p className="text-[#64748b] text-sm sm:text-base leading-[1.8]">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Liability Disclaimer */}
+            <div className="mb-8 sm:mb-10">
+              <div className="flex items-start gap-3 mb-3 sm:mb-4">
+                <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center text-[11px] font-bold text-[#2563eb]">04</span>
+                <h2 className="text-lg sm:text-xl font-bold text-[#0f172a] pt-0.5">Liability Disclaimer</h2>
+              </div>
+              <div className="pl-10 space-y-3">
+                <p className="text-[#64748b] text-sm sm:text-base leading-[1.8]">
+                  While we strive to provide the best possible service, RO Service Centre / QuickRoFix shall not be held liable for any indirect, incidental, or consequential damages arising from the use of our services.
+                </p>
+                <p className="text-[#64748b] text-sm sm:text-base leading-[1.8]">
+                  The information provided on this website is for general informational purposes only and should not be construed as professional advice. We make no representations or warranties of any kind about the completeness, accuracy, or reliability of the information.
+                </p>
+              </div>
+            </div>
+
+            {/* Contact */}
             <div className="mt-10 sm:mt-12 bg-[#f8fafc] rounded-2xl p-6 sm:p-8 border border-[#e2e8f0]">
-              <h3 className="font-bold text-[#0f172a] mb-2">Questions About This Disclaimer?</h3>
-              <p className="text-[#64748b] text-sm leading-relaxed">If you have any questions about this disclaimer, please contact us at <a href="mailto:info@roservicecenter.in" className="text-[#2563eb] hover:underline font-medium">info@roservicecenter.in</a> or call us at <a href="tel:919876543210" className="text-[#2563eb] hover:underline font-medium">+91 98765 43210</a>.</p>
+              <h3 className="font-bold text-[#0f172a] mb-3">Questions?</h3>
+              <p className="text-[#64748b] text-sm leading-relaxed mb-3">If you have any questions about this disclaimer or our services, please contact us:</p>
+              <div className="space-y-2">
+                <a href={`tel:${SITE.phoneRaw}`} className="flex items-center gap-2 text-[#2563eb] font-semibold text-sm hover:underline">
+                  {SITE.phoneFormatted}
+                </a>
+                <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 text-[#2563eb] font-semibold text-sm hover:underline">
+                  {SITE.email}
+                </a>
+              </div>
             </div>
           </div>
         </Container>
