@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -28,13 +28,13 @@ export default async function handler(req, res) {
       },
     });
 
-    const isBrandPage = source === 'brand-detail';
+    const sourceLabel = source === 'brand-detail' ? 'Brand Detail Page' : source === 'homepage' ? 'Homepage' : 'Contact Page';
 
     const htmlBody = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
         <div style="background: linear-gradient(135deg, #2563eb, #0ea5e9); padding: 24px; text-align: center;">
           <h1 style="color: white; margin: 0; font-size: 22px;">New Service Request</h1>
-          <p style="color: rgba(255,255,255,0.85); margin: 6px 0 0; font-size: 14px;">${source === 'brand-detail' ? 'Brand Detail Page' : source === 'homepage' ? 'Homepage' : 'Contact Page'} Form Submission</p>
+          <p style="color: rgba(255,255,255,0.85); margin: 6px 0 0; font-size: 14px;">${sourceLabel} Form Submission</p>
         </div>
         <div style="padding: 24px; background: #f8fafc;">
           <table style="width: 100%; border-collapse: collapse;">
